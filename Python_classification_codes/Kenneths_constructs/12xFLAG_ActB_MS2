@@ -1,0 +1,271 @@
+LOCUS       .                       9614 bp    DNA              UNK 01-JAN-1980
+DEFINITION  .
+ACCESSION   <unknown id>
+VERSION     <unknown id>
+KEYWORDS    .
+SOURCE      .
+  ORGANISM  .
+            .
+FEATURES             Location/Qualifiers
+     misc_feature    2742..2756
+                     /label="Linker3"
+                     /note="color: #0000ff"
+     misc_feature    2703..2717
+                     /label="Linker2"
+                     /note="color: #0000ff"
+     misc_feature    2664..2678
+                     /label="linker1"
+                     /note="color: #0000ff"
+     CDS             2640..2663
+                     /transl_table=1
+                     /translation="DYKDDDDK"
+                     /product="FLAG® epitope tag, followed by an enterokinase
+                     cleavage site"
+                     /codon_start=1
+                     /label="FLAG1"
+                     /note="color: #cc99b2"
+     CDS             2679..2702
+                     /transl_table=1
+                     /translation="DYKDDDDK"
+                     /product="FLAG® epitope tag, followed by an enterokinase
+                     cleavage site"
+                     /codon_start=1
+                     /label="FLAG2"
+                     /note="color: #cc99b2"
+     CDS             2718..2741
+                     /transl_table=1
+                     /translation="DYKDDDDK"
+                     /product="FLAG® epitope tag, followed by an enterokinase
+                     cleavage site"
+                     /codon_start=1
+                     /label="FLAG3"
+                     /note="color: #cc99b2"
+     CDS             2958..2981
+                     /transl_table=1
+                     /translation="DYKDDDDK"
+                     /product="FLAG® epitope tag, followed by an enterokinase
+                     cleavage site"
+                     /codon_start=1
+                     /label="FLAG3"
+                     /note="color: #cc99b2"
+     CDS             2919..2942
+                     /transl_table=1
+                     /translation="DYKDDDDK"
+                     /product="FLAG® epitope tag, followed by an enterokinase
+                     cleavage site"
+                     /codon_start=1
+                     /label="FLAG1"
+                     /note="color: #cc99b2"
+     CDS             2880..2903
+                     /transl_table=1
+                     /translation="DYKDDDDK"
+                     /product="FLAG® epitope tag, followed by an enterokinase
+                     cleavage site"
+                     /codon_start=1
+                     /label="FLAG2"
+                     /note="color: #cc99b2"
+     misc_feature    2943..2957
+                     /label="Linker3"
+                     /note="color: #0000ff"
+     CDS             2835..2858
+                     /transl_table=1
+                     /translation="DYKDDDDK"
+                     /product="FLAG® epitope tag, followed by an enterokinase
+                     cleavage site"
+                     /codon_start=1
+                     /label="FLAG2"
+                     /note="color: #cc99b2"
+     CDS             2757..2780
+                     /transl_table=1
+                     /translation="DYKDDDDK"
+                     /product="FLAG® epitope tag, followed by an enterokinase
+                     cleavage site"
+                     /codon_start=1
+                     /label="FLAG3"
+                     /note="color: #cc99b2"
+     CDS             2796..2819
+                     /transl_table=1
+                     /translation="DYKDDDDK"
+                     /product="FLAG® epitope tag, followed by an enterokinase
+                     cleavage site"
+                     /codon_start=1
+                     /label="FLAG1"
+                     /note="color: #cc99b2"
+     misc_feature    2781..2795
+                     /label="Linker2"
+                     /note="color: #0000ff"
+     misc_feature    2820..2834
+                     /label="Linker3"
+                     /note="color: #0000ff"
+     misc_feature    2859..2873
+                     /label="linker1"
+                     /note="color: #0000ff"
+     CDS             2997..3020
+                     /transl_table=1
+                     /translation="DYKDDDDK"
+                     /product="FLAG® epitope tag, followed by an enterokinase
+                     cleavage site"
+                     /codon_start=1
+                     /label="FLAG3"
+                     /note="color: #cc99b2"
+     CDS             3075..3098
+                     /transl_table=1
+                     /translation="DYKDDDDK"
+                     /product="FLAG® epitope tag, followed by an enterokinase
+                     cleavage site"
+                     /codon_start=1
+                     /label="FLAG1"
+                     /note="color: #cc99b2"
+     misc_feature    3060..3074
+                     /label="Linker2"
+                     /note="color: #0000ff"
+     misc_feature    3099..3113
+                     /label="Linker3"
+                     /note="color: #0000ff"
+     CDS             3036..3059
+                     /transl_table=1
+                     /translation="DYKDDDDK"
+                     /product="FLAG® epitope tag, followed by an enterokinase
+                     cleavage site"
+                     /codon_start=1
+                     /label="FLAG2"
+                     /note="color: #cc99b2"
+     misc_feature    3021..3035
+                     /label="linker1"
+                     /note="color: #0000ff"
+     misc_feature    2982..2996
+                     /label="Linker2"
+                     /note="color: #0000ff"
+     misc_feature    2904..2918
+                     /label="linker1"
+                     /note="color: #0000ff"
+     CDS             3129..4250
+                     /transl_table=1
+                     /translation="DDDIAALVVDNGSGMCKAGFAGDDAPRAVFPSIVGRPRHQGVMVG
+                     MGQKDSYVGDEAQSKRGILTLKYPIEHGIVTNWDDMEKIWHHTFYNELRVAPEEHPVLL
+                     TEAPLNPKANREKMTQIMFETFNTPAMYVAIQAVLSLYASGRTTGIVMDSGDGVTHTVP
+                     IYEGYALPHAILRLDLAGRDLTDYLMKILTERGYSFTTTAEREIVRDIKEKLCYVALDF
+                     EQEMATAASSSSLEKSYELPDGQVITIGNERFRCPEALFQPSFLGMESCGIHETTFNSI
+                     MKCDVDIRKDLYANTVLSGGTTMYPGIADRMQKEITALAPSTMKIKIIAPPERKYSVWI
+                     GGSILASLSTFQQMWISKQEYDESGPSIVHRKCF"
+                     /label="actb"
+                     /codon_start=1
+                     /note="color: #408080"
+     CDS             3128..4250
+                     /transl_table=1
+                     /translation="DDDIAALVVDNGSGMCKAGFAGDDAPRAVFPSIVGRPRHQGVMVG
+                     MGQKDSYVGDEAQSKRGILTLKYPIEHGIVTNWDDMEKIWHHTFYNELRVAPEEHPVLL
+                     TEAPLNPKANREKMTQIMFETFNTPAMYVAIQAVLSLYASGRTTGIVMDSGDGVTHTVP
+                     IYEGYALPHAILRLDLAGRDLTDYLMKILTERGYSFTTTAEREIVRDIKEKLCYVALDF
+                     EQEMATAASSSSLEKSYELPDGQVITIGNERFRCPEALFQPSFLGMESCGIHETTFNSI
+                     MKCDVDIRKDLYANTVLSGGTTMYPGIADRMQKEITALAPSTMKIKIIAPPERKYSVWI
+                     GGSILASLSTFQQMWISKQEYDESGPSIVHRKCF"
+                     /label="SpaghettiMonster_actb"
+                     /codon_start=1
+                     /note="color: #c0c0c0"
+     promoter        2218..2616
+                     /label="UBC_human"
+                     /note="color: #ffff00"
+     protein_bind    4270..4299
+                     /label="Zipcode"
+                     /note="color: #00ffff"
+     protein_bind    4886..4906
+                     /label="MS2_4"
+                     /note="color: #008000"
+     protein_bind    4832..4854
+                     /label="MS2_3"
+                     /note="color: #008000"
+     protein_bind    4779..4801
+                     /label="MS2_2"
+                     /note="color: #008000"
+     protein_bind    4726..4748
+                     /label="MS2_1"
+                     /note="color: #008000"
+     protein_bind    5945..5967
+                     /label="MS2_24"
+                     /note="color: #008000"
+     protein_bind    5892..5914
+                     /label="MS2_23"
+                     /note="color: #008000"
+     protein_bind    5786..5808
+                     /label="MS2_21"
+                     /note="color: #008000"
+     protein_bind    5733..5755
+                     /label="MS2_20"
+                     /note="color: #008000"
+     protein_bind    5680..5702
+                     /label="MS2_19"
+                     /note="color: #008000"
+     protein_bind    5627..5649
+                     /label="MS2_18"
+                     /note="color: #008000"
+     protein_bind    5574..5596
+                     /label="MS2_17"
+                     /note="color: #008000"
+     protein_bind    5521..5543
+                     /label="MS2_16"
+                     /note="color: #008000"
+     protein_bind    5468..5490
+                     /label="MS2_15"
+                     /note="color: #008000"
+     protein_bind    5415..5437
+                     /label="MS2_14"
+                     /note="color: #008000"
+     protein_bind    5362..5384
+                     /label="MS2_13"
+                     /note="color: #008000"
+     protein_bind    5309..5331
+                     /label="MS2_12"
+                     /note="color: #008000"
+     protein_bind    5256..5278
+                     /label="MS2_11"
+                     /note="color: #008000"
+     protein_bind    5203..5225
+                     /label="MS2_10"
+                     /note="color: #008000"
+     protein_bind    5150..5172
+                     /label="MS2_9"
+                     /note="color: #008000"
+     protein_bind    5097..5119
+                     /label="MS2_8"
+                     /note="color: #008000"
+     protein_bind    5044..5066
+                     /label="MS2_7"
+                     /note="color: #008000"
+     protein_bind    4991..5013
+                     /label="MS2_6"
+                     /note="color: #008000"
+     protein_bind    5839..5861
+                     /label="MS2_22"
+                     /note="color: #008000"
+     protein_bind    4938..4960
+                     /label="MS2_5"
+                     /note="color: #008000"
+     CDS             7210..8070
+                     /label="AmpR"
+                     /note="color: #ff8040"
+     LTR             1..634
+                     /note="3' long terminal repeat (LTR) from HIV-1"
+                     /note="color: #ffe4c4"
+                     /label="3' LTR"
+     misc_feature    6004..6592
+                     /note="woodchuck hepatitis virus posttranscriptional
+                     regulatory element"
+                     /note="color: #ffffff"
+                     /label="WPRE"
+     rep_origin      8241..8829
+                     /direction=RIGHT
+                     /note="high-copy-number ColE1/pMB1/pBR322/pUC origin of
+                     replication"
+                     /note="color: #ffff00"
+                     /label="ori"
+     misc_feature    1303..1536
+                     /note="The Rev response element (RRE) of HIV-1 allows for
+                     Rev-dependent mRNA export from the nucleus to the
+                     cytoplasm."
+                     /note="color: #ffe4c4"
+                     /label="RRE"
+     LTR             6667..6900
+                     /note="self-inactivating 3' long terminal repeat (LTR) from
+                     HIV-1"
+                     /note="color: #ffe4c4"

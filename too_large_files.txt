@@ -1,0 +1,5 @@
+figures_data/multiplexing/multiplexing_7_1
+figures_data/data_pipeline/base_vid_0
+P300_KDM5B_base_experiment_5_cells/base_experiment*
+datasets/
+all h5 files for heatmaps

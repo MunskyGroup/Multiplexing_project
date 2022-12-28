@@ -1,0 +1,9 @@
+base_command: run_cnn_commandline_all_w_freq.py
+base_dir: ML_run_1280_10s_wfreq
+base_model_name: cnn_par
+global_N_frames: 128
+global_framerate: 10
+retrain: 1
+runtime: 78126.29967546463
+samples: 5000
+timestamp: '2022-08-04T23:28:14.431910'

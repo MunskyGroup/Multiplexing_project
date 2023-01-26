@@ -108,11 +108,11 @@ class multiplexing_core:
                 for i in range(intensity_vec.shape[2]):
                     ivec = intensity_vec[n, :, i]
                     autocorr_vec[n, :, i] = self.get_acc2(
-                        (ivec - np.mean(ivec))/np.var(ivec))
+                        (ivec - np.mean(ivec))/np.std(ivec))
     
             elif norm in ['global', 'Global', 'g', 'G']:
                 global_mean = np.mean(intensity_vec[n])
-                global_var = np.var(intensity_vec[n])
+                global_var = np.std(intensity_vec[n])
                 for i in range(intensity_vec.shape[2]):
                     autocorr_vec[n, :, i] = self.get_acc2(
                         (intensity_vec[n, :, i]-global_mean)/global_var )

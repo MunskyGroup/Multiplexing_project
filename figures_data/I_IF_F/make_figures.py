@@ -21,11 +21,15 @@ import mc_core as multiplexing_core
 os.chdir(cwd)
 
 target_dir = '../../ML_imaging_long_same_int_24000_14scale'
-aps.make_heatmaps_from_keyfile(target_dir)
+aps.make_heatmaps_from_keyfile_big(target_dir)
 
-
+1/0
 target_dir = '../../ML_IF_kisdiff'
-aps.make_heatmaps_from_keyfile(target_dir)
+aps.make_heatmaps_from_keyfile_big(target_dir)
+
+1/0
+target_dir = '../../ML_imaging_long_different_int_12000_14scale'
+aps.make_heatmaps_from_keyfile_big(target_dir)
 
 
 mc = multiplexing_core.multiplexing_core()
@@ -37,6 +41,8 @@ similar_p300 = 'D:/multiplexing_ML/finalized_plots_gaussians/datasets/P300_KDM5B
 same_kdm5b = 'D:/multiplexing_ML/finalized_plots_gaussians/datasets/P300_KDM5B_24000s_Same_intensity_gaussian_14scale/ki_ke_sweep_same_int_KDM5B_KDM5B_0.014139262990455991_5.33333_0.csv'
 same_p300 = 'D:/multiplexing_ML/finalized_plots_gaussians/datasets/P300_KDM5B_24000s_Same_intensity_gaussian_14scale/ki_ke_sweep_same_int_P300_P300_0.009675852685050798_5.33333_0.csv'
 
+
+1/0
 
 colors = ['#073b4c','#57ffcd', '#ff479d', '#ffe869','#ff8c00','#04756f']
 fs = (5,2)
@@ -73,9 +79,11 @@ x,bins = np.histogram(X_train[labels==1,::100,0].flatten(),bins=30)
 #plt.hist(X_train[labels==0,::100,0].flatten(),bins=bins,  ec = colors[0], lw=3, density=True,fc=(0, 0, 1, 0.0), histtype='step');
 plt.hist(X_train[labels==0,::100,0].flatten(),bins=bins, lw=3, ec = colors[0], density=True,  histtype='step',)
 plt.hist(X_train[labels==1,::100,0].flatten(),bins=bins, lw=3, ec = colors[2], density=True, histtype='step', )
+plt.ylim([0,11])
+plt.xlim([-0.05,1.05])
 plt.ylabel('Density')
 plt.xlabel('Normalized Intensity')
-
+plt.savefig('same_int_dist.svg')
 
 
 
@@ -103,20 +111,22 @@ x,bins = np.histogram(X_train2[labels==1,::100,0].flatten(),bins=30)
 #plt.hist(X_train[labels==0,::100,0].flatten(),bins=bins,  ec = colors[0], lw=3, density=True,fc=(0, 0, 1, 0.0), histtype='step');
 plt.hist(X_train2[labels==0,::100,0].flatten(),bins=bins, lw=3, ec = colors[0], density=True,  histtype='step', )
 plt.hist(X_train2[labels==1,::100,0].flatten(),bins=bins, lw=3, ec = colors[2], density=True,  histtype='step', )
+plt.ylim([0,11])
+plt.xlim([-0.05,1.05])
 plt.ylabel('Density')
 plt.xlabel('Normalized Intensity')
-
+plt.savefig('similar_int_dist.svg')
 
 
 ntraj=2500
-ntimes=3000
+ntimes=12000
 Nsamples = 5000
 seed = 42
 n_model_traj = 4000
 witheld=0
 test_size=0
-different_kdm5b = 'D:/multiplexing_ML/finalized_plots_gaussians/datasets/par_sweep_kis/parsweep_kis_kdm5b_0.1.csv'
-different_p300 = 'D:/multiplexing_ML/finalized_plots_gaussians/datasets/par_sweep_kis/parsweep_kis_p300_0.01.csv'
+different_kdm5b = 'D:/multiplexing_ML/finalized_plots_gaussians/datasets/P300_KDM5B_24000s_different_intensity_gaussian_14scale/ki_ke_sweep_diff_int_KDM5B_KDM5B_0.04241781283138918_5.33333_0.csv'
+different_p300 = 'D:/multiplexing_ML/finalized_plots_gaussians/datasets/P300_KDM5B_24000s_different_intensity_gaussian_14scale/ki_ke_sweep_diff_int_P300_P300_0.009675858127721334_5.33333_0.csv'
 
 multiplexing_df1 = pd.read_csv(different_kdm5b)
 multiplexing_df2 = pd.read_csv(different_p300)
@@ -145,6 +155,9 @@ plt.hist(X_train3[labels==1,::100,0].flatten(),bins=bins, lw=3, ec = colors[2], 
 plt.ylabel('Density')
 plt.xlabel('Normalized Intensity')
 
+plt.ylim([0,11])
+plt.xlim([-0.05,1.05])
+plt.savefig('different_int_dist.svg')
 
 
 

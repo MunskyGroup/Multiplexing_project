@@ -96,9 +96,10 @@ for i in range(10):
         ki = float(xlabels[i])
         ke = float(ylabels[j])
         
-        int_fold = (1 - (1011)/(2*8268))*(2756/ke)*ki
+        p300 =  (1 - (1011)/(2*8268))*(2756/ke)*ki
+        kdm5b =  (1 - (1011)/(2*5658))*(5658/3/ke)*ki
         #int_fold = 2756/ke/320
-        ke_ratio.append(int_fold)
+        ke_ratio.append(np.mean([p300,kdm5b]))
         accuracy.append(acc_mat[i,j])
 
 def movmean(x, N):
@@ -144,9 +145,10 @@ for i in range(10):
         ki = float(xlabels[i])
         ke = float(ylabels[j])
         
-        int_fold =  (1 - (1011)/(2*8268))*(2756/ke)*ki
+        p300 =  (1 - (1011)/(2*8268))*(2756/ke)*ki
+        kdm5b =  (1 - (1011)/(2*5658))*(5658/3/ke)*ki
         #int_fold = 2756/ke/320
-        ke_ratio.append(int_fold)
+        ke_ratio.append(np.mean([p300,kdm5b]) )
         accuracy.append(acc_mat[i,j])
 
 
@@ -191,7 +193,7 @@ plt.semilogx([.08, 200],[.8,.8],'k-', label='_nolegend_')
 plt.xlim([1,125])
 plt.ylim([0.6,1.05])
 #plt.xlabel('Times KDM5B dwell time sampled')
-plt.xlabel('Intensity P300 (UMP)')
+plt.xlabel('Average Spot Intensity (UMP)')
 #lt.annotate('0.684', xy=(1/1.4612937433722164 - .1, .5), xytext=(.2, .6),
 #            arrowprops=dict(facecolor='black', shrink=0.0005,width=.4))
 #plt.xlim([0.08,15])

@@ -24,6 +24,14 @@ from matplotlib.colors import LogNorm
 
 import argparse
 import os
+cwd = os.getcwd()
+os.chdir('../../')
+import apply_style  as aps#apply custom matplotlib style
+import mc_core as multiplexing_core
+os.chdir(cwd)
+
+aps.apply_style()
+
 
 import numpy as np
 import pandas as pd
@@ -32,11 +40,10 @@ from sklearn.preprocessing import MinMaxScaler
 from sklearn.metrics import accuracy_score, confusion_matrix
 
 print(os.getcwd())
-from mc_core import multiplexing_core 
-from apply_style import apply_style
-mc = multiplexing_core()
-apply_style()
-files = ['./P300_KDM5B_base_experiment_5_cells/base_experiment_KDM5B_0.06_P300_0.06_5.33333_%i.csv'%i for i in range(5)][:3]
+
+mc = multiplexing_core.multiplexing_core()
+aps.apply_style()
+files = ['../../P300_KDM5B_base_experiment_5_cells/base_experiment_KDM5B_0.06_P300_0.06_5.33333_%i.csv'%i for i in range(2)][:3]
 
 ntraj = 50
 ntimes = 3000
@@ -54,7 +61,7 @@ int_g = np.vstack(green_intensities)
 int_g = mc.slice_arr_reverse(int_g, 10, 128)
 labels = np.vstack(all_labels).flatten()
 
-mc = multiplexing_core()
+mc = multiplexing_core.multiplexing_core()
 X_train_real, _, y_train_real, _, _, _, Acc_train_real, _, _ = mc.process_data(int_g, labels, norm='train', seed=42, witheld = 0, test_size = 0, include_acc = True )
 
 
@@ -129,7 +136,7 @@ kdm5b_files = ['parsweep_kes_kdm5b_2.0.csv',
               'parsweep_kes_kdm5b_10.88888888888889.csv',
               'parsweep_kes_kdm5b_12.0.csv']
 
-path = './datasets/par_sweep_kes/'
+path = '../../datasets/par_sweep_kes/'
 real_labels = np.copy(labels)
 
 def get_LL(kdm5b_file, p300_file):
@@ -444,7 +451,7 @@ ax.hist(X_train[labels==0,::100,0].flatten(),bins=bins,  ec = colors[0], lw=3, d
 #plt.hist(X_train[labels==1,::100,0].flatten(),bins=bins, lw=3, ec = colors[2], density=True, fc=(0, 0, 1, 0.0), histtype='step')
 #ax.set_ylabel('Normalized Intensity')
 ax.set_xlabel('Density')
-
+ax.set_xlim([0,5])
 ax.legend(['KDM5B Model', 'KDM5B Data',])
 ax.set_title('Intensity Distribution')
 
@@ -458,12 +465,14 @@ ax.hist(X_train[labels==1,::100,0].flatten(),bins=bins,  ec = colors[2], lw=3, d
 #plt.hist(X_train[labels==1,::100,0].flatten(),bins=bins, lw=3, ec = colors[2], density=True, fc=(0, 0, 1, 0.0), histtype='step')
 #ax.set_ylabel('Normalized Intensity')
 ax.set_xlabel('Density')
-
+ax.set_xlim([0,5])
 ax.legend(['P300 Model', 'KDM5B Data',])
 ax.set_title('Intensity Distribution')
 
 plt.savefig('fit.svg')
 
+
+1/0
 ##############################
 
 plt.figure(dpi=300, figsize= (4,8))
@@ -492,7 +501,7 @@ plt.xlabel('Density')
 plt.legend([ 'P300 Model', 'P300 Data'])
 plt.title('Intensity Distribution')
 plt.savefig('intensity_dist_p300.svg')
-1/0
+
 
 import tifffile as tiff
 cell_0 = tiff.imread('D:/multiplexing_ML/finalized_plots_gaussians/P300_KDM5B_base_experiment_5_cells/base_experiment0.tif')[:1280:10]
@@ -578,15 +587,23 @@ real_labels = np.array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 
        0., 0., 0., 0., 0., 0., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
        1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.])
 
-predicted_labels = np.array([0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
-       0., 0., 0., 0., 0., 0., 0., 0., 1., 1., 1., 1., 1., 0., 1., 1., 1.,
-       1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 0.,
-       0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
-       0., 0., 0., 0., 0., 0., 0., 1., 1., 1., 1., 1., 1., 1., 0., 1., 1.,
-       1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 0., 0.,
-       0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0., 0.,
-       0., 0., 0., 0., 0., 0., 1., 0., 1., 1., 1., 1., 1., 1., 1., 1., 1.,
-       1., 1., 0., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1.],)
+predicted_labels = np.array([False, False, False, False, False, False, False, False, False,
+       False, False, False, False, False, False, False, False, False,
+       False, False, False, False, False, False, False,  True,  True,
+        True,  True,  True, False,  True,  True,  True,  True,  True,
+        True,  True,  True,  True,  True,  True,  True,  True,  True,
+        True,  True,  True,  True,  True, False, False, False, False,
+       False, False, False, False, False, False, False, False, False,
+       False, False, False, False, False, False, False, False, False,
+       False, False, False,  True,  True,  True,  True,  True,  True,
+        True, False,  True,  True,  True,  True,  True,  True,  True,
+        True,  True,  True,  True,  True,  True,  True,  True,  True,
+        True, False, False, False, False, False, False, False, False,
+       False, False, False, False, False, False, False, False, False,
+       False, False, False, False, False, False, False, False,  True,
+       False,  True,  True,  True,  True,  True,  True,  True,  True,
+        True,  True,  True, False,  True,  True,  True,  True,  True,
+        True,  True,  True,  True,  True,  True],)
 
 
 conf = confusion_matrix(real_labels, predicted_labels)

@@ -21,7 +21,7 @@ This repository contains the codes necessary to reproduce figures from the above
 
 
 ## Graphical Abstract<br/>
-![graphical abstract](https://raw.githubusercontent.com/MunskyGroup/Multiplexing_project/master/figures/MP_graphical_abstract.png)
+![graphical abstract](https://raw.githubusercontent.com/MunskyGroup/Multiplexing_project/master/figures/MP_graphical_abstract_w.png)
 ---
 
 ## Manuscripts  <br/>

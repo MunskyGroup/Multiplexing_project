@@ -44,17 +44,27 @@ within each sub folder is
 	* cl_key.csv:     test accuracy matrix with row and column labels (pandas)
 
 ```./ML_F_kis_diff```:  Frequency only classifier applied to varying imaging conditions
+
 ```./ML_IF_kis_diff```: Intensity + Frequency classifier applied to varying imaging conditions
+
 ```./ML_I_kis_diff```: Intensity only classifier applied to varying imaging conditions
+
 ```./ML_run_1280_10s_wfreq```: Classifier applied to 1280s of NCT for 50 cells video with a 10s frame interval (128 frames, 10s fi) for all comparison analyses
+
 ```./ML_run_1280_5s_wfreq```: Classifier applied to 1280s of NCT video for 50 cells with a 10s frame interval (256  frames, 10s fi) for all comparison analyses
+
 ```./ML_run_3000_2s_wfreq```: Classifier applied to 3000s of NCT video for 50 cells with a 10s frame interval (1500  frames, 2s fi) for all comparison analyses
+
 ```./ML_run_320_5s_wfreq```: Classifier applied to 320s of NCT video for 50 cells with a 10s frame interval (64 frames, 5s fi) for all comparison analyses
+
 ```./ML_run_tag_3prime```:   Classifier applied to alternate tag design, 10xFLAG on the 3' end KDM5B vs 10xFLAG p300
+
 ```./ML_run_tag_base```: Classifier applied to original tag design, 10xFLAG on the 5' end KDM5B vs 10xFLAG p300
+
 ```./ML_run_tag_minus5```: Classifier applied to alternate tag design, 5xFLAG on the 5' end KDM5B vs 10xFLAG p300
 
 ```./ML_run_tag_plus5```: Classifier applied to alternate tag design, 15xFLAG on the 5' end KDM5B vs 10xFLAG p300
+
 ```./ML_run_tag_split```: Classifier applied to alternate tag design, 5xFLAG on the 5' end and 5xFLAG on the 3' end KDM5B vs 10xFLAG p300
 
 

@@ -19,6 +19,11 @@ For questions about the codes, please contact:  wsraymon@rams.colostate.edu, Lui
 ---
 This repository contains the codes necessary to reproduce figures from the above manuscript. All codes are implemented in Python
 
+
+## Graphical Abstract<br/>
+![graphical abstract](https://raw.githubusercontent.com/MunskyGroup/Multiplexing_project/master/figures/MP_graphical_abstract.png)
+---
+
 ## Manuscripts  <br/>
 
 ---

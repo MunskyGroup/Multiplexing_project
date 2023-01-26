@@ -13,11 +13,6 @@ For questions about the codes, please contact:  wsraymon@rams.colostate.edu, Lui
 This repository contains the codes necessary to reproduce figures from the above manuscript. All codes are implemented in Python and Matlab 2019b. <br/>
 
 
-## LaTeX document is accessible in the following link: <br/>
-
-https://www.overleaf.com/6951434265kwqvpwhcpydg
-
-
 ## Code organization <br/>
 
 The codes are organized on the following categories. <br/>

@@ -1,4 +1,5 @@
 
+
 Using mechanistic models and machine learning to design single-color multiplexed Nascent Chain Tracking experiments
 =======
 ----
@@ -25,6 +26,8 @@ This repository contains the codes necessary to reproduce figures from the above
 ---
 
 ## Manuscripts  <br/>
+
+Using mechanistic models and machine learning to design single-color multiplexed Nascent Chain Tracking experiments, *Raymond et al.* (Jan 2023) [biorxiv preprint](https://www.biorxiv.org/content/10.1101/2023.01.25.525583v1_)
 
 ---
 

@@ -22,7 +22,7 @@ diffusion_rate = .55 #
 debug = True
 
 
-make_list = [1
+make_list = [1,
              1,  #24000s same intensity cells (figure4) 
              1,  #24000s similar intensity cells  (figure 4)
              1,  #24000s different intensity cells (figure 4)
@@ -866,7 +866,7 @@ if make_list[-1]:
     ncells = 1
     N_total_videos = 1
     
-    
+    data_dir = './multiplexing_vids_gaussian_14scale'
     if debug:
         intensity_scale = 14
         N_total_videos = 1 
@@ -921,5 +921,192 @@ if make_list[-1]:
             
             time.sleep(.1)
             pbar.update(1)
+    
+
+
+if make_list[-1]:
+    intensity_scale = 14
+    sim_time = 1000
+    ncells = 1
+    N_total_videos = 1
+    
+    
+    if debug:
+        intensity_scale = 14
+        N_total_videos = 1 
+        sim_time = 100
+        ki = .06 #1/s
+        ke = 5.3333 # aa/s
+        nspots_each = 10
+        data_dir = './debug/P300_KDM5B_350s_base_pb'  
+        
+    desired_average_ribosome_count = 5 #lower polysome count
+    elongations = [5.33333]
+    inits_kdm5b = lambda x: desired_average_ribosome_count/( 1886/x)
+    inits_p300 = lambda x: desired_average_ribosome_count/( 2756/x)
+    
+    
+    
+    ### manual initations to make kdm5b have intensity of 5.5
+    kis_kdm5b = [0.06]
+    kis_p300 = [0.06]
+    
+    #kis_kdm5b = [inits_kdm5b(elongations[0])]
+    #kis_p300 = [inits_p300(elongations[0])]
+    
+    print(kis_kdm5b)
+    print(kis_p300)
+    
+    data_dir = './P300_KDM5B_350s_base_pb'
+    
+    if not os.path.exists(os.path.join('.', data_dir)):
+        os.makedirs(os.path.join('.', data_dir))
+    
+    
+    sim_time = 350
+    frame_rate = 5
+    nframes = 128
+    
+    percentage_drop_per_frame = np.array([1, .999,.998, .996, .994, .99, .98, .965, .96, .955, .95])
+    pb_rates = np.abs(-np.log(percentage_drop_per_frame)/5) # convert percentage drop per frame to e^-alpha*t
+    pb_rates[0] = 0
+    
+    
+    print('Running data generation...')
+    
+    construct_files = ['pUB_SM_KDM5B_PP7_coding_sequence.txt', 'pUB_SM_p300_MS2_coding_sequence.txt']
+    print(len(construct_files))
+    
+    
+    
+    with tqdm.tqdm(total=len(kis_kdm5b)*2) as pbar :
+    
+        for i in range(len(pb_rates)):
+    
+            
+                kes_str = str(elongations[0]) + "," + str(elongations[0])
+                kis_str = str(kis_p300[0]) + "," + str(kis_p300[0])           
+                
+                print(kis_str)
+    
+                file_name = 'p300_base_pb'
+                subprocess.run(["python3",
+                                "run_rsnaped.py",
+                                "--rsnaped_dir=/home/ml/Desktop/rsnaped/rsnaped",
+                                "--kis=%s"%kis_str,
+                                "--kes=%s"%kes_str,
+                                "--save_name=%s"%(file_name + '_P300_P300_' + str(kis_p300[0]) + '_' + str(elongations[0])+ '_' + str(i)+'.csv' ),
+                                "--n_cells=25",
+                               "--sim_time=%f"%sim_time,
+                               "--n_spots=25,25",
+                               "--diff_rates=.55,.55",
+                               "--genes=pUB_SM_p300_MS2_coding_sequence.txt,pUB_SM_p300_MS2_coding_sequence.txt",
+                               "--gene_names=p300,p300",
+                               "--mRNA_tag_channels=0,0",
+                               "--mRNA_tag_intensity_scale=500,500",
+                               "--mRNA_tag_intensity_type=constant",
+                               "--intensity_scale=14",
+                               "--spot_size=5",
+                               "--save_vids=0",
+                               "--empty_vid_select=generate_from_guassian",
+                               "--pb=constant",
+                               "--pb_vid_mu=%s"% '{:f}'.format(pb_rates[i]) + ',' + '{:f}'.format(pb_rates[i])+ ',' +'{:f}'.format(pb_rates[i]),
+                               "--pb_vid_var=%s"% '{:f}'.format(pb_rates[i]/5)  + ',' + '{:f}'.format(pb_rates[i]/5)   + ',' + '{:f}'.format(pb_rates[i]/5) ,
+                               "--pb_spot_mu=%s"%'{:f}'.format(pb_rates[i])  + ',' + '{:f}'.format(pb_rates[i])  + ',' +'{:f}'.format(pb_rates[i])  ,
+                               "--pb_spot_var=%s"%'{:f}'.format(pb_rates[i]/5)  + ',' + '{:f}'.format(pb_rates[i]/5)  + ',' + '{:f}'.format(pb_rates[i]/5)  ,
+                               "--save_dir=%s"%data_dir,
+                               "--tracking=1"], )#stdout=subprocess.DEVNULL)
+                
+                #os.rename('./cell_0.tif', './' + file_name  + str(i) + '.tif')
+                time.sleep(.1)
+                pbar.update(1)
+    
+    
+    
+                
+                
+            
+    
+                kis_str = str(kis_kdm5b[0]) + "," + str(kis_kdm5b[0])           
+                
+                print(kis_str)
+    
+                file_name = 'kdm5b_base_pb'
+                subprocess.run(["python3",
+                                "run_rsnaped.py",
+                                "--rsnaped_dir=/home/ml/Desktop/rsnaped/rsnaped",
+                                "--kis=%s"%kis_str,
+                                "--kes=%s"%kes_str,
+                                "--save_name=%s"%(file_name + '_KDM5B_KDM5B_' + str(kis_kdm5b[0]) + '_' + str(elongations[0])+ '_' + str(i)+'.csv' ),
+                                "--n_cells=25",
+                               "--sim_time=%f"%sim_time,
+                               "--n_spots=25,25",
+                               "--diff_rates=.55,.55",
+                               "--genes=pUB_SM_KDM5B_PP7_coding_sequence.txt,pUB_SM_KDM5B_PP7_coding_sequence.txt",
+                               "--gene_names=kdm5b,kdm5b",
+                               "--mRNA_tag_channels=0,0",
+                               "--mRNA_tag_intensity_scale=500,500",
+                               "--mRNA_tag_intensity_type=constant",
+                               "--intensity_scale=14",
+                               "--spot_size=5",
+                               "--save_vids=0",
+                               "--empty_vid_select=generate_from_guassian",
+                               "--pb=constant",
+                               "--pb_vid_mu=%s"% '{:f}'.format(pb_rates[i]) + ',' + '{:f}'.format(pb_rates[i])+ ',' +'{:f}'.format(pb_rates[i]),
+                               "--pb_vid_var=%s"% '{:f}'.format(pb_rates[i]/5)  + ',' + '{:f}'.format(pb_rates[i]/5)   + ',' + '{:f}'.format(pb_rates[i]/5) ,
+                               "--pb_spot_mu=%s"%'{:f}'.format(pb_rates[i])  + ',' + '{:f}'.format(pb_rates[i])  + ',' +'{:f}'.format(pb_rates[i])  ,
+                               "--pb_spot_var=%s"%'{:f}'.format(pb_rates[i]/5)  + ',' + '{:f}'.format(pb_rates[i]/5)  + ',' + '{:f}'.format(pb_rates[i]/5)  ,
+                               "--save_dir=%s"%save_dir,
+                               "--tracking=1"], )#stdout=subprocess.DEVNULL)
+                time.sleep(.1)
+                pbar.update(1)
+                
+    
+    
+    
+    with tqdm.tqdm(total=len(kis_kdm5b)*2) as pbar :
+    
+        for i in range(len(pb_rates)):
+    
+            
+                kes_str = str(elongations[0]) + "," + str(elongations[0])
+                kis_str = str(kis_p300[0]) + "," + str(kis_p300[0])           
+                
+                print(kis_str)
+    
+    
+    
+                file_name = 'both_base_pb'
+                subprocess.run(["python3",
+                                "run_rsnaped.py",
+                                "--rsnaped_dir=/home/ml/Desktop/rsnaped/rsnaped",
+                                "--kis=%s"%kis_str,
+                                "--kes=%s"%kes_str,
+                                "--save_name=%s"%(file_name + '_KDM5B_P300_' + str(kis_p300[0]) + '_' + str(elongations[0])+ '_video_cell_' + str(i)+'.csv' ),
+                                "--n_cells=1",
+                               "--sim_time=%f"%300,
+                               "--n_spots=25,25",
+                               "--diff_rates=.55,.55",
+                               "--genes=pUB_SM_KDM5B_PP7_coding_sequence.txt,pUB_SM_p300_MS2_coding_sequence.txt",
+                               "--gene_names=kdm5b,p300",
+                               "--intensity_scale=14",
+                               "--spot_size=5",
+                               "--save_vids=1",
+                               "--empty_vid_select=generate_from_guassian",
+                               "--mRNA_tag_channels=0,0",
+                               "--mRNA_tag_intensity_scale=100,100",
+                               "--mRNA_tag_intensity_type=constant",
+                               "--pb=normal",
+                               "--pb_vid_mu=%s"% '{:f}'.format(pb_rates[i]) + ',' + '{:f}'.format(pb_rates[i])+ ',' +'{:f}'.format(pb_rates[i]),
+                               "--pb_vid_var=%s"% '{:f}'.format(pb_rates[i]/5)  + ',' + '{:f}'.format(pb_rates[i]/5)   + ',' + '{:f}'.format(pb_rates[i]/5) ,
+                               "--pb_spot_mu=%s"%'{:f}'.format(pb_rates[i])  + ',' + '{:f}'.format(pb_rates[i])  + ',' +'{:f}'.format(pb_rates[i])  ,
+                               "--pb_spot_var=%s"%'{:f}'.format(pb_rates[i]/5)  + ',' + '{:f}'.format(pb_rates[i]/5)  + ',' + '{:f}'.format(pb_rates[i]/5)  ,
+                               "--save_dir=%s"%save_dir,
+                               "--tracking=1"], )#stdout=subprocess.DEVNULL)
+                
+                os.rename('./cell_0.tif', './' + file_name  + str(i) + '.tif')
+                time.sleep(.1)
+                pbar.update(1)
+    
     
 

@@ -151,6 +151,26 @@ def run_heatmaps_frequency_comparison(base_name, base_command, d1, d2, global_sa
 
 
 
+def run_photobleaching(base_name, base_command, global_samples, witheld, test_size, test_type):
+    subprocess.run(['python', 'run_heatmaps_commandline_pb2.py',
+                    '--base_dir=%s'%base_name,
+                    '--base_command=%s'%base_command,
+                    '--global_samples=%s'%str(global_samples),
+                    '--witheld=%s'%(str(witheld)),
+                    '--test_size=%s'%(str(test_size)),
+                    '--test_type=%s'%(str(test_type)),
+    
+                    ])
+    
+    
+    subprocess.run(['python', 'plot_ml_heatmap_from_keyfile.py', '--target_dir=%s'%base_name,'--format=svg'])
+    subprocess.run(['python', 'plot_ml_heatmap_from_keyfile.py', '--target_dir=%s'%base_name,'--format=png'])
+
+
+
+
+
+'''
 base_name = 'ML_run_320_5s_wfreq_3000burnin'
 base_command = 'run_cnn_commandline_all_w_freq_burnin.py'
 
@@ -166,7 +186,45 @@ runwho =  [0,  0,   1,   1,   0]
 
 
 run_heatmaps(base_name,base_command,global_fr, global_nf, global_samples, witheld, test_size, runwho)
+'''
 
+
+print('1')
+base_name = 'PB'
+base_command = 'run_cnn_commandline_all_w_freq.py'
+
+# global data setup
+retrain = 1
+global_samples = 1400
+witheld = 500
+test_size = 0
+test_type = 'base'
+
+run_photobleaching(base_name,base_command, global_samples, witheld, test_size,'base')
+run_photobleaching(base_name,base_command, global_samples, witheld, test_size,'wo_correction')
+
+    
+
+'''
+
+
+base_name = 'single_image_classification'
+base_command = 'run_cnn_commandline_all_w_freq.py'
+
+# global data setup
+retrain = 1
+global_samples = 5000
+witheld = 1000
+test_size = 0
+data_file1 = 'kdm5b_base_pb_KDM5B_KDM5B_0.06_5.33333_0.csv'
+data_file2 = 'p300_base_pb_P300_P300_0.06_5.33333_0.csv'
+#          cl img  keki  kes kis
+runwho =  [0,  1,   0,   0,   0]
+
+run_single_grid(base_name,base_command, data_file1, data_file2, global_samples, witheld, test_size,)
+
+
+'''
 
 
 '''

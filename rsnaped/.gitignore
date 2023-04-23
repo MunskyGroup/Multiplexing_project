@@ -1,0 +1,19 @@
+.DS_Store
+
+# Ignore folders
+Output/
+.ipynb_checkpoints
+__pycache__/
+__pycache__
+rsnaped.egg-info
+DataSets/
+DataBases/
+.vscode
+LargeDataSets/
+*egg-info
+dist/
+build/
+
+# rSNAPsim_IP/temp
+temp/
+FISH_ONeil/

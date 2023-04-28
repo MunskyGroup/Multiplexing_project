@@ -1,7 +1,0 @@
-base_command: run_cnn_commandline_all_w_freq.py
-base_dir: ML_I_kisdiff
-base_model_name: cnn_par
-retrain: 1
-runtime: 3514.5474092960358
-samples: 5000
-timestamp: '2022-08-07T08:05:03.991809'

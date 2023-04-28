@@ -1,7 +1,0 @@
-base_command: run_cnn_commandline_all_w_freq.py
-base_dir: ML_run_tag_plus5
-base_model_name: cnn_par
-retrain: 1
-runtime: 108.1885826587677
-samples: 5000
-timestamp: '2022-08-17T17:31:50.688026'

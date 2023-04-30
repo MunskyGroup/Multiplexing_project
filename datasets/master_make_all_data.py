@@ -5,7 +5,6 @@ Created on Wed Nov  9 16:04:05 2022
 @author: willi
 """
 
-
 import numpy as np
 import subprocess
 import tqdm
@@ -14,10 +13,24 @@ import os
 import pandas as pd
 import shutil
 
-
 ##############################################################################
 # Global setup
+# This file makes all the simulated cell data used in the paper:
+#    
+# Data generation for "Using mechanistic models and machine learning
+# to design single-color multiplexed Nascent Chain Tracking experiments
+# RAYMOND (2023) - wsraymon@colostate.edu
+#
+#
+# Generates simulated NCT cell datasets used for machine learning experiments
+# Using rSNAPed and rSNAPsim to simulate fluorescence microscopy videos for
+# a given experimental setup.
+#
+# !!! WARNING !!! 
+# If not run in debug mode, this will generate 120 GB of files and WILL TAKE
+# UP TO 20 GB of RAM FOR SOME EXPERIMENTS
 ##############################################################################
+
 spot_size = 3 #pixels
 diffusion_rate = .55 #
 debug = True
@@ -45,6 +58,8 @@ else:
 
 ##############################################################################
 # 24000s same intensity cells
+# Run P300 vs KDM5B at the same intensity by manipulating initation rates for
+# 24000 total seconds, used to investigate usage of autocorrelation information
 ##############################################################################
 
 if make_list[0]:

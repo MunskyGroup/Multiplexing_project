@@ -16,10 +16,26 @@ import argparse
 import yaml
 from cycler import cycler
 
-########################################
-
+###############################################################################
+#  Style file for paper, applies a consistent style to each figure / plot
+#  Usage: from apply_style import apply_style; apply_style()
+###############################################################################
 
 def make_heatmaps_from_keyfile(target_dir, format_type='svg',):
+    '''
+    Generates the ML parameter sweep heatmaps
+
+    Parameters
+    ----------
+    target_dir : str
+        target directory to make an ML heat map for
+    format_type : str, optional
+        string file extension to save the figure as, ex: svg or png. The default is 'svg'.
+
+    Returns
+    -------
+    None
+    '''
     dark = False
     flipped_x = False
     flipped_y = False
@@ -32,10 +48,6 @@ def make_heatmaps_from_keyfile(target_dir, format_type='svg',):
     vscale_max = 1
     
     cmap = plt.get_cmap(c_map)
-    
-    #my_cmap = cmap(np.arange(cmap.N))
-    #my_cmap[:, -1] = .9
-    #my_cmap = ListedColormap(my_cmap)
     
     def truncate_colormap(cmap, minval=0.0, maxval=1.0, n=100):
         new_cmap = LinearSegmentedColormap.from_list(
@@ -52,22 +64,7 @@ def make_heatmaps_from_keyfile(target_dir, format_type='svg',):
     ##############################################################################
     
     colors = ['#ef476f', '#073b4c','#06d6a0','#7400b8','#073b4c', '#118ab2',]
-    '''
-    else:
-        plt.style.use('dark_background')
-        plt.rcParams.update({'axes.facecolor'      : '#131313'  , 
-    'figure.facecolor' : '#131313' ,
-    'figure.edgecolor' : '#131313' , 
-    'savefig.facecolor' : '#131313'  , 
-    'savefig.edgecolor' :'#131313'})
-    
-    
-        colors = ['#118ab2','#57ffcd', '#ff479d', '#ffe869','#ff8c00','#04756f']
-    
-    font = {'family' : 'normal',
-            'weight' : 'bold',
-            'size'   : 12}
-    '''
+
     save = False
     
     plt.rcParams.update({'font.size': 12, 'font.weight':'bold','font.family':'normal'  }   )
@@ -246,6 +243,20 @@ def make_heatmaps_from_keyfile(target_dir, format_type='svg',):
 
 
 def make_heatmaps_from_keyfile_big(target_dir, format_type='svg',):
+    '''
+    Generates the large ML parameter sweep heatmaps
+
+    Parameters
+    ----------
+    target_dir : str
+        target directory to make an ML heat map for
+    format_type : str, optional
+        string file extension to save the figure as, ex: svg or png. The default is 'svg'.
+
+    Returns
+    -------
+    None
+    '''
     dark = False
     flipped_x = False
     flipped_y = False
@@ -258,10 +269,7 @@ def make_heatmaps_from_keyfile_big(target_dir, format_type='svg',):
     vscale_max = 1
     
     cmap = plt.get_cmap(c_map)
-    
-    #my_cmap = cmap(np.arange(cmap.N))
-    #my_cmap[:, -1] = .9
-    #my_cmap = ListedColormap(my_cmap)
+
     
     def truncate_colormap(cmap, minval=0.0, maxval=1.0, n=100):
         new_cmap = LinearSegmentedColormap.from_list(
@@ -278,22 +286,6 @@ def make_heatmaps_from_keyfile_big(target_dir, format_type='svg',):
     ##############################################################################
     
     colors = ['#ef476f', '#073b4c','#06d6a0','#7400b8','#073b4c', '#118ab2',]
-    '''
-    else:
-        plt.style.use('dark_background')
-        plt.rcParams.update({'axes.facecolor'      : '#131313'  , 
-    'figure.facecolor' : '#131313' ,
-    'figure.edgecolor' : '#131313' , 
-    'savefig.facecolor' : '#131313'  , 
-    'savefig.edgecolor' :'#131313'})
-    
-    
-        colors = ['#118ab2','#57ffcd', '#ff479d', '#ffe869','#ff8c00','#04756f']
-    
-    font = {'family' : 'normal',
-            'weight' : 'bold',
-            'size'   : 12}
-    '''
     save = False
     
     plt.rcParams.update({'font.size': 8, 'font.weight':'bold','font.family':'normal'  }   )
@@ -343,9 +335,6 @@ def make_heatmaps_from_keyfile_big(target_dir, format_type='svg',):
     
 
     def make_plot(f, save_name, format_str):
-        
-        
-        
         key_file = pd.read_csv(f)
         
         xshape = key_file.shape[0]
@@ -471,6 +460,19 @@ def make_heatmaps_from_keyfile_big(target_dir, format_type='svg',):
 
 
 def apply_style(dark=False):
+    '''
+    Applies a consistent matplotlib style to any figure for the paper
+
+    Parameters
+    ----------
+    dark : bool, optional
+        Use a dark theme instead of bright. The default is False.
+
+    Returns
+    -------
+    None.
+
+    '''
     if not dark:
         colors = ['#073b4c', '#ef476f','#06d6a0','#7400b8','#073b4c', '#118ab2',]
     else:

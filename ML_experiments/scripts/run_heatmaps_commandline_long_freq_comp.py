@@ -19,7 +19,7 @@ meta_data = {}
 
 # metadata and naming
 
-data_root = '.'
+data_root = '..'
 model_base_name = 'cnn_par'
 start_time = time.time()
 start_iso = datetime.datetime.fromtimestamp(time.time()).isoformat()
@@ -95,11 +95,11 @@ kes = '5.33'
 
 
 
-if not os.path.exists(os.path.join('.', img_data_dir)):
+if not os.path.exists(os.path.join(data_root, img_data_dir)):
     x=1 ##add exception
     
-if not os.path.exists(os.path.join('.',base_dir, img_save_dir)):
-    os.makedirs(os.path.join('.',base_dir, img_save_dir))
+if not os.path.exists(os.path.join(data_root,base_dir, img_save_dir)):
+    os.makedirs(os.path.join(data_root,base_dir, img_save_dir))
 
 pairs_already_used = []
 
@@ -111,7 +111,7 @@ tmp = np.zeros([1,12000])
 
 n = len(FRs)*len(nframes)
 
-acc_path =  os.path.join('.',base_dir,img_save_dir, 'acc_mat_img.npy')
+acc_path =  os.path.join(data_root,base_dir,img_save_dir, 'acc_mat_img.npy')
 if not os.path.exists(acc_path):
     acc_mat = np.zeros([len(FRs),len(nframes)])
     np.save(acc_path, acc_mat)
@@ -134,10 +134,10 @@ with tqdm.tqdm(n**2) as pbar:
                 subprocess.run(['python', base_command,
                                 '--i=%s'%str(i),
                                 '--j=%s'%str(j),
-                                '--data_file1=%s'% os.path.join('.',dataset_dir,img_data_dir,datafile1),
-                                '--data_file2=%s'% os.path.join('.',dataset_dir,img_data_dir,datafile2),
+                                '--data_file1=%s'% os.path.join(data_root,dataset_dir,img_data_dir,datafile1),
+                                '--data_file2=%s'% os.path.join(data_root,dataset_dir,img_data_dir,datafile2),
                                 '--save_model=%s'%str(1),
-                                '--save_dir=%s'%os.path.join('.',base_dir,img_save_dir),
+                                '--save_dir=%s'%os.path.join(data_root,base_dir,img_save_dir),
                                 '--acc_file=%s'%'acc_mat_img.npy',
                                 '--retrain=%s'%str(retrain),
                                 '--model_file=%s'%'unused',
@@ -159,7 +159,7 @@ with tqdm.tqdm(n**2) as pbar:
                 
                 pbar.update(1)
                 
-acc_mat_file = np.load( os.path.join('.', base_dir,img_save_dir,'acc_mat_img.npy' )  )
+acc_mat_file = np.load( os.path.join(data_root, base_dir,img_save_dir,'acc_mat_img.npy' )  )
 fr_key = []
 for i in range(0,len(FRs)):
     sub_key = []
@@ -168,4 +168,4 @@ for i in range(0,len(FRs)):
     fr_key.append(sub_key)
 
 key_csv = pd.DataFrame(data=fr_key, index=FRs, columns=nframes)
-key_csv.to_csv(os.path.join('.',base_dir, img_save_dir, 'img_key.csv'))
+key_csv.to_csv(os.path.join(data_root,base_dir, img_save_dir, 'img_key.csv'))

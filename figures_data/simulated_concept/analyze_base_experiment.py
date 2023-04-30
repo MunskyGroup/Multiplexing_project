@@ -19,7 +19,7 @@ from ipywidgets import interact
 #import imread
 #import cv2
 #import skimage.io as io
-from matplotlib.colors import ListedColormap
+
 from matplotlib.colors import LogNorm
 
 import argparse
@@ -27,23 +27,37 @@ import os
 cwd = os.getcwd()
 os.chdir('../../')
 import apply_style  as aps#apply custom matplotlib style
-import mc_core as multiplexing_core
+import multiplex_core as multiplexing_core
 os.chdir(cwd)
 
 aps.apply_style()
 
-
-import numpy as np
 import pandas as pd
-from sklearn.model_selection import train_test_split
+
+from tensorflow import keras
 from sklearn.preprocessing import MinMaxScaler
 from sklearn.metrics import accuracy_score, confusion_matrix
+
+from tensorflow.keras import layers, models, optimizers
+from tensorflow.keras import backend as K
+from tensorflow.keras.models import Sequential
+from tensorflow.keras.layers import Dense, Dropout, Flatten, Reshape, AveragePooling1D, Conv1D, LeakyReLU, Lambda
+from tensorflow.keras.regularizers import l2, l1, l1_l2
+from tensorflow.keras.layers import BatchNormalization
+from sklearn.metrics import accuracy_score, confusion_matrix
+from sklearn.model_selection import RandomizedSearchCV
+from tensorflow.keras.wrappers.scikit_learn import KerasClassifier
+
+from matplotlib.colors import ListedColormap, LinearSegmentedColormap 
+from sklearn import mixture
+
+save_fig = False
 
 print(os.getcwd())
 
 mc = multiplexing_core.multiplexing_core()
 aps.apply_style()
-files = ['../../P300_KDM5B_base_experiment_5_cells/base_experiment_KDM5B_0.06_P300_0.06_5.33333_%i.csv'%i for i in range(2)][:3]
+files = ['../../datasets/P300_KDM5B_base_experiment_5_cells/base_experiment_KDM5B_0.06_P300_0.06_5.33333_%i.csv'%i for i in range(2)][:3]
 
 ntraj = 50
 ntimes = 3000
@@ -337,7 +351,8 @@ plt.legend(['Model','Data'])
 plt.xlabel(r'Delay, $\tau$, (10 s)')
 plt.xlim([-5,100])
 plt.ylim([-.2,1.1])
-plt.savefig('p300_acc.svg')
+if save_fig:
+    plt.savefig('p300_acc.svg')
 
 
 scaler = MinMaxScaler()
@@ -357,7 +372,8 @@ plt.ylabel('Density')
 
 plt.legend(['KDM5B Model', 'P300 Model', 'KDM5B Data', 'P300 Data'])
 plt.title('Intensity Distribution')
-plt.savefig('intensity_dist.svg')
+if save_fig:
+    plt.savefig('intensity_dist.svg')
 
 
 fig5 = plt.figure(dpi=300, constrained_layout=True)
@@ -468,11 +484,10 @@ ax.set_xlabel('Density')
 ax.set_xlim([0,5])
 ax.legend(['P300 Model', 'KDM5B Data',])
 ax.set_title('Intensity Distribution')
+if save_fig:
+    plt.savefig('fit.svg')
 
-plt.savefig('fit.svg')
 
-
-1/0
 ##############################
 
 plt.figure(dpi=300, figsize= (4,8))
@@ -486,7 +501,8 @@ plt.xlabel('Density')
 
 plt.legend(['KDM5B Model', 'KDM5B Data',])
 plt.title('Intensity Distribution')
-plt.savefig('intensity_dist_kdm5b.svg')
+if save_fig:
+    plt.savefig('intensity_dist_kdm5b.svg')
 
 
 plt.figure(dpi=300,  figsize= (4,8))
@@ -500,13 +516,14 @@ plt.xlabel('Density')
 
 plt.legend([ 'P300 Model', 'P300 Data'])
 plt.title('Intensity Distribution')
-plt.savefig('intensity_dist_p300.svg')
+if save_fig:
+    plt.savefig('intensity_dist_p300.svg')
 
 
 import tifffile as tiff
-cell_0 = tiff.imread('D:/multiplexing_ML/finalized_plots_gaussians/P300_KDM5B_base_experiment_5_cells/base_experiment0.tif')[:1280:10]
-cell_1 = tiff.imread('D:/multiplexing_ML/finalized_plots_gaussians/P300_KDM5B_base_experiment_5_cells/base_experiment1.tif')[:1280:10]
-cell_2 = tiff.imread('D:/multiplexing_ML/finalized_plots_gaussians/P300_KDM5B_base_experiment_5_cells/base_experiment2.tif')[:1280:10]
+cell_0 = tiff.imread('../../datasets/P300_KDM5B_base_experiment_5_cells/base_experiment0.tif')[:1280:10]
+cell_1 = tiff.imread('../../datasets/P300_KDM5B_base_experiment_5_cells/base_experiment1.tif')[:1280:10]
+cell_2 = tiff.imread('../../datasets/P300_KDM5B_base_experiment_5_cells/base_experiment2.tif')[:1280:10]
 
 
 def quantile_norm(movie, q ):  #quantile norm
@@ -524,20 +541,23 @@ def quantile_norm(movie, q ):  #quantile norm
 cell_0_norm = quantile_norm(cell_0,.99)
 cell_0_norm[:,:,:,2] = 0
 plt.imshow(cell_0_norm[0])
-plt.savefig('cell0.svg')
+if save_fig:
+    plt.savefig('cell0.svg')
 
 plt.figure(dpi=200)
 cell_1_norm = quantile_norm(cell_1,.99)
 cell_1_norm[:,:,:,2] = 0
 plt.imshow(cell_1_norm[0])
-plt.savefig('cell1.svg')
+if save_fig:
+    plt.savefig('cell1.svg')
 
 plt.figure(dpi=200)
 cell_2_norm = quantile_norm(cell_2,.99)
 cell_2_norm[:,:,:,2] = 0
 plt.imshow(cell_2_norm[0])
 
-plt.savefig('cell2.svg')
+if save_fig:
+    plt.savefig('cell2.svg')
 
 multiplexing_df = pd.read_csv(files[0])
 particle_id = 10
@@ -561,7 +581,8 @@ for i in range(sub):
     ax[1,i].imshow(cell_0_norm[points[i], int(y[points[i]] - width):int(y[points[i]]+width+1), int(x[points[i]] - width):int(x[points[i]]+width+1),1], cmap='Greens_r')
     ax[1,i].set_axis_off()
 
-plt.savefig('spots.svg')
+if save_fig:
+    plt.savefig('spots.svg')
 
 plt.figure(figsize=(10,3))
 plt.plot(np.linspace(0,127,128), particle_int_r,'r');
@@ -573,7 +594,8 @@ plt.ylabel('Intensity (simulated AU)')
 plt.legend(['R bg', 'G bg', 'G bg + G spot', 'G spot only'])
 plt.ylim([0,13000])
 plt.plot(points, particle_int_g_spot[points], 'mo')
-plt.savefig('int_trace.svg')
+if save_fig:
+    plt.savefig('int_trace.svg')
 
 
 
@@ -643,7 +665,8 @@ for i in range(50):
         
 plt.scatter(x0,y0,marker='o', edgecolors=colors2, facecolors='none', lw=2)
 plt.scatter(x0,y0,marker='x', c=colors3, lw=2)
-plt.savefig('cell0_labeled.svg')
+if save_fig:
+    plt.savefig('cell0_labeled.svg')
 
 
 
@@ -678,7 +701,8 @@ for i in range(50,100):
         
 plt.scatter(x0,y0,marker='o', edgecolors=colors2, facecolors='none', lw=2)
 plt.scatter(x0,y0,marker='x', c=colors3, lw=2)
-plt.savefig('cell1_labeled.svg')
+if save_fig:
+    plt.savefig('cell1_labeled.svg')
 
 plt.figure(dpi=200)
 cell_2_norm = quantile_norm(cell_2,.99)
@@ -710,7 +734,235 @@ for i in range(100,150):
         
 plt.scatter(x0,y0,marker='o', edgecolors=colors2, facecolors='none', lw=2)
 plt.scatter(x0,y0,marker='x', c=colors3, lw=2)
+if save_fig:
+    plt.savefig('cell2_labeled.svg')
 
-plt.savefig('cell2_labeled.svg')
+
+##############################################################################
+# Train a classifier on simulated data and apply to the 2 example cells
+##############################################################################
+
+Fr = 10
+Nframes = 128
+ntraj = 2500
+ntimes = 3000
+Nsamples = 5000
+seed = 42
+witheld = 1000
+test_size = 0
+
+model_file = './dp_example_simulated_data_32_5.h5'
+retrain=False
+
+path = '.'
+
+p300_files = ['parsweep_kes_p300_2.0.csv',
+              'parsweep_kes_p300_3.111111111111111.csv',
+              'parsweep_kes_p300_4.222222222222222.csv',
+              'parsweep_kes_p300_5.333333333333334.csv',
+              'parsweep_kes_p300_6.444444444444445.csv',
+              'parsweep_kes_p300_7.555555555555555.csv',
+              'parsweep_kes_p300_9.777777777777779.csv',
+              'parsweep_kes_p300_8.666666666666668.csv',
+              'parsweep_kes_p300_10.88888888888889.csv',
+              'parsweep_kes_p300_12.0.csv']
+
+
+kdm5b_files = ['parsweep_kes_kdm5b_2.0.csv',
+              'parsweep_kes_kdm5b_3.111111111111111.csv',
+              'parsweep_kes_kdm5b_4.222222222222222.csv',
+              'parsweep_kes_kdm5b_5.333333333333334.csv',
+              'parsweep_kes_kdm5b_6.444444444444445.csv',
+              'parsweep_kes_kdm5b_7.555555555555555.csv',
+              'parsweep_kes_kdm5b_9.777777777777779.csv',
+              'parsweep_kes_kdm5b_8.666666666666668.csv',
+              'parsweep_kes_kdm5b_10.88888888888889.csv',
+              'parsweep_kes_kdm5b_12.0.csv']
+
+multiplexing_df1 = pd.read_csv('../../datasets/par_sweep_kes/' + kdm5b_files[3])
+multiplexing_df2 = pd.read_csv('../../datasets/par_sweep_kes/'  + p300_files[3])
+int_g1 = multiplexing_df1['green_int_mean'].values.reshape([ntraj,ntimes])    
+int_g2 = multiplexing_df2['green_int_mean'].values.reshape([ntraj,ntimes])    
+
+t = np.linspace(0,len(int_g1) - 1,len(int_g1))  #time vector in seconds
+labels = np.ones(int_g1.shape[0]*2)
+labels[:int_g1.shape[0]] = 0
+int_g = np.vstack((int_g1,int_g2))  #merge the files and then let it sort
+labels = labels
+
+int_g, labels = mc.even_shuffle_sample(int_g, labels, samples=[int(Nsamples/2), int(Nsamples/2)], seed=seed)
+int_g = mc.slice_arr(int_g, Fr, Nframes)
+
+X_train, X_test, y_train, y_test, X_witheld, y_witheld, Acc_train, Acc_test, Acc_witheld = mc.process_data(int_g, labels, norm='train', seed=seed, witheld = witheld, test_size = test_size, include_acc = True )
+
+# full model
+def signal_model(input_size_1, kernel_size, filters):
+    model = Sequential()
+    model.add(Conv1D(filters=filters, kernel_size=kernel_size, kernel_regularizer=l1_l2(l1=1e-5), padding="same", input_shape=(input_size_1, 1)))
+    model.add(LeakyReLU(alpha=0.3))
+    model.add(AveragePooling1D(pool_size=2))  
+    model.add(Flatten())
+    return model
+
+def freq_model(input_size_2, kernel_size, filters):
+    model = Sequential()
+    model.add(Conv1D(filters=filters, kernel_size=kernel_size, kernel_regularizer=l1_l2(l1=1e-5), padding="same", input_shape=(input_size_2, 1)))
+    model.add(LeakyReLU(alpha=0.3))
+    model.add(AveragePooling1D(pool_size=2))  
+    model.add(Flatten())
+    return model
+
+def create_model(input_size_1, input_size_2, N_neurons, kernel_size, filters, lr):
+
+    combi_input = keras.layers.Input(shape = (input_size_1+input_size_2,1) ) 
+    
+    Input_1 = Lambda(lambda x: x[:,:input_size_1,:])(combi_input)
+    Input_2 = Lambda(lambda x: x[:,input_size_1:,:])(combi_input)
+
+    signal_output = signal_model(input_size_1, kernel_size, filters)(Input_1)
+    freq_output = freq_model(input_size_2, kernel_size, filters)(Input_2)
+
+    cat_output = keras.layers.concatenate([signal_output, freq_output])
+
+    dense_output =  Dense(N_neurons, kernel_regularizer=l1_l2(l1=1e-5), activation = LeakyReLU(alpha=0.3))(cat_output)
+    model_out = Dense(1,activation='sigmoid')(dense_output)
+
+    optmizer = keras.optimizers.Adam(lr=lr)
+    model = keras.Model(inputs=[combi_input], outputs=model_out)
+    model.compile(loss='binary_crossentropy', optimizer=optmizer, metrics=['accuracy'],)
+
+    return model
+
+X_TRAIN = np.concatenate((X_train, Acc_train),axis=1)
+X_WITHELD = np.concatenate((X_witheld, Acc_witheld),axis=1)
+
+#_TRAIN = Acc_train
+#X_WITHELD = Acc_witheld    
+
+seed = 7
+np.random.seed(seed)
+  
+
+model_CV = KerasClassifier(build_fn=create_model, verbose=0)
+
+if retrain:
+  filters = [16, 32, 64]
+  kernel_size = [3, 5, 7]
+  batches = [16, 32, 64]
+  epochs = [50, 100]
+  lrs = [.001]
+  neurons = [200]
+  inputs_1 = [X_train.shape[1]]
+  inputs_2 = [Acc_train.shape[1]]
+
+  distributions = dict(input_size_1 = inputs_1, input_size_2 = inputs_2, kernel_size = kernel_size, filters = filters, epochs= epochs, batch_size= batches, lr=lrs, N_neurons = neurons)
+  random = RandomizedSearchCV(model_CV, distributions, n_iter= 2, verbose= 0, n_jobs= 1, cv=3)
+  random_result = random.fit(X_TRAIN, y_train)
+
+  best_model = random_result.best_estimator_.model
+  best_params = random_result.best_params_
+  best_kernel = best_params['kernel_size']
+  best_filter = best_params['filters']
+
+  clf = random_result.best_estimator_
+  acc = clf.score(X_WITHELD, y_witheld)
+  model_path = os.path.join('.', 'drive', 'MyDrive', 'dp_'+ 'real_data' + '_'  + str(best_filter) + '_' + str(best_kernel)  + '.h5')
+  best_model.save(model_path)   
+else:
+  #format: model_i_j_kernelsize_filters
+  filters = int(model_file.split('_')[-2])
+  kernel_size = int( model_file.split('_')[-1] .split('.')[0] )
+
+  inputs_1 = [X_train.shape[1], Acc_train.shape[1]]
+  best_model = create_model(X_train.shape[1], Acc_train.shape[1], 200, kernel_size, filters, .001)
+  best_model.load_weights(model_file)
+
+  clf = best_model
+
+  y_pred = best_model.predict(X_WITHELD)
+  y_pred = np.argmax(y_pred,axis=1).astype(int)
+  y_pred_onehot = np.zeros((y_pred.size, y_pred.max() + 1))
+  y_pred_onehot[np.arange(y_pred.size), y_pred] = 1
+
+  acc = 1-np.sum(np.abs(y_pred_onehot- y_witheld))/len(y_pred_onehot)
+
+
+
+plt.figure(dpi=300)
+cmap = plt.get_cmap('YlGn')
+def truncate_colormap(cmap, minval=0.0, maxval=1.0, n=100):
+    new_cmap = LinearSegmentedColormap.from_list(
+        'trunc({n},{a:.2f},{b:.2f})'.format(n=cmap.name, a=minval, b=maxval),
+        cmap(np.linspace(minval, maxval, n)))
+    return new_cmap
+
+new_cmap = truncate_colormap(cmap, 0.1, 1)
+my_cmap = new_cmap(np.arange(cmap.N))
+my_cmap[:, -1] = .9
+my_cmap = ListedColormap(my_cmap)
+
+
+b_mat = confusion_matrix(y_train,  clf.predict(np.concatenate((X_train, Acc_train),axis=1)).flatten() > .5)
+b_mat = b_mat / b_mat.astype(np.float).sum(axis=1)
+plt.matshow(b_mat, cmap =my_cmap,)
+
+for i in range(2):
+  for j in range(2):
+    if i != j:
+      plt.text(j,i, str(b_mat[i,j]),
+                horizontalalignment='center',
+                verticalalignment='center',
+                size=10)   
+    else:
+      plt.text(j,i, str(b_mat[i,j]),
+                horizontalalignment='center',
+                verticalalignment='center',
+                size=10, color='w')    
+      
+plt.gca().set_xticklabels(['','KDM5B','P300', ], fontsize=8)
+plt.gca().set_yticklabels(['','KDM5B','P300',], fontsize=8)
+plt.title('Prediction'); plt.ylabel('Actual')
+###########################################
+if save_fig:
+    plt.savefig('conf_training_data.svg')
+
+
+plt.figure(dpi=300)
+cmap = plt.get_cmap('YlGn')
+def truncate_colormap(cmap, minval=0.0, maxval=1.0, n=100):
+    new_cmap = LinearSegmentedColormap.from_list(
+        'trunc({n},{a:.2f},{b:.2f})'.format(n=cmap.name, a=minval, b=maxval),
+        cmap(np.linspace(minval, maxval, n)))
+    return new_cmap
+
+new_cmap = truncate_colormap(cmap, 0.1, 1)
+my_cmap = new_cmap(np.arange(cmap.N))
+my_cmap[:, -1] = .9
+my_cmap = ListedColormap(my_cmap)
+
+
+b_mat = confusion_matrix(y_train_real,  clf.predict(np.concatenate((np.expand_dims(int_g_real_transformed,axis=-1), Acc_train_real),axis=1)).flatten() > .5)
+b_mat = b_mat / b_mat.astype(np.float).sum(axis=1)
+plt.matshow(b_mat, cmap =my_cmap,)
+
+for i in range(2):
+  for j in range(2):
+    if i != j:
+      plt.text(j,i, str(np.round(b_mat[i,j],3)),
+                horizontalalignment='center',
+                verticalalignment='center',
+                size=10)   
+    else:
+      plt.text(j,i, str(np.round(b_mat[i,j],3)),
+                horizontalalignment='center',
+                verticalalignment='center',
+                size=10, color='w')    
+      
+plt.gca().set_xticklabels(['','KDM5B','P300', ], fontsize=8)
+plt.gca().set_yticklabels(['','KDM5B','P300',], fontsize=8)
+plt.title('Prediction'); plt.ylabel('Actual')
+###########################################
+if save_fig:
+    plt.savefig('conf_sim_data.svg')
 
 

@@ -19,7 +19,7 @@ meta_data = {}
 
 # metadata and naming
 
-data_root = '.'
+data_root = '..'
 model_base_name = 'cnn_par'
 start_time = time.time()
 start_iso = datetime.datetime.fromtimestamp(time.time()).isoformat()
@@ -127,8 +127,8 @@ print(os.getcwd())
 #####################################################################
 
 
-if not os.path.exists(os.path.join('.', base_dir)):
-    os.makedirs(os.path.join('.', base_dir))
+if not os.path.exists(os.path.join(data_root, base_dir)):
+    os.makedirs(os.path.join(data_root, base_dir))
 
 
 #####################################################################
@@ -144,11 +144,11 @@ if runwho[0]:
     
     
     
-    if not os.path.exists(os.path.join('.', CL_data_dir)):
+    if not os.path.exists(os.path.join(data_root, CL_data_dir)):
         x=1 ##Add exception
         
-    if not os.path.exists(os.path.join('.',base_dir, CL_save_dir)):
-        os.makedirs(os.path.join('.',base_dir, CL_save_dir))
+    if not os.path.exists(os.path.join(data_root,base_dir, CL_save_dir)):
+        os.makedirs(os.path.join(data_root,base_dir, CL_save_dir))
     
     
     pairs_already_used = []
@@ -172,10 +172,10 @@ if runwho[0]:
                     subprocess.run(['python', base_command,
                                     '--i=%s'%str(i),
                                     '--j=%s'%str(j),
-                                    '--data_file1=%s'% os.path.join('.',dataset_dir,CL_data_dir,datafile1),
-                                    '--data_file2=%s'% os.path.join('.',dataset_dir,CL_data_dir,datafile2),
+                                    '--data_file1=%s'% os.path.join(data_root,dataset_dir,CL_data_dir,datafile1),
+                                    '--data_file2=%s'% os.path.join(data_root,dataset_dir,CL_data_dir,datafile2),
                                     '--save_model=%s'%str(1),
-                                    '--save_dir=%s'%os.path.join('.',base_dir,CL_save_dir),
+                                    '--save_dir=%s'%os.path.join(data_root,base_dir,CL_save_dir),
                                     '--acc_file=%s'%'acc_mat_cl.npy',
                                     '--retrain=%s'%str(retrain),
                                     '--model_file=%s'%'unused',
@@ -193,7 +193,7 @@ if runwho[0]:
                     pairs_already_used.append(set([names1[i], names1[j]]) )
                 pbar.update(1)
     
-    acc_mat_file = np.load( os.path.join('.', base_dir,CL_save_dir,'acc_mat_cl.npy' )  )
+    acc_mat_file = np.load( os.path.join(data_root, base_dir,CL_save_dir,'acc_mat_cl.npy' )  )
     CL_key = []
     for i in range(0,n):
         CL_keyi = []
@@ -202,7 +202,7 @@ if runwho[0]:
         CL_key.append(CL_keyi)
     
     CL_key_csv = pd.DataFrame(data=CL_key, index=names2, columns=names2)
-    CL_key_csv.to_csv(os.path.join('.',base_dir, CL_save_dir, 'cl_key.csv'))
+    CL_key_csv.to_csv(os.path.join(data_root,base_dir, CL_save_dir, 'cl_key.csv'))
 
 ##############################################################################
 # run the ML cnn training for P300 and Kdm5b at different imaging conditions
@@ -224,11 +224,11 @@ if runwho[1]:
     
     
     
-    if not os.path.exists(os.path.join('.', img_data_dir)):
+    if not os.path.exists(os.path.join(data_root, img_data_dir)):
         x=1 ##add exception
         
-    if not os.path.exists(os.path.join('.',base_dir, img_save_dir)):
-        os.makedirs(os.path.join('.',base_dir, img_save_dir))
+    if not os.path.exists(os.path.join(data_root,base_dir, img_save_dir)):
+        os.makedirs(os.path.join(data_root,base_dir, img_save_dir))
     
     pairs_already_used = []
     
@@ -263,10 +263,10 @@ if runwho[1]:
                     subprocess.run(['python', base_command,
                                     '--i=%s'%str(i),
                                     '--j=%s'%str(j),
-                                    '--data_file1=%s'% os.path.join('.',dataset_dir,img_data_dir,datafile1),
-                                    '--data_file2=%s'% os.path.join('.',dataset_dir,img_data_dir,datafile2),
+                                    '--data_file1=%s'% os.path.join(data_root,dataset_dir,img_data_dir,datafile1),
+                                    '--data_file2=%s'% os.path.join(data_root,dataset_dir,img_data_dir,datafile2),
                                     '--save_model=%s'%str(1),
-                                    '--save_dir=%s'%os.path.join('.',base_dir,img_save_dir),
+                                    '--save_dir=%s'%os.path.join(data_root,base_dir,img_save_dir),
                                     '--acc_file=%s'%'acc_mat_img.npy',
                                     '--retrain=%s'%str(retrain),
                                     '--model_file=%s'%'unused',
@@ -281,7 +281,7 @@ if runwho[1]:
                                     ])
                     pbar.update(1)
                     
-    acc_mat_file = np.load( os.path.join('.', base_dir,img_save_dir,'acc_mat_img.npy' )  )
+    acc_mat_file = np.load( os.path.join(data_root, base_dir,img_save_dir,'acc_mat_img.npy' )  )
     fr_key = []
     for i in range(0,n):
         sub_key = []
@@ -290,7 +290,7 @@ if runwho[1]:
         fr_key.append(sub_key)
     
     key_csv = pd.DataFrame(data=fr_key, index=FRs, columns=total_time)
-    key_csv.to_csv(os.path.join('.',base_dir, img_save_dir, 'img_key.csv'))
+    key_csv.to_csv(os.path.join(data_root,base_dir, img_save_dir, 'img_key.csv'))
 
 #####################################################################
 # run the ML cnn training for each ki/ke pair difference
@@ -308,11 +308,11 @@ if runwho[2]:
     
     
     
-    if not os.path.exists(os.path.join('.', ke_ki_data_dir)):
+    if not os.path.exists(os.path.join(data_root, ke_ki_data_dir)):
         x=1 ##add exception
         
-    if not os.path.exists(os.path.join('.',base_dir, ke_ki_save_dir)):
-        os.makedirs(os.path.join('.', base_dir,ke_ki_save_dir))
+    if not os.path.exists(os.path.join(data_root,base_dir, ke_ki_save_dir)):
+        os.makedirs(os.path.join(data_root, base_dir,ke_ki_save_dir))
     
     pairs_already_used = []
     
@@ -329,9 +329,9 @@ if runwho[2]:
                 subprocess.run(['python', base_command,
                                 '--i=%s'%str(i),
                                 '--j=%s'%str(j),
-                                '--data_file1=%s'% os.path.join('.',dataset_dir,ke_ki_data_dir,datafile),
+                                '--data_file1=%s'% os.path.join(data_root,dataset_dir,ke_ki_data_dir,datafile),
                                 '--save_model=%s'%str(1),
-                                '--save_dir=%s'%os.path.join('.',base_dir,ke_ki_save_dir),
+                                '--save_dir=%s'%os.path.join(data_root,base_dir,ke_ki_save_dir),
                                 '--acc_file=%s'%'acc_mat_keki.npy',
                                 '--retrain=%s'%str(retrain),
                                 '--model_file=%s'%'unused',
@@ -352,7 +352,7 @@ if runwho[2]:
   
     
     fr_key = []
-    acc_mat_file = np.load( os.path.join('.', base_dir,ke_ki_save_dir,'acc_mat_keki.npy' )  )
+    acc_mat_file = np.load( os.path.join(data_root, base_dir,ke_ki_save_dir,'acc_mat_keki.npy' )  )
     for i in range(0,n):
         sub_key = []
         for j in range(0,n):
@@ -360,7 +360,7 @@ if runwho[2]:
         fr_key.append(sub_key)
     
     key_csv = pd.DataFrame(data=fr_key, index=kes, columns=kis)
-    key_csv.to_csv(os.path.join('.',base_dir, ke_ki_save_dir, 'keki_key.csv'))
+    key_csv.to_csv(os.path.join(data_root,base_dir, ke_ki_save_dir, 'keki_key.csv'))
 
 #####################################################################
 # run the ML cnn training for gene at ke1 and ke2
@@ -378,11 +378,11 @@ if runwho[3]:
     
     
     
-    if not os.path.exists(os.path.join('.', ke_data_dir)):
+    if not os.path.exists(os.path.join(data_root, ke_data_dir)):
         x=1##add exception
         
-    if not os.path.exists(os.path.join('.',base_dir, ke_save_dir)):
-        os.makedirs(os.path.join('.', base_dir,ke_save_dir))
+    if not os.path.exists(os.path.join(data_root,base_dir, ke_save_dir)):
+        os.makedirs(os.path.join(data_root, base_dir,ke_save_dir))
     
     pairs_already_used = []
     
@@ -396,10 +396,10 @@ if runwho[3]:
                 subprocess.run(['python', base_command,
                                 '--i=%s'%str(i),
                                 '--j=%s'%str(j),
-                                '--data_file1=%s'% os.path.join('.',dataset_dir,ke_data_dir,datafile1),
-                                '--data_file2=%s'% os.path.join('.',dataset_dir,ke_data_dir,datafile2),
+                                '--data_file1=%s'% os.path.join(data_root,dataset_dir,ke_data_dir,datafile1),
+                                '--data_file2=%s'% os.path.join(data_root,dataset_dir,ke_data_dir,datafile2),
                                 '--save_model=%s'%str(1),
-                                '--save_dir=%s'%os.path.join('.',base_dir,ke_save_dir),
+                                '--save_dir=%s'%os.path.join(data_root,base_dir,ke_save_dir),
                                 '--acc_file=%s'%'acc_mat_kes.npy',
                                 '--retrain=%s'%str(retrain),
                                 '--model_file=%s'%'unused',
@@ -417,7 +417,7 @@ if runwho[3]:
     
                 pbar.update(1)
                 
-    acc_mat_file = np.load( os.path.join('.', base_dir,ke_save_dir,'acc_mat_kes.npy' )  )
+    acc_mat_file = np.load( os.path.join(data_root, base_dir,ke_save_dir,'acc_mat_kes.npy' )  )
     fr_key = []
     for i in range(0,n):
         sub_key = []
@@ -426,7 +426,7 @@ if runwho[3]:
         fr_key.append(sub_key)
     
     key_csv = pd.DataFrame(data=fr_key, index=kes, columns=kes)
-    key_csv.to_csv(os.path.join('.',base_dir, ke_save_dir, 'kes_key.csv'))
+    key_csv.to_csv(os.path.join(data_root,base_dir, ke_save_dir, 'kes_key.csv'))
 
 #####################################################################
 # run the ML cnn training for gene at ki1 and ki2
@@ -440,11 +440,11 @@ if runwho[4]:
     ke = '5.33'
     
     
-    if not os.path.exists(os.path.join('.', ki_data_dir)):
+    if not os.path.exists(os.path.join(data_root, ki_data_dir)):
         x=1 ##add exception
         
-    if not os.path.exists(os.path.join('.',base_dir, ki_save_dir)):
-        os.makedirs(os.path.join('.', base_dir,ki_save_dir))
+    if not os.path.exists(os.path.join(data_root,base_dir, ki_save_dir)):
+        os.makedirs(os.path.join(data_root, base_dir,ki_save_dir))
     
     pairs_already_used = []
     
@@ -458,10 +458,10 @@ if runwho[4]:
                 subprocess.run(['python', base_command,
                                 '--i=%s'%str(i),
                                 '--j=%s'%str(j),
-                                '--data_file1=%s'% os.path.join('.',dataset_dir,ki_data_dir,datafile1),
-                                '--data_file2=%s'% os.path.join('.',dataset_dir,ki_data_dir,datafile2),
+                                '--data_file1=%s'% os.path.join(data_root,dataset_dir,ki_data_dir,datafile1),
+                                '--data_file2=%s'% os.path.join(data_root,dataset_dir,ki_data_dir,datafile2),
                                 '--save_model=%s'%str(1),
-                                '--save_dir=%s'%os.path.join('.',base_dir,ki_save_dir),
+                                '--save_dir=%s'%os.path.join(data_root,base_dir,ki_save_dir),
                                 '--acc_file=%s'%'acc_mat_kis.npy',
                                 '--retrain=%s'%str(retrain),
                                 '--model_file=%s'%'unused',
@@ -478,7 +478,7 @@ if runwho[4]:
     
                 pbar.update(1)
                 
-    acc_mat_file = np.load( os.path.join('.', base_dir,ki_save_dir,'acc_mat_kis.npy' )  )
+    acc_mat_file = np.load( os.path.join(data_root, base_dir,ki_save_dir,'acc_mat_kis.npy' )  )
     fr_key = []
     for i in range(0,n):
         sub_key = []
@@ -487,10 +487,10 @@ if runwho[4]:
         fr_key.append(sub_key)
     
     key_csv = pd.DataFrame(data=fr_key, index=kis, columns=kis)
-    key_csv.to_csv(os.path.join('.',base_dir, ki_save_dir, 'kis_key.csv'))
+    key_csv.to_csv(os.path.join(data_root,base_dir, ki_save_dir, 'kis_key.csv'))
 
 
 meta_data['runtime'] = time.time() - start_time
 
-with open(os.path.join('.',base_dir, 'metadata.yaml'), 'w') as outfile:
+with open(os.path.join(data_root,base_dir, 'metadata.yaml'), 'w') as outfile:
     yaml.dump(meta_data, outfile)

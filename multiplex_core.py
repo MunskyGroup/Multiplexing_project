@@ -13,8 +13,7 @@ from sklearn.utils import resample
 
 class multiplexing_core:
     '''
-    over head class containing some consistent functions to make the multiplexing easier / more
-    cogiant. 
+    over head class containing some consistent functions to use in the multiplexing paper 
     '''
     def __init__(self):
         pass
@@ -260,7 +259,7 @@ class multiplexing_core:
         return onehotlabels
     
 
-    def process_data_n(self, data, labels, use_norm=True, norm='train_and_test', seed=42, witheld = 1000, test_size = .2, include_acc = False):
+    def process_data_n(self, data, labels, use_norm=True, norm='train_and_test', seed=42, witheld = 1000, test_size = .2, include_acc = False, shuffle=True):
         '''
         
 
@@ -305,7 +304,8 @@ class multiplexing_core:
             s.append(len(labels == i))
         
         # Shuffle the data so its not from the same cells when we index by labels
-        data, labels = self.even_shuffle_sample_n(data, labels, samples=s, seed=seed) 
+        if shuffle:
+            data, labels = self.even_shuffle_sample_n(data, labels, samples=s, seed=seed) 
         
         
         if witheld > 0:
@@ -422,9 +422,10 @@ class multiplexing_core:
         
 
 
-    def process_data(self, data, labels, use_norm=True, norm='train_and_test', seed=42, witheld = 1000, test_size = .2, include_acc = False):
+    def process_data(self, data, labels, use_norm=True, norm='train_and_test', seed=42, witheld = 1000, test_size = .2, include_acc = False, shuffle=True):
         '''
-        
+        This is the main function to process data before machine learning, takes the intensity numpy array
+        and returns X_train, X_test, X_witheld, y_train, y_test, y_train based on desired training sizes.
 
         Parameters
         ----------
@@ -463,8 +464,10 @@ class multiplexing_core:
         
         s1 = len(labels == 0)
         s2 = len(labels == 1)
-        # Shuffle the data so its not from the same cells when we index by labels
-        data, labels = self.even_shuffle_sample(data, labels, samples=[s1,s2], seed=seed) 
+        
+        if shuffle:
+            # Shuffle the data so its not from the same cells when we index by labels
+            data, labels = self.even_shuffle_sample(data, labels, samples=[s1,s2], seed=seed) 
         
         if witheld > 0:
             # Witheld data ###################################
@@ -608,6 +611,7 @@ class multiplexing_core:
     
     
     def get_intensity_from_df(self,multiplexing_df, n_traj, n_timepoints, channel='green_int_mean'):
+        # convert a data frame into intensity and label arrays
         int_g = multiplexing_df['green_int_mean'].values.reshape([n_traj,n_timepoints])    
         labels = multiplexing_df['Classification'].values.reshape([n_traj,n_timepoints])[:,0]
         

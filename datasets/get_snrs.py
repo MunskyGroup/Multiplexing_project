@@ -5,35 +5,15 @@ Created on Wed Dec 14 15:19:10 2022
 @author: willi
 """
 
-import pandas   
-from IPython.display import Image, display
-import matplotlib.pyplot as plt
 import numpy as np
-import matplotlib.cm as cm
 import os
-import tqdm.notebook as tq
-import PIL
-import ipywidgets as widgets
-from ipywidgets import interact
-#import imread
-#import cv2
-#import skimage.io as io
-from matplotlib.colors import ListedColormap
-from matplotlib.colors import LogNorm
-
-import argparse
-import os
-
-import numpy as np
 import pandas as pd
-from sklearn.model_selection import train_test_split
-from sklearn.preprocessing import MinMaxScaler
-from sklearn.metrics import accuracy_score, confusion_matrix
+import scipy.stats as st
 
-print(os.getcwd())
-from mc_core import multiplexing_core 
-from apply_style import apply_style
-import numpy as np, scipy.stats as st
+###############################################################################
+#  Calculate SNR for all dataframe(s) / csv(s) to report in the paper
+###############################################################################
+
 
 multiplexing_df = pd.read_csv('./P300_KDM5B_24000s_Same_intensity_gaussian_14scale/ki_ke_sweep_same_int_KDM5B_KDM5B_0.014139262990455991_5.33333_0.csv')
 snrs_0 = []

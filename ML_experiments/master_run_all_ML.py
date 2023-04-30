@@ -69,6 +69,19 @@ def run_single_grid(base_name, base_command, d1, d2, global_samples, witheld, te
     subprocess.run(['python', 'plot_ml_heatmap_from_keyfile.py', '--target_dir=%s'%base_name,'--format=png'])
 
 
+def run_training_size(base_name, base_command, d1, d2, sizes):
+    subprocess.run(['python', 'run_training_size_exp.py',
+                    '--base_dir=%s'%base_name,
+                    '--base_command=%s'%base_command,
+                    '--datafile2=%s'%(d2),
+                    '--datafile1=%s'%(d1),
+                    '--sizes=%s'%str(sizes),
+                    '--test_size=%s'%(str(0)),
+                    '--test_type=%s'%'freq'
+                    ])
+    
+    subprocess.run(['python', 'plot_ml_heatmap_from_keyfile.py', '--target_dir=%s'%base_name,'--format=svg'])
+    subprocess.run(['python', 'plot_ml_heatmap_from_keyfile.py', '--target_dir=%s'%base_name,'--format=png'])
 
 
 def run_heatmaps(base_name,base_command,global_fr, global_nf, global_samples, witheld, test_size, runwho):
@@ -210,6 +223,43 @@ runwho =  [0,  0,   1,   1,   0]
 
 run_heatmaps(base_name,base_command,global_fr, global_nf, global_samples, witheld, test_size, runwho)
 '''
+
+##############################################################################
+# Training data size
+##############################################################################
+
+if runexp[0]:
+    data_size = [  10,   15,   20,   25,   30,   35,   40,   50,   75,  100,  125,
+        150,  165,  200,  225,  250,  275,  300,  325,  350,  376,  400,
+        425,  500,  550,  600,  675,  700,  775,  800,  900, 1000, 1250,
+       1500, 1750, 2000]
+    
+    
+    print('running training size exp...')
+    dirs = ['ML_training_size']
+    
+    
+    data_file1s = ['par_sweep_kes/parsweep_kes_p300_5.333333333333334.csv',]
+    
+    data_file2s = ['par_sweep_kes/parsweep_kes_kdm5b_5.333333333333334.csv',
+                   ]
+    base_name = dirs[0]
+    data_file1 = data_file1s[0]
+    data_file2 = data_file2s[0]
+    base_command = 'run_cnn_commandline_all_training_size.py'    
+    run_training_size(base_name, base_command, data_file1, data_file2, data_size)
+
+
+##############################################################################
+# Example proof of concept (Figure 3)
+##############################################################################
+
+
+if runexp[1]:
+    x=1
+    
+
+
 
 
 ##############################################################################

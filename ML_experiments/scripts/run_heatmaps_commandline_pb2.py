@@ -19,7 +19,7 @@ meta_data = {}
 
 # metadata and naming
 
-data_root = '.'
+data_root = '..'
 model_base_name = 'cnn_par'
 start_time = time.time()
 start_iso = datetime.datetime.fromtimestamp(time.time()).isoformat()
@@ -88,8 +88,8 @@ print(os.getcwd())
 pbs = [0,1,2,3,4,5,6,7,8,9,10]
 test_types = ['base','w_correction','wo_correction']
 
-if not os.path.exists(os.path.join('.',base_dir, pb_save_dir)):
-    os.makedirs(os.path.join('.', base_dir,pb_save_dir))
+if not os.path.exists(os.path.join(data_root,base_dir, pb_save_dir)):
+    os.makedirs(os.path.join(data_root, base_dir,pb_save_dir))
 
 pairs_already_used = []
 
@@ -110,10 +110,10 @@ if test_type == 'base':
                 subprocess.run(['python', base_command,
                                 '--i=%s'%str(i),
                                 '--j=%s'%str(j),
-                                '--data_file1=%s'% os.path.join('.',dataset_dir,img_data_dir,datafile1),
-                                '--data_file2=%s'% os.path.join('.',dataset_dir,img_data_dir,datafile2),
+                                '--data_file1=%s'% os.path.join(data_root,dataset_dir,img_data_dir,datafile1),
+                                '--data_file2=%s'% os.path.join(data_root,dataset_dir,img_data_dir,datafile2),
                                 '--save_model=%s'%str(1),
-                                '--save_dir=%s'%os.path.join('.',base_dir,pb_save_dir),
+                                '--save_dir=%s'%os.path.join(data_root,base_dir,pb_save_dir),
                                 '--acc_file=%s'%'acc_mat_pb.npy',
                                 '--retrain=%s'%str(retrain),
                                 '--model_file=%s'%'unused',
@@ -135,7 +135,7 @@ if test_type == 'base':
       
         
         fr_key = []
-        acc_mat_file = np.load( os.path.join('.', base_dir,pb_save_dir,'acc_mat_pb.npy' )  )
+        acc_mat_file = np.load( os.path.join(data_root, base_dir,pb_save_dir,'acc_mat_pb.npy' )  )
         for i in range(0,n):
             sub_key = []
             for j in range(0,n):
@@ -143,7 +143,7 @@ if test_type == 'base':
             fr_key.append(sub_key)
         
         key_csv = pd.DataFrame(data=fr_key, index=[0], columns=pbs)
-        key_csv.to_csv(os.path.join('.',base_dir, pb_save_dir, 'pb_key.csv'))
+        key_csv.to_csv(os.path.join(data_root,base_dir, pb_save_dir, 'pb_key.csv'))
 
     
 if test_type == 'wo_correction':
@@ -160,10 +160,10 @@ if test_type == 'wo_correction':
                 subprocess.run(['python', base_command,
                                 '--i=%s'%str(i),
                                 '--j=%s'%str(j),
-                                '--data_file1=%s'% os.path.join('.',dataset_dir,img_data_dir,datafile1),
-                                '--data_file2=%s'% os.path.join('.',dataset_dir,img_data_dir,datafile2),
+                                '--data_file1=%s'% os.path.join(data_root,dataset_dir,img_data_dir,datafile1),
+                                '--data_file2=%s'% os.path.join(data_root,dataset_dir,img_data_dir,datafile2),
                                 '--save_model=%s'%str(1),
-                                '--save_dir=%s'%os.path.join('.',base_dir,pb_save_dir),
+                                '--save_dir=%s'%os.path.join(data_root,base_dir,pb_save_dir),
                                 '--acc_file=%s'%'acc_mat_pb_wo.npy',
                                 '--retrain=%s'%str(retrain),
                                 '--model_file=%s'%'unused',
@@ -186,7 +186,7 @@ if test_type == 'wo_correction':
       
         
         fr_key = []
-        acc_mat_file = np.load( os.path.join('.', base_dir,pb_save_dir,'acc_mat_pb_wo.npy' )  )
+        acc_mat_file = np.load( os.path.join(data_root, base_dir,pb_save_dir,'acc_mat_pb_wo.npy' )  )
         for i in range(0,n):
             sub_key = []
             for j in range(0,n):
@@ -194,5 +194,5 @@ if test_type == 'wo_correction':
             fr_key.append(sub_key)
         
         key_csv = pd.DataFrame(data=fr_key, index=[0], columns=pbs)
-        key_csv.to_csv(os.path.join('.',base_dir, pb_save_dir, 'pb_wo_key.csv'))    
+        key_csv.to_csv(os.path.join(data_root,base_dir, pb_save_dir, 'pb_wo_key.csv'))    
 

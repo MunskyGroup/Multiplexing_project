@@ -5,34 +5,25 @@ Created on Thu Dec 29 11:46:44 2022
 @author: willi
 """
 import pandas as pd
-from IPython.display import Image, display
 import matplotlib.pyplot as plt
 import numpy as np
-import matplotlib.cm as cm
-import os
-import tqdm.notebook as tq
-import PIL
-import ipywidgets as widgets
-from ipywidgets import interact
-#import imread
-#import cv2
-#import skimage.io as io
-from matplotlib.colors import ListedColormap
-from matplotlib.colors import LogNorm
-
-import argparse
 import os
 
-import apply_style  as aps#apply custom matplotlib style
-import mc_core as multiplexing_core
+cwd = os.getcwd()
+os.chdir('../../')
+import apply_style  as aps
+import multiplex_core as multiplexing_core
+os.chdir(cwd)
 
+###############################################################################
+#  Calculate diffusion rate from x, y locations in a given dataframe(s) / csv(s)
+###############################################################################
 
+# apply style and get functions 
 aps.apply_style()
-
 mc = multiplexing_core.multiplexing_core()
-aps.apply_style()
-files = ['./par_sweep_5000/ki_ke_sweep_5000spots_0.06000000000000001_5.333333333333334.csv']
 
+files = ['./par_sweep_5000/ki_ke_sweep_5000spots_0.06000000000000001_5.333333333333334.csv']
 ntraj = 5000
 ntimes = 3000
 
@@ -91,11 +82,6 @@ print ('The slope is: ', str(linear_fit_slope), 'px^2 / sec')
 print ('Calulated D = slope / 2*n = ', str(linear_fit_slope/4), 'px^2 / sec')
 
 
-
-
-
-
-
 number_spots_per_cell = 50
 
 t=np.arange(1,3000,1)
@@ -110,18 +96,12 @@ for j in range(0,100):
 
 # MSD Statistics (mu, sigma) for all trajectories.
 msd_trajectories_all_mu = np.mean(np.mean(msd_trajectories,axis=1),axis=0)
-#msd_trajectories_all_mu = np.mean(np.squeeze(msd_trajectories_all_mu),axis=1)
-#msd_trajectories_all_sem = np.std(msd_trajectories,axis=1) /np.sqrt(number_spots_per_cell)
-
 
 
 number_dimenssions = 2
 k_diff_calulated = msd_trajectories_all_mu/(2*number_dimenssions*t)
 
-
-#@title ####Plotting the MSD vs Time
 downsampling = 20
-
 
 # using a linear fit to calculate the slope and D.
 linear_fit_model = np.polyfit(x = t, y = msd_trajectories_all_mu, deg = 1)
@@ -154,7 +134,6 @@ ax[1].set_xlabel('time (s)')
 plt.subplots_adjust(wspace=0.3, hspace=0)
 
 plt.show()
-
 
 D_pixels = float(str(linear_fit_slope/4))
 

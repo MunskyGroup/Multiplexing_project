@@ -8,6 +8,50 @@ Original file is located at
 """
 
 
+###############################################################################
+#
+#  This code runs the classification given an intensity dataset and saves / 
+#  returns the classifier and accuracy for a given condition. This is specific
+#  to the training data size experiment, it will use a consistent data set
+#  and will slice larger and larger sections to train on.
+#
+#  Arguments:
+#    
+#  --i    index one to save to the accuracy matrix, int
+#  --j    index two to save to the accuracy matrix, int
+#  --data_file1   path to data file 1, str
+#  --data_file2   path to data file 2, str
+#  --save_model   save the model, bool
+#  --save_dir     path to save the model to, str
+#  --acc_file     name of the accuracy file to save to, str
+#  --retrain      retrain the model or use the model fpath, bool
+#  --model_file   path to model to use, str
+#  --model_name   name of the model to use, str
+#  --verbose      verbose output, bool
+#  --Fr           frame rate / frame interval to slice too, int
+#  --NFr          number of frames to slice too, int
+#  --ntraj        number of total trajectories per gene in each data file, int
+#  --ntimes       total time in the original data, int
+#  --two_files    data is in two files or one, bool
+#  --Nsamples     number of total samples inside the data files, int
+#  --witheld      how many samples to withold for test accuracy, int
+#  --test_size    percentage to withold for test size, optional, float
+#  --seed         rng seed, int
+#
+#  --test_type    test type? freq, no_freq, acc_only, standardize, zero mean  
+#                 freq is used in the paper, meaning it includes the frequency 
+#                 half of the architecture. no_freq is intensity only
+#                 acc_only would be frequency only classification
+#                 standardization would standardize both intensities
+#                 zero mean would be zeroing the data means before classifying
+#  --data_size    size of the training data to use
+#  --subfold      which subfold to save too, ie original data is 5000 spots
+#                 so we can only break this into 4 subfolds of 1000 spots + 
+#                 1 1000 spot witheld dataset. subfold denotes which subfold
+#                 to use.
+###############################################################################
+
+
 import argparse
 import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
@@ -45,15 +89,7 @@ from multiplex_core import multiplexing_core
 
 mc = multiplexing_core()
 
-#from sklearn.preprocessing import MinMaxScaler
-#from tensorflow.keras.layers import BatchNormalization
-#from sklearn.metrics import accuracy_score, confusion_matrix
-#from tensorflow.keras import layers, models, optimizers
-#from tensorflow.keras import backend as K
-#from sklearn.preprocessing import MinMaxScaler
-#from sklearn.model_selection import train_test_split
 
-# path to data
 # parse arguments 
 
 ##############

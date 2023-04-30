@@ -15,7 +15,6 @@ Created on Sat Apr 29 13:26:14 2023
 # All models applied to dataset 3,4 would be acc_keki_grid[:,:,3,4]
 ##############################################################################
 
-import argparse
 import os
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
 

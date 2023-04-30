@@ -17,6 +17,13 @@ os.chdir(cur_dir)
 from skimage.io import imread
 
 
+##############################################################################
+# This code matches particles from the tracked particles photobleaching
+# and links the particles together and recovers the spots that
+# last longer than 300s and match the real simulation particles to a given error
+##############################################################################
+
+
 mc = multiplexing_core()
 ntimes = 350
 ntraj = 1250
@@ -29,7 +36,7 @@ nspots=50
 
 target_dir = './P300_KDM5B_350s_base_pb2'
 save = False
-def quantile_norm(movie, q ):
+def quantile_norm(movie, q ): # normalize a numpy array of a movie
     norm_movie = np.zeros(movie.shape)
     for i in range(movie.shape[-1]):
         max_val = np.quantile(movie[:,:,:,i], q)
@@ -39,9 +46,11 @@ def quantile_norm(movie, q ):
         norm_movie[norm_movie < 0] = 0
     return norm_movie
 
-for i in range(11):
-    
-    
+
+# TRACKING MATCHING FOR KDM5B
+# no photobleach correction
+for i in range(11): # for each photobleaching rate
+
     # KDM5B w_correction
     
     df_real ='%s/kdm5b_base_pb_KDM5B_KDM5B_0.06_5.33333_%i.csv'%(target_dir,i)
@@ -74,43 +83,41 @@ for i in range(11):
     
     int_g_wo_correction = []
     
-    for cell_number in range(ncells):
+    for cell_number in range(ncells): #for every cell
+        # get the tracked particles trajectories
         cell_traj = m_df1_wo_correction[m_df1_wo_correction['cell_number'] == cell_number]
-        
-        real_x = multiplexing_df1[multiplexing_df1['cell_number'] == cell_number]['x']
-        real_y = multiplexing_df1[multiplexing_df1['cell_number'] == cell_number]['y']
+        real_x = multiplexing_df1[multiplexing_df1['cell_number'] == cell_number]['x'] # get the real particle x's
+        real_y = multiplexing_df1[multiplexing_df1['cell_number'] == cell_number]['y'] # get the real particle y's
         real_xy = np.array([real_x.values, real_y.values])
         real_xy = real_xy.reshape(2,nspots,ntimes) # xy, cell, frame
         
-        for n_particle in range(np.max(cell_traj['particle'])):
+        for n_particle in range(np.max(cell_traj['particle'])): # for each tracked particle
             particle_traj = cell_traj[cell_traj['particle'] == n_particle]
-            #particle_traj = particle_traj.iloc[:int(len(particle_traj)/2),:] #data is accidently doubled, delete half
-            
             min_rsme = 1e6
-            
-            valid_frames = particle_traj['frame']
+            valid_frames = particle_traj['frame'] # get how long this particle was tracked
     
-            if len(valid_frames) > 0:
-                tracked_x =  particle_traj['x']
+            if len(valid_frames) > 0: # if it was tracked for more than one frame
+                tracked_x =  particle_traj['x'] 
                 tracked_y =  particle_traj['y']
                 tracked_xy = np.expand_dims(np.array([tracked_x, tracked_y]),-1)
                 matched_real = np.moveaxis(real_xy[:,:,valid_frames], 1,2)
-                xydiff = (matched_real - tracked_xy)
+                xydiff = (matched_real - tracked_xy) 
                 lenxydiff = xydiff.shape[1]
-                rmse = np.sum(np.sum(xydiff**2, axis=0), axis=0)/lenxydiff
-                potential_match = np.argmin(rmse)
+                rmse = np.sum(np.sum(xydiff**2, axis=0), axis=0)/lenxydiff #calculate MSE to real spots
+                potential_match = np.argmin(rmse) # get which particle matches the best
                 include = 0
                 real = 0
-                starting_frame = valid_frames.values[0]
-                if rmse[potential_match] < 3:
+                starting_frame = valid_frames.values[0] # what frame did tracking start
+                if rmse[potential_match] < 3: #if the matching error is below 3 its a real particle
                     real = 1
                 if real:
-                    if len(valid_frames) >= 300:
+                    if len(valid_frames) >= 300: # if it was tracked for 300 seconds keep this spot
                         include = 1
                         int_g_wo_correction.append(particle_traj['green_int_mean'].values[:300])
-                        
+                 
+                # matching array: cell, N particle, matched particle, length of trajectory, error, real, include       
                 best_rsmes.append([cell_number,n_particle,potential_match, len(valid_frames), rmse[potential_match], include, real, starting_frame])
-    
+                  
 
             
     int_g_wo_correction = np.array(int_g_wo_correction)
@@ -130,6 +137,7 @@ for i in range(11):
     
     int_g_w_correction = []
     
+    # w/ photobleach correction
     for cell_number in range(ncells):
         cell_traj = m_df1_w_correction[m_df1_w_correction['cell_number'] == cell_number]
         
@@ -175,11 +183,10 @@ for i in range(11):
         np.save('./%s/kdm5b_base_pb_KDM5B_KDM5B_0.06_5.33333_%i_tracking_w_correction_matching.npy'%(target_dir,i), matching_array)
     
 
-
+# TRACKING MATCHING FOR P300
+# w/o photobleach correction
 for i in range(11):
     
-    
-    # KDM5B w_correction
     
     df_real ='%s/p300_base_pb_P300_P300_0.06_5.33333_%i.csv'%(target_dir,i)
     df_correction = '%s/p300_base_pb_P300_P300_0.06_5.33333_%i.csv_tracking_w_correction'%(target_dir,i)
@@ -264,6 +271,7 @@ for i in range(11):
     
     int_g_w_correction = []
     
+    # w/ photobleach correction
     for cell_number in range(ncells):
         cell_traj = m_df1_w_correction[m_df1_w_correction['cell_number'] == cell_number]
         

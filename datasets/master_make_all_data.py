@@ -58,8 +58,10 @@ else:
 
 ##############################################################################
 # 24000s same intensity cells
+#
 # Run P300 vs KDM5B at the same intensity by manipulating initation rates for
 # 24000 total seconds, used to investigate usage of autocorrelation information
+# vs frame rate and video length
 ##############################################################################
 
 if make_list[0]:
@@ -148,6 +150,10 @@ if make_list[0]:
 
 ##############################################################################
 # 24000s similar intensity cells
+#
+# Run P300 vs KDM5B at the same intensity by manipulating initation rates for
+# 24000 total seconds, used to investigate usage of autocorrelation / intensity
+# information vs frame rate and video length
 ##############################################################################
 
 
@@ -238,6 +244,10 @@ if make_list[1]:
 
 ##############################################################################
 # 24000s different intensity cells
+#
+# Run P300 vs KDM5B at different intensities by manipulating initation rates for
+# 24000 total seconds, used to investigate usage of autocorrelation information
+# vs frame rate and video length
 ##############################################################################
 
 
@@ -329,7 +339,7 @@ if make_list[2]:
 
 
 ##############################################################################
-# All 5000 spot by 3000s data sets
+# KE vs KI parameter sweep, 5000 spots x 3000s
 ##############################################################################
 
 if make_list[4]:
@@ -387,7 +397,7 @@ if make_list[4]:
 
 
 ##############################################################################
-# Ki vs Ki dataset
+# KI vs KI parameter sweep, 5000 spots x 3000s
 ##############################################################################
 
 
@@ -462,7 +472,7 @@ if make_list[6]:
 
 
 ##############################################################################
-# KE vs KE dataset
+# KE vs KE parameter sweep, 5000 spots x 3000s
 ##############################################################################
 
 if make_list[5]:
@@ -537,7 +547,7 @@ if make_list[5]:
 
 
 ##############################################################################
-# Varying length data set 
+# Varying length gene data set
 ##############################################################################
 
 if make_list[3]:
@@ -642,7 +652,7 @@ if make_list[3]:
 
 
 ##############################################################################
-# Tagging Experiment
+# Alternate Tagging schemes Experiment
 ##############################################################################
 
 if make_list[7]:
@@ -816,7 +826,7 @@ if make_list[7]:
 
 
 ##############################################################################
-# Multiplexing cells
+# Multiplexing cells, 4 genes in the green channel, 3 in the blue
 ##############################################################################
 
 if make_list[8]:
@@ -893,7 +903,7 @@ if make_list[8]:
             pbar.update(1)
         
 ##############################################################################
-# single example multiplexing video
+# single example multiplexing video for labeling the figure
 ##############################################################################
 
 
@@ -960,7 +970,7 @@ if make_list[8]:
 
 
 ##############################################################################
-# photobleaching examples
+# photobleaching examples generate 75 cells at varying photobleaching rates
 ##############################################################################
 
 

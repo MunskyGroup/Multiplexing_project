@@ -5,30 +5,31 @@ Created on Fri Nov  4 10:38:37 2022
 @author: willi
 """
 
+##############################################################################
+#     Plot the large heatmaps for the 24000s videos vs frame rate and frame interval
+##############################################################################
+
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-from matplotlib import cm
 
-from matplotlib.collections import PatchCollection
-from matplotlib.patches import Rectangle
 
 import os
 cwd = os.getcwd()
 os.chdir('../../')
 import apply_style  as aps#apply custom matplotlib style
-import mc_core as multiplexing_core
+import multiplex_core as multiplexing_core
 os.chdir(cwd)
 
-target_dir = '../../ML_imaging_long_same_int_24000_14scale'
+target_dir = '../../ML_experiments/ML_imaging_long_same_int_24000_14scale'
 aps.make_heatmaps_from_keyfile_big(target_dir)
 
-1/0
-target_dir = '../../ML_IF_kisdiff'
+
+target_dir = '../../ML_experiments/ML_IF_kisdiff'
 aps.make_heatmaps_from_keyfile_big(target_dir)
 
-1/0
-target_dir = '../../ML_imaging_long_different_int_12000_14scale'
+
+target_dir = '../../ML_experiments/ML_imaging_long_different_int_12000_14scale'
 aps.make_heatmaps_from_keyfile_big(target_dir)
 
 
@@ -42,7 +43,7 @@ same_kdm5b = 'D:/multiplexing_ML/finalized_plots_gaussians/datasets/P300_KDM5B_2
 same_p300 = 'D:/multiplexing_ML/finalized_plots_gaussians/datasets/P300_KDM5B_24000s_Same_intensity_gaussian_14scale/ki_ke_sweep_same_int_P300_P300_0.009675852685050798_5.33333_0.csv'
 
 
-1/0
+
 
 colors = ['#073b4c','#57ffcd', '#ff479d', '#ffe869','#ff8c00','#04756f']
 fs = (5,2)
@@ -162,13 +163,12 @@ plt.savefig('different_int_dist.svg')
 
 
 
-1/0
 
 
 # similar intensity dataset
-Ikey = '../../ML_I_kisdiff/parsweep_img_ML/img_key.csv'
-IFkey = '../../ML_IF_kisdiff/parsweep_img_ML/img_key.csv'
-Fkey = '../../ML_F_kisdiff/parsweep_img_ML/img_key.csv'
+Ikey = '../../ML_experiments/ML_I_kisdiff/parsweep_img_ML/img_key.csv'
+IFkey = '../../ML_experiments/ML_IF_kisdiff/parsweep_img_ML/img_key.csv'
+Fkey = '../../ML_experiments/ML_F_kisdiff/parsweep_img_ML/img_key.csv'
 
 
 

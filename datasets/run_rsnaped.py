@@ -6,6 +6,11 @@ Created on Tue Feb 14 11:23:06 2023
 """
 
 
+##############################################################################
+# This code runs the rSNAPed to generate a simulated cell dataset
+##############################################################################
+
+
 
 ############################################################################
 # PARSE ARGUMENTS HERE
@@ -90,6 +95,7 @@ parser.add_argument('--mRNA_tag_intensity_scale', dest='mRNA_tag_intensity_scale
                     help='include_extra_info')    
 parser.add_argument('--mRNA_tag_intensity_type', dest='mRNA_tag_intensity_type', default='constant',type=str,
                     help='include_extra_info')    
+
                       
                       
 args = parser.parse_args()         
@@ -123,22 +129,15 @@ simulated_pb_spot_var = input_float(args.simulated_pb_spot_var)
 
 mRNA_tag_intensity_scale = input_int(args.mRNA_tag_intensity_scale)
 mRNA_tag_intensity_type = args.mRNA_tag_intensity_type
-print(mRNA_tag_intensity_scale)
-print(mRNA_tag_intensity_type)
-
-print(simulate_photobleaching)
-print(simulated_pb_video_mu)
-print(simulated_pb_spot_mu)
-print(simulated_pb_video_var)
-print(simulated_pb_spot_var)
 
 save_dir = args.save_dir
 save_name = args.save_name
 save_vids = int(args.save_vids)
 intensity_scale = args.intensity_scale
 tracking = int(args.tracking)
-print(intensity_scale)
+
 spot_size = args.spot_size
+
 ############################################################################
 ### Imports
 import rsnapsim as rsim  #import the rsnapsim
@@ -163,12 +162,9 @@ st = time.time()
 
 
 
-#python3 run_rsnaped.py --rsnaped_dir=~/Desktop/rsnaped/ --kis=.033,.033 --kes=10,10 --save_name='test_df' --
-
 ############################################################################
 
 # Defining directories
-
 
 #sequences_dir = current_dir.joinpath('rsnaped','DataBases','gene_files')
 #video_dir = current_dir.joinpath('rsnaped','DataBases','videos_for_sim_cell')
@@ -208,6 +204,7 @@ path_files = [ str(video_dir.joinpath(f).resolve()) for f in list_files_names ] 
 num_cell_shapes = len(path_files)
 
 ############################################################################
+# RUN THE CELL SIMULATIONS
 
 def run_simulations(list_gene_sequences, list_number_spots, list_target_channels_proteins, list_target_channels_mRNA,list_diffusion_coefficients,list_label_names, list_elongation_rates, list_initation_rates, frame_selection_empty_video = 'linear_interpolation',simulation_time_in_sec = 100,step_size_in_sec = 1,save_as_tif = 0,save_dataframe = 0,create_temp_folder = 0, spot_size = spot_size, number_cells=1,intensity_scale_ch0=intensity_scale,intensity_scale_ch1=intensity_scale,intensity_scale_ch2=intensity_scale, tracking=tracking, mRNA_tag_intensity_type=mRNA_tag_intensity_type, mRNA_tag_intensity_scale=mRNA_tag_intensity_scale):
   list_dataframe_simulated_cell =[]
@@ -219,6 +216,8 @@ def run_simulations(list_gene_sequences, list_number_spots, list_target_channels
     video_path = path_files[sel_shape]
     inial_video = io.imread(video_path) # video with empty cell
     mask_image = imread(masks_dir.joinpath('mask_cell_shape_'+str(sel_shape)+'.tif'))
+    
+    # CALL THE GENE MULTIPLEXING CODE IN RSNAPED
     tensor_vid, single_dataframe_simulated_cell,list_ssa = rsp.SimulatedCellMultiplexing(inial_video,list_gene_sequences,list_number_spots,list_target_channels_proteins,list_target_channels_mRNA, list_diffusion_coefficients,list_label_names,list_elongation_rates,list_initation_rates,simulation_time_in_sec,step_size_in_sec,save_as_tif, save_dataframe, saved_file_name,create_temp_folder, mask_image=mask_image, cell_number =i,frame_selection_empty_video=frame_selection_empty_video,spot_size =spot_size, intensity_scale_ch0=intensity_scale_ch0, intensity_scale_ch1=intensity_scale_ch1, intensity_scale_ch2=intensity_scale_ch2, dataframe_format=dataframe_format,
                                                                                         simulate_photobleaching = simulate_photobleaching,
                                                                                         simulated_pb_video_mu = simulated_pb_video_mu,
@@ -234,6 +233,8 @@ def run_simulations(list_gene_sequences, list_number_spots, list_target_channels
     found_particles = sum(list_number_spots)
     print(tensor_vid.shape)
     
+    
+    # PERFORM TRACKING IF NEEDED
     if tracking:
 
                 #[T, Y, X, C]
@@ -270,12 +271,10 @@ def run_simulations(list_gene_sequences, list_number_spots, list_target_channels
                                                             dataframe_format='short')
     
       trackpy_df_wo_correction = list_DataFrame_tracking[0]
-
-     # trackpy_df_wo_correction, found_particles, _ =  rsp.Trackpy(tensor_vid, mask_image, particle_size=spot_size,
-      #                                                      selected_channel=list_target_channels_mRNA[0],
-       #                                                     optimization_iterations=500, show_plot = 0, minimal_frames=20,).perform_tracking()
+      
+      # APPLY PHOTOBLEACH CORRECTION IF NEEDED
       if simulate_photobleaching: 
-            # apply photobleach correction to the tensor video coming out before tracking
+         # apply photobleach correction to the tensor video coming out before tracking
         tensor_vid, exponentials, opt, cov = rsp.PhotobleachingCorrectionVideo(tensor_vid, mask_image,).apply_photobleaching_correction()
 
         list_DataFrame_tracking, _, _, _ = rsp.image_processing( tensor_vid, mask_image, files_dir_path_processing=target_dir,
@@ -293,12 +292,6 @@ def run_simulations(list_gene_sequences, list_number_spots, list_target_channels
                                                               dataframe_format='short')
       
       trackpy_df = list_DataFrame_tracking[0]
-
-
-      #trackpy_df, found_particles, _ =  rsp.Trackpy(tensor_vid, mask_image, particle_size=spot_size,
-      #                                                      selected_channel=list_target_channels_mRNA[0],
-      #                                                      optimization_iterations=500, show_plot = 0, minimal_frames=20,).perform_tracking()
-   
       trackpy_df['cell_number'] = [i,]*trackpy_df.shape[0]   
       trackpy_df_wo_correction['cell_number'] = [i,]*trackpy_df_wo_correction.shape[0]     
 
@@ -321,12 +314,6 @@ def run_simulations(list_gene_sequences, list_number_spots, list_target_channels
 
 ############################################################################
 
-print(frame_selection_empty_video)
-
-print(rsp.__dict__)
-print('$$$$$$$$$$$$$$$$$$$$$$$$$')
-print(list_target_channels_mRNA)
-print('$$$$$$$$$$$$$$$$$$$$$$$$$')
 
 #Make the dataframe from rSNAPed
 dataframe_simulated_cells_condition_0 , list_ssa_all_cells_and_genes_condition_0, trackpy_df, trackpy_df_wo_correction = run_simulations(list_gene_sequences,
@@ -349,22 +336,20 @@ dataframe_simulated_cells_condition_0 , list_ssa_all_cells_and_genes_condition_0
  intensity_scale_ch1=intensity_scale,
  intensity_scale_ch2=intensity_scale)
  
-print('#######################################')
-print('#######################################')
-print(np.mean([np.mean(x[0]) for x in list_ssa_all_cells_and_genes_condition_0]))
-print('#######################################')
-print('#######################################')
+
 ##Patch the csv file so its a bit smaller to save 
 int_labels = [int(x==list_label_names[1]) for x in dataframe_simulated_cells_condition_0['Classification']]
 dataframe_simulated_cells_condition_0['Classification'] = int_labels
 
+if dataframe_format == 'short':
+    df_to_save = dataframe_simulated_cells_condition_0.drop(columns=['red_int_mean', 'red_int_std', 'SNR_red',
+                                                'background_int_mean_red', 'background_int_std_red','blue_int_mean',
+                                                'blue_int_std', 'SNR_blue', 'background_int_mean_blue', 'background_int_std_blue' ])
+else:
+    df_to_save = dataframe_simulated_cells_condition_0
 
 
-df_to_save = dataframe_simulated_cells_condition_0#.drop(columns=['red_int_mean', 'red_int_std', 'SNR_red',
-                                            #'background_int_mean_red', 'background_int_std_red','blue_int_mean',
-                                            #'blue_int_std', 'SNR_blue', 'background_int_mean_blue', 'background_int_std_blue' ])
-
-
+# Save the final data frame
 save_path = pathlib.Path(save_dir).joinpath(save_name)
 df_to_save.to_csv(str(save_path))
 if tracking:

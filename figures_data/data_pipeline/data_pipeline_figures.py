@@ -9,16 +9,19 @@ Created on Thu Nov  3 15:14:22 2022
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-from matplotlib import cm
 
-from matplotlib.collections import PatchCollection
-from matplotlib.patches import Rectangle
+
+##################################################################################
+# This code makes the data pipeline figure for the paper from example trajectories
+##################################################################################
 
 import os
 cwd = os.getcwd()
 os.chdir('../../')
 import apply_style #apply custom matplotlib style
 os.chdir(cwd)
+
+
 apply_style.apply_style(dark=True)
 
 ssas = np.load('./single_traj_example.csv_ssas.npy')

@@ -8,37 +8,21 @@ Original file is located at
 """
 
 
-import argparse
-import os
-os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3'
-
-import tensorflow.compat.v1 as tf
-tf.disable_v2_behavior()
-config = tf.ConfigProto()
-config.gpu_options.per_process_gpu_memory_fraction = 0.4
-sess = tf.Session(config=config)
-tf.compat.v1.keras.backend.set_session(sess)
-
-
-import logging
-logging.getLogger('tensorflow').setLevel(logging.FATAL)
-
-'''
-if tf.test.gpu_device_name():
-    print('Default GPU Device: {}'.format(tf.test.gpu_device_name()))
-else:
-    print("no connection to gpu")
-'''
 import numpy as np
 import pandas as pd
-
 from multiplex_core import multiplexing_core 
+
+##############################################################################
+# Load example data trajectories to plot for the pipeline figure
+##############################################################################
+
 
 mc = multiplexing_core()
 
 path1 = './construct_length_dataset_larger_range_14scale/construct_lengths_P300_P300.csv'
 path2 = './construct_length_dataset_larger_range_14scale/construct_lengths_KDM5B_KDM5B.csv'
 
+# parameters
 Fr = 1
 Nframes = 256
 retrain = 5
@@ -50,6 +34,7 @@ test_size = 0
 two_files = 1
 seed = 42
 
+# load the intensity and labels from the dataframes
 if two_files:
     multiplexing_df1 = pd.read_csv(path1)
     multiplexing_df2 = pd.read_csv(path2)
@@ -61,7 +46,7 @@ if two_files:
     labels[:int_g1.shape[0]] = 0
     int_g = np.vstack((int_g1,int_g2))  #merge the files and then let it sort
     labels = labels
-
+    # randomly shuffle the intensities and labels
     int_g, labels = mc.even_shuffle_sample(int_g, labels, samples=[int(Nsamples/2), int(Nsamples/2)], seed=seed)
 
 else:    
@@ -71,17 +56,14 @@ else:
     
     int_g, labels = mc.even_shuffle_sample(int_g, labels, samples=[int(Nsamples/2), int(Nsamples/2)], seed=seed)
 
-# Slice the data
-print(Fr)
-print(Nframes)
+# Slice the data to the approriate frames / frame interval
 int_g = mc.slice_arr(int_g, Fr, Nframes)
 
-print(int_g.shape)
-print(labels.shape)
 
-
+# process the data, generate the autocorrelations
 X_train, X_test, y_train, y_test, X_witheld, y_witheld, Acc_train, Acc_test, Acc_witheld = mc.process_data(int_g, labels, norm='train', seed=seed, witheld = witheld, test_size = test_size, include_acc = True )
 
+# save example files
 np.save('base_example_X_train',X_train)
 np.save('base_example_y_train',y_train)
 np.save('base_example_Acc_train',Acc_train)

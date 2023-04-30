@@ -56,7 +56,7 @@ plt.rcParams.update({'figure.dpi':300})
 
 
 
-cl_acc_mat = np.load('../../ML_run_320_5s_wfreq/parsweep_cl_ML/acc_mat_cl.npy')
+cl_acc_mat = np.load('../../ML_experiments/ML_run_320_5s_wfreq/parsweep_cl_ML/acc_mat_cl.npy')
 
 p = [(0, 2), (1, 4), (2, 5), (3, 6), (4, 8), (5, 8)]
 Ls = [ 1200, 1734, 2265, 2799, 3333, 3867, 4401, 4647, 4932, 5466, 6000, 7257]
@@ -105,7 +105,7 @@ plt.plot([1.40,1.4],[.4,1.1],'b--',label='_nolegend_')
 
 
 
-cl_acc_mat = np.load('../../ML_run_1280_5s_wfreq/parsweep_cl_ML/acc_mat_cl.npy')
+cl_acc_mat = np.load('../../ML_experiments/ML_run_1280_5s_wfreq/parsweep_cl_ML/acc_mat_cl.npy')
 
 p = [(0, 2), (1, 4), (2, 5), (3, 6), (4, 8), (5, 8)]
 Ls = [ 1200, 1734, 2265, 2799, 3333, 3867, 4401, 4647, 4932, 5466, 6000, 7257]
@@ -147,7 +147,7 @@ plt.plot(movmean(np.array(lfold)[np.argsort(lfold).astype(int)],n), movmean(np.a
 
 
 
-cl_acc_mat = np.load('../../ML_run_3000_2s_wfreq/parsweep_cl_ML/acc_mat_cl.npy')
+cl_acc_mat = np.load('../../ML_experiments/ML_run_3000_2s_wfreq/parsweep_cl_ML/acc_mat_cl.npy')
 
 p = [(0, 2), (1, 4), (2, 5), (3, 6), (4, 8), (5, 8)]
 

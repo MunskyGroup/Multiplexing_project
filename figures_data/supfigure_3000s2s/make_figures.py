@@ -18,5 +18,5 @@ os.chdir('../../')
 import apply_style  as aps#apply custom matplotlib style
 os.chdir(cwd)
 
-target_dir = '../../ML_run_3000_2s_wfreq'
+target_dir = '../..ML_experiments/ML_run_3000_2s_wfreq'
 aps.make_heatmaps_from_keyfile(target_dir)

@@ -55,11 +55,11 @@ plt.rcParams.update({'figure.dpi':300})
 
 
 
-acc_base = np.load('../../ML_run_tag_base/parsweep_img_ML/acc_mat_img.npy')[0][0]
-acc_3prime = np.load('../../ML_run_tag_3prime/parsweep_img_ML/acc_mat_img.npy')[0][0]
-acc_split = np.load('../../ML_run_tag_split/parsweep_img_ML/acc_mat_img.npy')[0][0]
-acc_minus5 = np.load('../../ML_run_tag_minus5/parsweep_img_ML/acc_mat_img.npy')[0][0]
-acc_plus5 = np.load('../../ML_run_tag_plus5/parsweep_img_ML/acc_mat_img.npy')[0][0]
+acc_base = np.load('../../ML_experiments/ML_run_tag_base/parsweep_img_ML/acc_mat_img.npy')[0][0]
+acc_3prime = np.load('../../ML_experiments/ML_run_tag_3prime/parsweep_img_ML/acc_mat_img.npy')[0][0]
+acc_split = np.load('../../ML_experiments/ML_run_tag_split/parsweep_img_ML/acc_mat_img.npy')[0][0]
+acc_minus5 = np.load('../../ML_experiments/ML_run_tag_minus5/parsweep_img_ML/acc_mat_img.npy')[0][0]
+acc_plus5 = np.load('../../ML_experiments/ML_run_tag_plus5/parsweep_img_ML/acc_mat_img.npy')[0][0]
 
 fig, ax = plt.subplots(1,1,dpi=300)
 ax.bar([0,1,2,3,4],[acc_base, acc_3prime, acc_split, acc_minus5, acc_plus5])

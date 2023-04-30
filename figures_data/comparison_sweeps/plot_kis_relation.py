@@ -56,7 +56,7 @@ plt.rcParams.update({'axes.titlepad':10})
 plt.rcParams.update({'figure.dpi':300})
 
 
-f = '../../ML_run_320_5s_wfreq/parsweep_kis_ML/kis_key.csv'
+f = '../../ML_experiments/ML_run_320_5s_wfreq/parsweep_kis_ML/kis_key.csv'
 key_file = pd.read_csv(f)
 convert_str = lambda tstr: [x.replace(' ','').replace('(','').replace(')','').replace("'",'') for x in tuple(tstr.split(','))] 
 
@@ -104,7 +104,7 @@ plt.semilogx([.08, 20],[.8,.8],'k-', label='_nolegend_')
 
 
 
-f = '../../ML_run_1280_5s_wfreq/parsweep_kis_ML/kis_key.csv'
+f = '../../ML_experiments/ML_run_1280_5s_wfreq/parsweep_kis_ML/kis_key.csv'
 key_file = pd.read_csv(f)
 convert_str = lambda tstr: [x.replace(' ','').replace('(','').replace(')','').replace("'",'') for x in tuple(tstr.split(','))] 
 
@@ -129,7 +129,7 @@ plt.semilogx(ke_ratio,accuracy,'o', alpha=a)
 plt.semilogx(movmean(np.array(ke_ratio)[np.argsort(ke_ratio).astype(int)],n), movmean(np.array(accuracy)[np.argsort(ke_ratio).astype(int)],n),label='_nolegend_',color=colors[1] )
 
 
-f = '../../ML_run_3000_2s_wfreq/parsweep_kis_ML/kis_key.csv'
+f = '../../ML_experiments/ML_run_3000_2s_wfreq/parsweep_kis_ML/kis_key.csv'
 key_file = pd.read_csv(f)
 convert_str = lambda tstr: [x.replace(' ','').replace('(','').replace(')','').replace("'",'') for x in tuple(tstr.split(','))] 
 

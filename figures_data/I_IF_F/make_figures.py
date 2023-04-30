@@ -23,24 +23,25 @@ os.chdir(cwd)
 
 target_dir = '../../ML_experiments/ML_imaging_long_same_int_24000_14scale'
 aps.make_heatmaps_from_keyfile_big(target_dir)
+os.rename('img_key_0.svg', 'same_intensity_heatmap.svg')
 
 
 target_dir = '../../ML_experiments/ML_IF_kisdiff'
 aps.make_heatmaps_from_keyfile_big(target_dir)
-
+os.rename('img_key_0.svg', 'overlapping_intensity_heatmap.svg')
 
 target_dir = '../../ML_experiments/ML_imaging_long_different_int_12000_14scale'
 aps.make_heatmaps_from_keyfile_big(target_dir)
-
+os.rename('img_key_0.svg', 'different_intensity_heatmap.svg')
 
 mc = multiplexing_core.multiplexing_core()
 aps.apply_style()
 
-similar_kdm5b = 'D:/multiplexing_ML/finalized_plots_gaussians/datasets/P300_KDM5B_24000s_similar_intensity_gaussian_14scale/ki_ke_sweep_same_int_P300_P300_0.009675858127721334_5.33333_0.csv'
-similar_p300 = 'D:/multiplexing_ML/finalized_plots_gaussians/datasets/P300_KDM5B_24000s_similar_intensity_gaussian_14scale/ki_ke_sweep_same_int_KDM5B_KDM5B_0.0186_5.33333_0.csv'
+similar_kdm5b = '../../datasets/P300_KDM5B_24000s_similar_intensity_gaussian_14scale/ki_ke_sweep_same_int_P300_P300_0.009675858127721334_5.33333_0.csv'
+similar_p300 = '../../datasets/P300_KDM5B_24000s_similar_intensity_gaussian_14scale/ki_ke_sweep_same_int_KDM5B_KDM5B_0.0186_5.33333_0.csv'
 
-same_kdm5b = 'D:/multiplexing_ML/finalized_plots_gaussians/datasets/P300_KDM5B_24000s_Same_intensity_gaussian_14scale/ki_ke_sweep_same_int_KDM5B_KDM5B_0.014139262990455991_5.33333_0.csv'
-same_p300 = 'D:/multiplexing_ML/finalized_plots_gaussians/datasets/P300_KDM5B_24000s_Same_intensity_gaussian_14scale/ki_ke_sweep_same_int_P300_P300_0.009675852685050798_5.33333_0.csv'
+same_kdm5b = '../../finalized_plots_gaussians/datasets/P300_KDM5B_24000s_Same_intensity_gaussian_14scale/ki_ke_sweep_same_int_KDM5B_KDM5B_0.014139262990455991_5.33333_0.csv'
+same_p300 = '../../finalized_plots_gaussians/datasets/P300_KDM5B_24000s_Same_intensity_gaussian_14scale/ki_ke_sweep_same_int_P300_P300_0.009675852685050798_5.33333_0.csv'
 
 
 
@@ -126,8 +127,8 @@ seed = 42
 n_model_traj = 4000
 witheld=0
 test_size=0
-different_kdm5b = 'D:/multiplexing_ML/finalized_plots_gaussians/datasets/P300_KDM5B_24000s_different_intensity_gaussian_14scale/ki_ke_sweep_diff_int_KDM5B_KDM5B_0.04241781283138918_5.33333_0.csv'
-different_p300 = 'D:/multiplexing_ML/finalized_plots_gaussians/datasets/P300_KDM5B_24000s_different_intensity_gaussian_14scale/ki_ke_sweep_diff_int_P300_P300_0.009675858127721334_5.33333_0.csv'
+different_kdm5b = '../../datasets/P300_KDM5B_24000s_different_intensity_gaussian_14scale/ki_ke_sweep_diff_int_KDM5B_KDM5B_0.04241781283138918_5.33333_0.csv'
+different_p300 = '../../finalized_plots_gaussians/datasets/P300_KDM5B_24000s_different_intensity_gaussian_14scale/ki_ke_sweep_diff_int_P300_P300_0.009675858127721334_5.33333_0.csv'
 
 multiplexing_df1 = pd.read_csv(different_kdm5b)
 multiplexing_df2 = pd.read_csv(different_p300)

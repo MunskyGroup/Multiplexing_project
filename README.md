@@ -1,6 +1,6 @@
 
-
-Using mechanistic models and machine learning to design single-color multiplexed Nascent Chain Tracking experiments
+ ---  
+ Using mechanistic models and machine learning to design single-color multiplexed Nascent Chain Tracking experiments
 =======
 ----
 
@@ -18,7 +18,7 @@ William S. Raymond<sup>1</sup>, Sadaf Ghaffari<sup>2</sup>, Luis U. Aguilera<sup
 For questions about the codes, please contact:  wsraymon@rams.colostate.edu, Luis.aguilera@colostate.edu and brian.munsky@colostate.edu
 
 ---
-This repository contains the codes necessary to reproduce figures from the above manuscript. All codes are implemented in Python
+This repository contains the codes necessary to reproduce figures from the above manuscript. All codes are implemented in Python 3.7. Environments used are stored in ```./ML_experiments/ML_env.txt``` and ```./datasets/data_making_env.yml```. Large data sets and machine learning classifier model files are not stored in this repository but are available upon request. 
 
 
 ## Graphical Abstract<br/>
@@ -34,7 +34,31 @@ Using mechanistic models and machine learning to design single-color multiplexed
 
 ## Organization  <br/>
 
-```./datasets ```: [dropbox link]
+
+The data sets  and code to remake the data are stored in ```./datasets ```.
+
+Data making codes
+
+* ```master_make_all_data.py``` - Script that regenerates all simulated data for the machine learning experiments in the paper. THIS WILL GENERATE 120 gb OF DATA! Run at your own risk.
+* ```run_rsnaped.py``` - this code runs rSNAPed to generate simulated cells w/ various settings.
+
+-----
+Analysis codes
+
+* ```get_diff_pixels.py``` - calculate diffusion rates of all data sets in the paper
+* ```get_snrs.py``` - calculate Signal to Noise Ratios (SNR) of all data sets in the paper
+* ```match_particles.py``` - match particles coming out of tracking for the photobleaching experiment, generate intensity arrays to be used for training in the "realistic tracking condition"
+* ```get_example_data.py``` - get some sample intensities / autocorrelations for plotting purposes in the paper.
+
+
+-----
+
+In the ```./ML_experiments``` folder:
+
+Running machine learning experiments
+```master_run_all_ML.py```  will rerun every ML experiment listed in the paper
+
+
 
 Machine learning results
 
@@ -48,8 +72,9 @@ Machine learning results
 
 within each sub folder is 
 
-	* acc_mat_N_.npy: test accuracy matrix across the parameter sweep
-	* cl_key.csv:     test accuracy matrix with row and column labels (pandas)
+	* acc_mat_*_.npy: test accuracy matrix across the parameter sweep
+	* *_key.csv:     test accuracy matrix with row and column labels (pandas)
+
 
 ```./ML_F_kis_diff```:  Frequency only classifier applied to varying imaging conditions
 
@@ -75,9 +100,11 @@ within each sub folder is
 
 ```./ML_run_tag_split```: Classifier applied to alternate tag design, 5xFLAG on the 5' end and 5xFLAG on the 3' end KDM5B vs 10xFLAG p300
 
+```./ML_PB```: Classifiers applied 11 different photobleaching rates of the P300 vs KDM5B default settings
+
+```./scripts/``` Contains all the scripts used to call run the classification code and return the accuracy matrices over given parameter sets.
 
 Figures and figure generating codes
-
 
 ```./figures_data```: saved data and codes to recreate each figure
 ```./figures```:  constructed figures in various formats
@@ -85,33 +112,8 @@ Figures and figure generating codes
 
 ---
 
-
-## Example Notebooks <br/>
-
-
----
-
 ## Large datasets  <br/>
 
----
-
-## Code organization <br/>
+Most data files and ML classifiers are not stored on this github (~200 gb), but are available upon request, all data can be regenerated / resimulated from the ```master_make_all_data.py``` script. Any ML experiment can be reran with the ```master_run_all_ML.py``` script.
 
 ---
-
-## Gene Sequences <br/>
-
-
----  
-
-## Code implementation<br/>
-
-
- 
- ---  
-
-## Cluster implementation<br/>
-
-
- ---  
- 

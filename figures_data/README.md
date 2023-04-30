@@ -1,5 +1,4 @@
 
-
 Using mechanistic models and machine learning to design single-color multiplexed Nascent Chain Tracking experiments
 =======
 ----
@@ -18,100 +17,21 @@ William S. Raymond<sup>1</sup>, Sadaf Ghaffari<sup>2</sup>, Luis U. Aguilera<sup
 For questions about the codes, please contact:  wsraymon@rams.colostate.edu, Luis.aguilera@colostate.edu and brian.munsky@colostate.edu
 
 ---
-This repository contains the codes necessary to reproduce figures from the above manuscript. All codes are implemented in Python
+This subfolder contains all the figure generating codes and data needed to recreate the figure parts.
 
+```./data_pipeline``` - Figure 1, explanation of the simulated NCT video generation process.
+```./cell_bgs``` - Real max projection cell backgrounds used for rSNAPed in this experiment
 
-## Graphical Abstract<br/>
-![graphical abstract](https://raw.githubusercontent.com/MunskyGroup/Multiplexing_project/master/figures/MP_graphical_abstract_w.png)
----
+```./data_size_sweep``` -  Figure 2, training data size vs accuracy for given classifier architecture 
+```./simulated_concept``` - Figure 3, example of the classification and labelling process of two simulated cells
+```./I_IF_F``` - Figure 4 and Figure S2, Comparison of parts of the architecture applied to similar, same, or different intensity conditions all with varying frequency information.
+```./parsweep_heatmpas``` - Figure 5, classification under 4 varying parameter conditions, mRNA1 length vs mRNA2 length, ke vs ki, ke vs ke, ki vs ki for 320s of video at a 5s frame rate of simualted P300 vs KDM5B NCT experiments.
+```./comparison_sweeps``` - Figure 6, classification performance as a function of video length for all conditions in Figure 5.
+```./tagging_changes``` - Figure 7, changing an experiment design to recover classification
+```./wrong_params``` - Figure 8, exploring the effect of incorrect parameter guesses on classification accuracy
+```./multiplexing``` - Figure 9, example multiplexed cell with 90% accuracy labelling 7 different mRNAs with 2 colors.
+```./gaussian_generation``` - Figure S1, Generation of new frames of bg video from real cell bgs
+```./pb``` - Figure S3, preliminary exploration of effect of photobleaching and tracking on classification
+```./supfigure_1280s10s``` - Figure 5 but for twice the data
+```./supfigure_3000s2s``` - Figure 5 but for maximum possible amount of data from simulated data
 
-## Manuscripts  <br/>
-
-Using mechanistic models and machine learning to design single-color multiplexed Nascent Chain Tracking experiments, *Raymond et al.* (Jan 2023) [biorxiv preprint](https://www.biorxiv.org/content/10.1101/2023.01.25.525583v1_)
-
----
-
-
-## Organization  <br/>
-
-```./datasets ```: [dropbox link]
-
-Machine learning results
-
-		* parsweep_cl_ML:   construct length vs construct lengths
-		* parsweep_img_ML:  number of frames vs frame interval
-		* parsweep_keki_ML: elongation rate vs initation rate for both mRNAs
-		* parsweep_kes_ML:  elongation rate mRNA1 vs elongation rate mRNA2
-		* parsweep_kis_ML:  initation rate mRNA1 vs initation rate mRNA2
-		* plots:            plotted results of the parameter sweep
-		* metadata.yaml:    generation parameters
-
-within each sub folder is 
-
-	* acc_mat_N_.npy: test accuracy matrix across the parameter sweep
-	* cl_key.csv:     test accuracy matrix with row and column labels (pandas)
-
-```./ML_F_kis_diff```:  Frequency only classifier applied to varying imaging conditions
-
-```./ML_IF_kis_diff```: Intensity + Frequency classifier applied to varying imaging conditions
-
-```./ML_I_kis_diff```: Intensity only classifier applied to varying imaging conditions
-
-```./ML_run_1280_10s_wfreq```: Classifier applied to 1280s of NCT for 50 cells video with a 10s frame interval (128 frames, 10s fi) for all comparison analyses
-
-```./ML_run_1280_5s_wfreq```: Classifier applied to 1280s of NCT video for 50 cells with a 10s frame interval (256  frames, 10s fi) for all comparison analyses
-
-```./ML_run_3000_2s_wfreq```: Classifier applied to 3000s of NCT video for 50 cells with a 10s frame interval (1500  frames, 2s fi) for all comparison analyses
-
-```./ML_run_320_5s_wfreq```: Classifier applied to 320s of NCT video for 50 cells with a 10s frame interval (64 frames, 5s fi) for all comparison analyses
-
-```./ML_run_tag_3prime```:   Classifier applied to alternate tag design, 10xFLAG on the 3' end KDM5B vs 10xFLAG p300
-
-```./ML_run_tag_base```: Classifier applied to original tag design, 10xFLAG on the 5' end KDM5B vs 10xFLAG p300
-
-```./ML_run_tag_minus5```: Classifier applied to alternate tag design, 5xFLAG on the 5' end KDM5B vs 10xFLAG p300
-
-```./ML_run_tag_plus5```: Classifier applied to alternate tag design, 15xFLAG on the 5' end KDM5B vs 10xFLAG p300
-
-```./ML_run_tag_split```: Classifier applied to alternate tag design, 5xFLAG on the 5' end and 5xFLAG on the 3' end KDM5B vs 10xFLAG p300
-
-
-Figures and figure generating codes
-
-
-```./figures_data```: saved data and codes to recreate each figure
-```./figures```:  constructed figures in various formats
-
-
----
-
-
-## Example Notebooks <br/>
-
-
----
-
-## Large datasets  <br/>
-
----
-
-## Code organization <br/>
-
----
-
-## Gene Sequences <br/>
-
-
----  
-
-## Code implementation<br/>
-
-
- 
- ---  
-
-## Cluster implementation<br/>
-
-
- ---  
- 

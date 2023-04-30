@@ -188,6 +188,8 @@ if verbose:
         print('None')
     print('witheld: ')
     print(X_witheld.shape)
+    print(y_witheld.shape)
+    print(np.sum(y_witheld))
     print('--------------------')
 
 ########## Define model here ##############
@@ -424,7 +426,11 @@ if retrain:
     clf = random_result.best_estimator_
     if verbose:
         print('Test accuracy: %.3f' % clf.score(X_WITHELD, y_witheld))
-    acc = clf.score(X_WITHELD, y_witheld)
+    #print(y_witheld.shape)
+    #print(np.sum(y_witheld))
+    acc = np.sum(np.abs((best_model.predict(X_WITHELD) < .5) - y_witheld))/len(y_witheld)
+    #print(y_witheld[:15])
+    #acc = clf.score(X_WITHELD, y_witheld)
     
     if save_model:
         model_path = os.path.join('.', save_dir,model_name + '_'  + str(best_filter) + '_' + str(best_kernel) + '_' + '_'+ str(ind1) + '_' + str(ind2) + '.h5')

@@ -34,6 +34,17 @@ target_dir = '../../ML_experiments/ML_imaging_long_different_int_12000_14scale'
 aps.make_heatmaps_from_keyfile_big(target_dir)
 os.rename('img_key_0.svg', 'different_intensity_heatmap.svg')
 
+
+
+target_dir = '../../ML_experiments/ML_I_kisdiff'
+aps.make_heatmaps_from_keyfile_big(target_dir)
+os.rename('img_key_0.svg', 'overlapping_intensity_heatmap_intensity_only.svg')
+
+target_dir = '../../ML_experiments/ML_F_kisdiff'
+aps.make_heatmaps_from_keyfile_big(target_dir)
+os.rename('img_key_0.svg', 'overlapping_intensity_heatmap_frequency_only.svg')
+
+
 mc = multiplexing_core.multiplexing_core()
 aps.apply_style()
 

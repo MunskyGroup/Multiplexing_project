@@ -29,13 +29,7 @@ import skimage.io as io
 
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 
-
-import tensorflow.compat.v1 as tf
-tf.disable_v2_behavior()
-config = tf.ConfigProto()
-config.gpu_options.per_process_gpu_memory_fraction = 0.4
-sess = tf.Session(config=config)
-tf.compat.v1.keras.backend.set_session(sess)
+import tensorflow as tf
 
 
 
@@ -60,14 +54,14 @@ import os
 cwd = os.getcwd()
 os.chdir('../../')
 import apply_style  as aps#apply custom matplotlib style
-import mc_core as multiplexing_core
+import multiplex_core as multiplexing_core
 os.chdir(cwd)
 
 aps.apply_style()
 
 def train_model(files, color, name, model_file=None, retrain=True, include_noise = True):
 
-  mc = multiplexing_core()
+  mc = multiplexing_core.multiplexing_core()
   verbose = 1
   ntraj = 2500
   ntimes = 3000
@@ -136,14 +130,18 @@ def train_model(files, color, name, model_file=None, retrain=True, include_noise
   X_train, X_test, y_train, y_test, X_witheld, y_witheld, Acc_train, Acc_test, Acc_witheld = mc.process_data_n(int_g, labels, norm='train', seed=seed, witheld = witheld, test_size = test_size, include_acc = True )
 
 
-  y_train = sess.run(tf.one_hot(y_train, n_files))
-  y_train = np.swapaxes(y_train, 1,2)[:,:,0]
+ 
+  y_train_oh = np.zeros((y_train.size, n_files))
+  y_train_oh[np.arange(y_train.size), y_train.astype(int).flatten()] = 1
+  y_train = y_train_oh
 
   if witheld > 0:
-      y_witheld = sess.run(tf.one_hot(y_witheld, n_files))
-      y_witheld = np.swapaxes(y_witheld, 1,2)[:,:,0]
+
+      y_witheld_oh = np.zeros((y_witheld.size, int(y_witheld.max()) + 1))
+      y_witheld_oh[np.arange(y_witheld.size), y_witheld.astype(int).flatten()] = 1
+      y_witheld = y_witheld_oh
   if test_size > 0:
-      y_test = tf.one_hot(y_test, n_files).cpu()
+      y_test = np.one_hot(y_test, n_files).numpy()
 
   if verbose:
       print('----Data Shapes-----')
@@ -270,10 +268,10 @@ def train_model(files, color, name, model_file=None, retrain=True, include_noise
     y_pred_onehot = np.zeros((y_pred.size, y_pred.max() + 1))
     y_pred_onehot[np.arange(y_pred.size), y_pred] = 1
 
-
     print( y_witheld.shape)
     print(y_pred_onehot.shape)
     acc = 1-np.sum(np.abs(y_pred_onehot- y_witheld))/len(y_pred_onehot)
+
     if verbose:
         print('acc: %f '%acc)
 
@@ -282,7 +280,7 @@ def train_model(files, color, name, model_file=None, retrain=True, include_noise
 
 
 retrain = False
-f = '../../datasets/construct_lengths_RRAGC_RRAGC.csv,../../datasets/construct_lengths_LONRF2_LONRF2.csv,../../datasets/construct_lengths_MAP3K6_MAP3K6.csv,../../datasets/construct_lengths_DOCK8_DOCK8.csv'
+f = '../../datasets/construct_length_dataset_larger_range_14scale/construct_lengths_RRAGC_RRAGC.csv,../../datasets/construct_length_dataset_larger_range_14scale/construct_lengths_LONRF2_LONRF2.csv,../../datasets/construct_length_dataset_larger_range_14scale/construct_lengths_MAP3K6_MAP3K6.csv,../../datasets/construct_length_dataset_larger_range_14scale/construct_lengths_DOCK8_DOCK8.csv'
 color='green'
 
 if retrain:
@@ -291,7 +289,7 @@ else:
     green_model, green_acc, int_g_g = train_model(f,'green','green', retrain=0, model_file='./mp_green_w_noise_16_3.h5')
 
 
-f = '../../datasets/construct_lengths_ORC2_ORC2.csv,../../datasets/construct_lengths_TRIM33_TRIM33.csv,../../datasets/construct_lengths_PHIP_PHIP.csv'
+f = '../../datasets/construct_length_dataset_larger_range_14scale/construct_lengths_ORC2_ORC2.csv,../../datasets/construct_length_dataset_larger_range_14scale/construct_lengths_TRIM33_TRIM33.csv,../../datasets/construct_length_dataset_larger_range_14scale/construct_lengths_PHIP_PHIP.csv'
 
 if retrain:
     blue_model, blue_acc, int_b_g = train_model(f,'green','blue_w_noise_and_temp', retrain=1, model_file=None)
@@ -301,7 +299,7 @@ else:
 
 ######## apply the classifier and get confidences
 
-data_file_50 = './multiplexing_7__cell0_50'
+data_file_50 = './multiplexing_7__cell0_50.csv'
 simulated_cell_dataframe_50 = pandas.read_csv(data_file_50)
 shape = (70*50,1000)
 
@@ -343,7 +341,7 @@ def slice_arr(array, FR, Nframes,axis=1):
 
 g_50 = slice_arr(g_50,5,64)
 b_50 = slice_arr(b_50,5,64)
-mc = multiplexing_core()
+mc = multiplexing_core.multiplexing_core()
 labels = [0,]*10 + [1,]*10 + [2,]*10 + [3,]*10 
 data, data_acc_b_50 = mc.process_test_data(b_50, include_acc=True )
 
@@ -647,7 +645,7 @@ plt.savefig('conf_B.svg')
 # Generate the single frame classification of an example multiplexed video
 ##############################################################################
 
-data_file = './multiplexing_7_cell0.csv.csv'
+data_file = './multiplexing_7_cell0.csv'
 simulated_cell_dataframe = pandas.read_csv(data_file)
 
 shape = (70,1000)
@@ -682,7 +680,6 @@ scaler.fit(int_b_g)
 int_b_cell1_64_minmax = scaler.fit_transform(int_b_cell1_64)
 
 
-mc = multiplexing_core()
 labels = [0,]*10 + [1,]*10 + [2,]*10 + [3,]*10 
 data, data_acc_g = mc.process_test_data(int_g_cell1_64, include_acc=True )
 

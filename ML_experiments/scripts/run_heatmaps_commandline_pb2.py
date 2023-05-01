@@ -48,6 +48,7 @@ parser.add_argument('--global_samples', dest='global_samples', type=int,)
 parser.add_argument('--test_size', dest='test_size', type=float,)
 parser.add_argument('--witheld', dest='witheld', type=int,)
 parser.add_argument('--test_type', dest='test_type', type=str,)
+parser.add_argument('--debug', dest='debug', type=int, default=0)
 
 args = parser.parse_args()
 
@@ -58,6 +59,7 @@ global_samples = args.global_samples
 witheld = args.witheld
 test_size = args.test_size
 test_type = args.test_type
+debug = args.debug
 
 
 meta_data['base_dir'] = base_dir
@@ -127,7 +129,9 @@ if test_type == 'base':
                                 '--ntimes=350',
                                 '--test_size=%s'%(str(test_size)),
                                 '--Nsamples=%s'%(str(2500)),
-                                '--ntraj=%s'%(str(1250)),    
+                                '--ntraj=%s'%(str(1250)),  
+                                '--acc_mat_shape=%s'%'11,11',
+                                '--debug=%s'%str(debug),
                                 ])
                 
     
@@ -178,6 +182,8 @@ if test_type == 'wo_correction':
                                 '--test_size=%s'%(str(test_size)),
                                 '--Nsamples=%s'%(str(2500)),
                                 '--ntraj=%s'%(str(1250)),
+                                '--acc_mat_shape=%s'%'11,11',
+                                '--debug=%s'%(str(debug)),
     
                                 ])
                 

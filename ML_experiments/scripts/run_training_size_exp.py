@@ -48,7 +48,7 @@ parser = argparse.ArgumentParser(description='get paths and save dir and acc_fil
 parser.add_argument('--global_fr', dest='global_fr', type=int,)
 parser.add_argument('--global_nf', dest='global_nf', type=int,)
 parser.add_argument('--base_dir', dest='base_dir', type=str,)
-parser.add_argument('--global_samples', dest='global_samples', type=int,)
+parser.add_argument('--global_samples', dest='global_samples', type=int, default=5000)
 parser.add_argument('--test_size', dest='test_size', type=float,)
 parser.add_argument('--witheld', dest='witheld', type=int,)
 parser.add_argument('--base_command', dest='base_command', type=str,)
@@ -59,6 +59,7 @@ parser.add_argument('--keki', dest='keki', type=int,)
 parser.add_argument('--kes', dest='kes', type=int,)
 parser.add_argument('--sizes', dest='sizes', type=str,)
 parser.add_argument('--kis', dest='kis', type=int,)
+parser.add_argument('--debug', dest='debug', type=int, default=0)
 
 
 args = parser.parse_args()
@@ -68,9 +69,10 @@ base_dir = args.base_dir
 global_fr = args.global_fr
 global_nf = args.global_nf
 retrain = 1
-global_samples = args.global_samples
-witheld = args.witheld
-test_size = args.test_size
+global_samples = 5000
+witheld = 1000
+test_size = 0
+debug = args.debug
 
 cl = args.cl
 img = args.img
@@ -157,7 +159,7 @@ NF_mat = np.zeros([10,10])
 time_mat = np.zeros([10,10])
 with tqdm.tqdm(180) as pbar:
     for i in range(0,len(sizes)):
-        subfold = int(min(4000/sizes,5))
+        subfold = int(min(4000/sizes[i],5))
         for j in range(0,subfold):
              
 
@@ -182,6 +184,7 @@ with tqdm.tqdm(180) as pbar:
                             '--test_size=%s'%(str(test_size)),
                             '--data_size=%s'%str(sizes[i]),
                             '--subfold=%s'%str(j),
+                            '--debug=%s'%(str(debug)),
                             ])
             pbar.update(1)
                 

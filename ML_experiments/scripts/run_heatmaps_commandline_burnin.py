@@ -58,7 +58,7 @@ parser.add_argument('--img', dest='img', type=int,)
 parser.add_argument('--keki', dest='keki', type=int,)
 parser.add_argument('--kes', dest='kes', type=int,)
 parser.add_argument('--kis', dest='kis', type=int,)
-
+parser.add_argument('--debug', dest='debug', type=int, default=0)
 
 args = parser.parse_args()
 
@@ -70,6 +70,7 @@ retrain = 1
 global_samples = args.global_samples
 witheld = args.witheld
 test_size = args.test_size
+debug = args.debug
 
 cl = args.cl
 img = args.img
@@ -187,6 +188,7 @@ if runwho[0]:
                                     '--two_files=%s'%(str(1)),
                                     '--witheld=%s'%(str(witheld)),
                                     '--test_size=%s'%(str(test_size)),
+                                    '--debug=%s'%(str(debug)),
 
                                     ])
                     
@@ -278,6 +280,7 @@ if runwho[1]:
                                     '--two_files=%s'%(str(1)),
                                     '--witheld=%s'%(str(witheld)),
                                     '--test_size=%s'%(str(test_size)),
+                                    '--debug=%s'%(str(debug)),
                                     ])
                     pbar.update(1)
                     
@@ -344,6 +347,7 @@ if runwho[2]:
                                 '--ntraj=%s'%(str(5000)),
                                 '--witheld=%s'%(str(witheld)),
                                 '--test_size=%s'%(str(test_size)),
+                                '--debug=%s'%(str(debug)),
 
                                 ])
                 
@@ -411,6 +415,7 @@ if runwho[3]:
                                 '--two_files=%s'%(str(1)),
                                 '--witheld=%s'%(str(witheld)),
                                 '--test_size=%s'%(str(test_size)),
+                                '--debug=%s'%(str(debug)),
 
                                 ])
                 
@@ -473,6 +478,7 @@ if runwho[4]:
                                 '--two_files=%s'%(str(1)),
                                 '--witheld=%s'%(str(witheld)),
                                 '--test_size=%s'%(str(test_size)),
+                                '--debug=%s'%(str(debug)),
                                 ])
                 
     

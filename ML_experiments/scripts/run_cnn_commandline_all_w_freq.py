@@ -97,6 +97,9 @@ parser.add_argument('--Nsamples', dest='Nsamples',type=int, default=5000)
 parser.add_argument('--witheld',dest='witheld',type=int)
 parser.add_argument('--test_size',dest='test_size',type=float)
 parser.add_argument('--seed',dest='seed',type=int)
+parser.add_argument('--debug',dest='debug',type=int, default=0)
+parser.add_argument('--acc_mat_shape', dest='acc_mat_shape', type=str, default='10,10')
+
 
 parser.add_argument('--test_type',dest='test_type',type=str, default='freq')
 
@@ -124,6 +127,8 @@ test_size = args.test_size
 witheld = args.witheld
 seed = args.seed
 test_type = args.test_type
+debug = args.debug
+acc_mat_shape = args.acc_mat_shape
 
 ###############################################################################
 
@@ -135,41 +140,48 @@ if verbose:
 
 print(path1)
 print(path2)
-if two_files:
-    if path1[-3:] == 'csv':
-        multiplexing_df1 = pd.read_csv(path1)
-        multiplexing_df2 = pd.read_csv(path2)
-        int_g1 = multiplexing_df1['green_int_mean'].values.reshape([ntraj,ntimes])    
-        int_g2 = multiplexing_df2['green_int_mean'].values.reshape([ntraj,ntimes])    
+if not debug:
+    if two_files:
+        if path1[-3:] == 'csv':
+            multiplexing_df1 = pd.read_csv(path1)
+            multiplexing_df2 = pd.read_csv(path2)
+            int_g1 = multiplexing_df1['green_int_mean'].values.reshape([ntraj,ntimes])    
+            int_g2 = multiplexing_df2['green_int_mean'].values.reshape([ntraj,ntimes])    
+        
+            t = np.linspace(0,len(int_g1) - 1,len(int_g1))  #time vector in seconds
+            labels = np.ones(int_g1.shape[0]*2)
+            labels[:int_g1.shape[0]] = 0
+            int_g = np.vstack((int_g1,int_g2))  #merge the files and then let it sort
+            labels = labels
+            
+            int_g, labels = mc.even_shuffle_sample(int_g, labels, samples=[int(Nsamples/2), int(Nsamples/2)], seed=seed)
+        
+        if path1[-3:] == 'npy':
+            int_g1 = np.load(path1)   
+            int_g2 = np.load(path2)   
+            t = np.linspace(0,len(int_g1) - 1,len(int_g1))  #time vector in seconds
+            t = np.linspace(0,len(int_g1) - 1,len(int_g1))  #time vector in seconds
+            labels = np.ones(int_g1.shape[0] + int_g2.shape[0])
+            labels[:int_g1.shape[0]] = 0
+            int_g = np.vstack((int_g1,int_g2))  #merge the files and then let it sort
+            labels = labels
+            
+            int_g, labels = mc.even_shuffle_sample(int_g, labels, samples=[len(int_g1), len(int_g2)], seed=seed)
+        
     
-        t = np.linspace(0,len(int_g1) - 1,len(int_g1))  #time vector in seconds
-        labels = np.ones(int_g1.shape[0]*2)
-        labels[:int_g1.shape[0]] = 0
-        int_g = np.vstack((int_g1,int_g2))  #merge the files and then let it sort
-        labels = labels
+    else:    
+        multiplexing_df = pd.read_csv(path1)
+        int_g = multiplexing_df['green_int_mean'].values.reshape([ntraj,ntimes])
+        labels = multiplexing_df['Classification'].values.reshape([ntraj,ntimes])[:,0]
         
         int_g, labels = mc.even_shuffle_sample(int_g, labels, samples=[int(Nsamples/2), int(Nsamples/2)], seed=seed)
-    
-    if path1[-3:] == 'npy':
-        int_g1 = np.load(path1)   
-        int_g2 = np.load(path2)   
-        t = np.linspace(0,len(int_g1) - 1,len(int_g1))  #time vector in seconds
-        t = np.linspace(0,len(int_g1) - 1,len(int_g1))  #time vector in seconds
-        labels = np.ones(int_g1.shape[0] + int_g2.shape[0])
-        labels[:int_g1.shape[0]] = 0
-        int_g = np.vstack((int_g1,int_g2))  #merge the files and then let it sort
-        labels = labels
         
-        int_g, labels = mc.even_shuffle_sample(int_g, labels, samples=[len(int_g1), len(int_g2)], seed=seed)
-    
+else:
+    int_g = np.random.randint(0,3000,size=(ntraj+ntraj,ntimes))
+    labels = np.ones((int_g.shape[0]))
+    labels[:int(int_g.shape[0]/2)] = 0
+    t = np.linspace(0,len(int_g) - 1,len(int_g))  #time vector in seconds    
 
-else:    
-    multiplexing_df = pd.read_csv(path1)
-    int_g = multiplexing_df['green_int_mean'].values.reshape([ntraj,ntimes])
-    labels = multiplexing_df['Classification'].values.reshape([ntraj,ntimes])[:,0]
-    
-    int_g, labels = mc.even_shuffle_sample(int_g, labels, samples=[int(Nsamples/2), int(Nsamples/2)], seed=seed)
-    
 ###############################################################################
 # Slice the data
 ###############################################################################
@@ -409,43 +421,45 @@ print(y_witheld.shape)
 if retrain:
     if verbose:
         print('training....')
-    seed = 7
-    np.random.seed(seed)
-     
-    # create the hyper parameter grid
-    model_CV = KerasClassifier(build_fn=create_model, verbose=0)
-    # hyper parameter search space
-    filters = [16, 32, 64]
-    kernel_size = [3, 5, 7]
-    batches = [16, 32, 64]
-    epochs = [50, 100]
-    lrs = [.001]
-    neurons = [200]
-    inputs_1 = [X_train.shape[1]]
-    inputs_2 = [Acc_train.shape[1]]
-    # run the hyper parameter search
-    distributions = dict(input_size_1 = inputs_1, input_size_2 = inputs_2, kernel_size = kernel_size, filters = filters, epochs= epochs, batch_size= batches, lr=lrs, N_neurons = neurons)
-    random = RandomizedSearchCV(model_CV, distributions, n_iter= 2, verbose= 0, n_jobs= 1, cv=3)
-    random_result = random.fit(X_TRAIN, y_train)
-    if verbose:
-        print(random_result.best_score_)
-        print(random_result.best_params_)
-    best_model = random_result.best_estimator_.model #get the best model
-    best_params = random_result.best_params_
-    best_kernel = best_params['kernel_size']
-    best_filter = best_params['filters']
-    
+    if not debug:
+        seed = 7
+        np.random.seed(seed)
+         
+        # create the hyper parameter grid
+        model_CV = KerasClassifier(build_fn=create_model, verbose=0)
+        # hyper parameter search space
+        filters = [16, 32, 64]
+        kernel_size = [3, 5, 7]
+        batches = [16, 32, 64]
+        epochs = [50, 100]
+        lrs = [.001]
+        neurons = [200]
+        inputs_1 = [X_train.shape[1]]
+        inputs_2 = [Acc_train.shape[1]]
+        # run the hyper parameter search
+        distributions = dict(input_size_1 = inputs_1, input_size_2 = inputs_2, kernel_size = kernel_size, filters = filters, epochs= epochs, batch_size= batches, lr=lrs, N_neurons = neurons)
+        random = RandomizedSearchCV(model_CV, distributions, n_iter= 2, verbose= 0, n_jobs= 1, cv=3)
+        random_result = random.fit(X_TRAIN, y_train)
+        if verbose:
+            print(random_result.best_score_)
+            print(random_result.best_params_)
+        best_model = random_result.best_estimator_.model #get the best model
+        best_params = random_result.best_params_
+        best_kernel = best_params['kernel_size']
+        best_filter = best_params['filters']
         
-    clf = random_result.best_estimator_
-    if verbose:
-        print('Test accuracy: %.3f' % clf.score(X_WITHELD, y_witheld))
-    acc = clf.score(X_WITHELD, y_witheld) # get the witheld accuracy
-    
-    # save the model if wanted
-    if save_model:
-        model_path = os.path.join('.', save_dir,model_name + '_'  + str(best_filter) + '_' + str(best_kernel) + '_' + '_'+ str(ind1) + '_' + str(ind2) + '.h5')
-        best_model.save(model_path)
+            
+        clf = random_result.best_estimator_
+        if verbose:
+            print('Test accuracy: %.3f' % clf.score(X_WITHELD, y_witheld))
+        acc = clf.score(X_WITHELD, y_witheld) # get the witheld accuracy
         
+        # save the model if wanted
+        if save_model:
+            model_path = os.path.join('.', save_dir,model_name + '_'  + str(best_filter) + '_' + str(best_kernel) + '_' + '_'+ str(ind1) + '_' + str(ind2) + '.h5')
+            best_model.save(model_path)
+    else:
+        acc = .5
 else: # use a model file instead of retraining
     if verbose:
         print('testing saved model....')
@@ -463,7 +477,7 @@ if verbose:
     print('saving acc_mat...')
 acc_path = os.path.join('.', save_dir, acc_file)
 if not os.path.exists(acc_path):
-    acc_mat = np.zeros([11,11])
+    acc_mat = np.zeros(acc_mat_shape)
     
 else:    
     acc_mat = np.load(acc_path)

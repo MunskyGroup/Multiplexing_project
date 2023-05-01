@@ -54,6 +54,7 @@ parser.add_argument('--base_command', dest='base_command', type=str,)
 parser.add_argument('--datafile1', dest='datafile1', type=str,)
 parser.add_argument('--datafile2', dest='datafile2', type=str,)
 parser.add_argument('--test_type', dest='test_type', type=str)
+parser.add_argument('--debug', dest='debug', type=int, default=0)
 
 
 args = parser.parse_args()
@@ -192,7 +193,8 @@ if runwho[1]:
                                     '--two_files=%s'%(str(1)),                                    
                                     '--witheld=%s'%(str(witheld)),
                                     '--test_size=%s'%(str(test_size)),
-                                    '--test_type=%s'%(test_type)
+                                    '--test_type=%s'%(test_type),
+                                    '--debug=%s'%str(debug),
 
                                     ])
                     

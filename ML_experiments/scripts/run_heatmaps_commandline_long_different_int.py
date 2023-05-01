@@ -46,6 +46,7 @@ parser.add_argument('--base_command', dest='base_command', type=str,)
 parser.add_argument('--global_samples', dest='global_samples', type=int,)
 parser.add_argument('--test_size', dest='test_size', type=float,)
 parser.add_argument('--witheld', dest='witheld', type=int,)
+parser.add_argument('--debug', dest='debug', type=int, default=0)
 
 args = parser.parse_args()
 
@@ -55,6 +56,7 @@ retrain = 1
 global_samples = args.global_samples
 witheld = args.witheld
 test_size = args.test_size
+debug = args.debug
 
 
 meta_data['base_dir'] = base_dir
@@ -148,6 +150,7 @@ with tqdm.tqdm(n**2) as pbar:
                                 '--witheld=%s'%(str(witheld)),
                                 '--ntimes=%s'%(str(12000)),
                                 '--test_size=%s'%(str(test_size)),
+                                '--debug=%s'%(str(debug)),
                                 ])
     
                 pbar.update(1)                

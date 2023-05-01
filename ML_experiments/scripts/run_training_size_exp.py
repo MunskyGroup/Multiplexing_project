@@ -19,7 +19,7 @@ meta_data = {}
 
 # metadata and naming
 
-data_root = '..'
+data_root = '.'
 model_base_name = 'cnn_par'
 start_time = time.time()
 start_iso = datetime.datetime.fromtimestamp(time.time()).isoformat()
@@ -192,7 +192,7 @@ acc_mat_file = np.load( os.path.join(data_root, base_dir,img_save_dir,'acc_mat_t
 fr_key = []
 for i in range(0,len(sizes)):
     sub_key = []
-    subfold = int(min(4000/sizes,5))
+    subfold = int(min(4000/sizes[i],5))
     for j in range(0,subfold):
         sub_key.append((i,j, sizes[i], j, acc_mat_file[i,j]))
     fr_key.append(sub_key)

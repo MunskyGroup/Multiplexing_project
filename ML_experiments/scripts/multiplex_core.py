@@ -108,11 +108,11 @@ class multiplexing_core:
                 for i in range(intensity_vec.shape[2]):
                     ivec = intensity_vec[n, :, i]
                     autocorr_vec[n, :, i] = self.get_acc2(
-                        (ivec - np.mean(ivec))/np.std(ivec))
+                        (ivec - np.mean(ivec))/np.var(ivec))
     
             elif norm in ['global', 'Global', 'g', 'G']:
                 global_mean = np.mean(intensity_vec[n])
-                global_var = np.std(intensity_vec[n])
+                global_var = np.var(intensity_vec[n])
                 for i in range(intensity_vec.shape[2]):
                     autocorr_vec[n, :, i] = self.get_acc2(
                         (intensity_vec[n, :, i]-global_mean)/global_var )
@@ -233,6 +233,13 @@ class multiplexing_core:
             return                 
         err_autocorr =  1.0/np.sqrt(n_traj)*np.std(autocorr, ddof=1, axis=2)
         return autocorr, err_autocorr
+
+    def slice_arr_reverse(self,array, FR, Nframes,axis=1):
+        total_time = FR*Nframes
+        if total_time > array.shape[1]:
+            print('WARNING: desired slicing regime is not possible, making as many frames as possible')
+            return array[:,::FR][:,:Nframes]
+        return array[:,::FR][:,-Nframes:]
     
     def slice_arr(self,array, FR, Nframes,axis=1):
         total_time = FR*Nframes
@@ -241,13 +248,7 @@ class multiplexing_core:
             return array[:,::FR][:,:Nframes]
         return array[:,::FR][:,:Nframes]
         
-    def slice_arr_reverse(self,array, FR, Nframes,axis=1):
-        total_time = FR*Nframes
-        if total_time > array.shape[1]:
-            print('WARNING: desired slicing regime is not possible, making as many frames as possible')
-            return array[:,::FR][:,:Nframes]
-        return array[:,::FR][:,-Nframes:]
-
+    
     def convert_labels_to_onehot(self,labels):
         '''
         converts labels in the format 1xN, [0,0,1,2,3,...] to onehot encoding,
@@ -259,7 +260,7 @@ class multiplexing_core:
         return onehotlabels
     
 
-    def process_data_n(self, data, labels, use_norm=True, norm='train_and_test', seed=42, witheld = 1000, test_size = .2, include_acc = False):
+    def process_data_n(self, data, labels, use_norm=True, norm='train_and_test', seed=42, witheld = 1000, test_size = .2, include_acc = False, shuffle=True):
         '''
         
 
@@ -304,7 +305,8 @@ class multiplexing_core:
             s.append(len(labels == i))
         
         # Shuffle the data so its not from the same cells when we index by labels
-        data, labels = self.even_shuffle_sample_n(data, labels, samples=s, seed=seed) 
+        if shuffle:
+            data, labels = self.even_shuffle_sample_n(data, labels, samples=s, seed=seed) 
         
         
         if witheld > 0:
@@ -462,8 +464,9 @@ class multiplexing_core:
         
         s1 = len(labels == 0)
         s2 = len(labels == 1)
-        # Shuffle the data so its not from the same cells when we index by labels
+        
         if shuffle:
+            # Shuffle the data so its not from the same cells when we index by labels
             data, labels = self.even_shuffle_sample(data, labels, samples=[s1,s2], seed=seed) 
         
         if witheld > 0:
@@ -811,6 +814,5 @@ class multiplexing_core:
             
             
         
-    
     
     

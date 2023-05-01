@@ -19,7 +19,7 @@ meta_data = {}
 
 # metadata and naming
 
-data_root = '..'
+data_root = '.'
 model_base_name = 'cnn_par'
 start_time = time.time()
 start_iso = datetime.datetime.fromtimestamp(time.time()).isoformat()

@@ -67,7 +67,7 @@ witheld = args.witheld
 test_size = args.test_size
 d1 = args.datafile1
 d2 = args.datafile2
-
+debug = args.debug
 test_type = args.test_type
 
 

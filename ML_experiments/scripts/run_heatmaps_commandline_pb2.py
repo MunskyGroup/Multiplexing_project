@@ -19,7 +19,7 @@ meta_data = {}
 
 # metadata and naming
 
-data_root = '..'
+data_root = '.'
 model_base_name = 'cnn_par'
 start_time = time.time()
 start_iso = datetime.datetime.fromtimestamp(time.time()).isoformat()
@@ -140,9 +140,9 @@ if test_type == 'base':
         
         fr_key = []
         acc_mat_file = np.load( os.path.join(data_root, base_dir,pb_save_dir,'acc_mat_pb.npy' )  )
-        for i in range(0,n):
+        for i in range(0,1):
             sub_key = []
-            for j in range(0,n):
+            for j in range(0,11):
                 sub_key.append((i,j, 0, pbs[j], acc_mat_file[i,j] ) )
             fr_key.append(sub_key)
         
@@ -193,9 +193,9 @@ if test_type == 'wo_correction':
         
         fr_key = []
         acc_mat_file = np.load( os.path.join(data_root, base_dir,pb_save_dir,'acc_mat_pb_wo.npy' )  )
-        for i in range(0,n):
+        for i in range(0,1):
             sub_key = []
-            for j in range(0,n):
+            for j in range(0,11):
                 sub_key.append((i,j, 0, pbs[j], acc_mat_file[i,j] ) )
             fr_key.append(sub_key)
         

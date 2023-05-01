@@ -114,6 +114,6 @@ Figures and figure generating codes
 
 ## Large datasets  <br/>
 
-Most data files and ML classifiers are not stored on this github (~200 gb), but are available upon request, all data can be regenerated / resimulated from the ```make_all_data.py``` script. Any ML experiment can be reran with the ``run_all_ML.py``` script.
+Most data files and ML classifiers are not stored on this github (~200 gb), but are available upon request, all data can be regenerated / resimulated from the ```make_all_data.py``` script. Any ML experiment can be reran with the ```run_all_ML.py``` script.
 
 ---

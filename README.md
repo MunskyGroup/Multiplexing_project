@@ -39,7 +39,7 @@ The data sets  and code to remake the data are stored in ```./datasets ```.
 
 Data making codes
 
-* ```master_make_all_data.py``` - Script that regenerates all simulated data for the machine learning experiments in the paper. THIS WILL GENERATE 120 gb OF DATA! Run at your own risk.
+* ```make_all_data.py``` - Script that regenerates all simulated data for the machine learning experiments in the paper. THIS WILL GENERATE 120 gb OF DATA! Run at your own risk.
 * ```run_rsnaped.py``` - this code runs rSNAPed to generate simulated cells w/ various settings.
 
 -----
@@ -56,7 +56,7 @@ Analysis codes
 In the ```./ML_experiments``` folder:
 
 Running machine learning experiments
-```master_run_all_ML.py```  will rerun every ML experiment listed in the paper
+```run_all_ML.py```  will rerun every ML experiment listed in the paper
 
 
 
@@ -114,6 +114,6 @@ Figures and figure generating codes
 
 ## Large datasets  <br/>
 
-Most data files and ML classifiers are not stored on this github (~200 gb), but are available upon request, all data can be regenerated / resimulated from the ```master_make_all_data.py``` script. Any ML experiment can be reran with the ```master_run_all_ML.py``` script.
+Most data files and ML classifiers are not stored on this github (~200 gb), but are available upon request, all data can be regenerated / resimulated from the ```make_all_data.py``` script. Any ML experiment can be reran with the ``run_all_ML.py``` script.
 
 ---

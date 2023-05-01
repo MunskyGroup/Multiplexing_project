@@ -10,10 +10,6 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import os
 from matplotlib.colors import ListedColormap, LinearSegmentedColormap
-import matplotlib
-
-import argparse
-import yaml
 from cycler import cycler
 
 ###############################################################################

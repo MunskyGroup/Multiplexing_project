@@ -30,7 +30,7 @@ The rSNAPed version provided is a custom version and is no up to date with the c
 
 ### Data generation
 To resimulate all data sets used in the paper call:
-			```python master_make_all_data.py```
+			```python make_all_data.py```
 
 **WARNING**:  THIS WILL TAKE A LONG TIME TO COMPLETE ALL SIMULATIONS UPWARDS OF 2 WEEKS DEPENDING ON COMPUTER HARDWARE. IT WILL ALSO MAKE 120GB+ OF FILES!
 

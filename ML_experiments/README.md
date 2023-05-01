@@ -28,7 +28,7 @@ The rSNAPed version provided is a custom version and is no up to date with the c
 
 ### ML
 To resimulate all data sets used in the paper call:
-			```python master_run_all_ML.py```
+			```python run_all_ML.py```
 
 **WARNING**:  This will take a while to run as it trains over 1000 classifiers
 

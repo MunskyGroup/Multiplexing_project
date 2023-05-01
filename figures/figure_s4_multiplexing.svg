@@ -27,15 +27,15 @@
      inkscape:pagecheckerboard="0"
      inkscape:document-units="mm"
      showgrid="false"
-     inkscape:zoom="0.77682376"
-     inkscape:cx="38.618798"
-     inkscape:cy="196.31222"
+     inkscape:zoom="0.54929735"
+     inkscape:cx="597.12649"
+     inkscape:cy="304.93502"
      inkscape:window-width="1920"
      inkscape:window-height="1027"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g9370"
+     inkscape:current-layer="layer1"
      inkscape:snap-global="false" />
   <defs
      id="defs33198">
@@ -3393,1407 +3393,9 @@
        inkscape:export-xdpi="300"
        inkscape:export-ydpi="300" />
     <g
-       id="g12835"
-       inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing_w.png"
-       inkscape:export-xdpi="300"
-       inkscape:export-ydpi="300"
-       transform="translate(1.3706912,-2.451627)">
-      <g
-         id="axes_1-7"
-         style="stroke-width:1.38165"
-         transform="matrix(0.25533617,0,0,0.2553231,156.06092,3.8710138)"
-         inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing_w.png"
-         inkscape:export-xdpi="300"
-         inkscape:export-ydpi="300">
-        <use
-           style="fill:#3387bc;fill-opacity:1;stroke:#073b4c;stroke-width:0.828726;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:0"
-           x="69.218185"
-           xlink:href="#m7111cbf3cd"
-           y="56.207748"
-           id="use34383-1"
-           width="100%"
-           height="100%"
-           transform="matrix(1.6670545,0,0,1.6673361,-237.64372,-25.044129)"
-           inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing_w.png"
-           inkscape:export-xdpi="300"
-           inkscape:export-ydpi="300" />
-        <use
-           style="fill:#e75a48;fill-opacity:1;stroke:#073b4c;stroke-width:0.828726;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:0"
-           x="69.218185"
-           xlink:href="#m7111cbf3cd"
-           y="56.207748"
-           id="use34383-1-5-6-2-1"
-           width="100%"
-           height="100%"
-           transform="matrix(1.6670545,0,0,1.6673361,37.465127,53.976236)"
-           inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing_w.png"
-           inkscape:export-xdpi="300"
-           inkscape:export-ydpi="300" />
-        <use
-           style="fill:#c9314c;fill-opacity:1;stroke:#073b4c;stroke-width:0.828726;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:0"
-           x="69.218185"
-           xlink:href="#m7111cbf3cd"
-           y="56.207748"
-           id="use34383-1-5-6-2-1-3"
-           width="100%"
-           height="100%"
-           transform="matrix(1.6670545,0,0,1.6673361,68.071155,167.79883)"
-           inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing_w.png"
-           inkscape:export-xdpi="300"
-           inkscape:export-ydpi="300" />
-        <use
-           style="fill:#f8884f;fill-opacity:1;stroke:#073b4c;stroke-width:0.828726;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:0"
-           x="69.218185"
-           xlink:href="#m7111cbf3cd"
-           y="56.207748"
-           id="use34383-1-5-6-2-4"
-           width="100%"
-           height="100%"
-           transform="matrix(1.6670545,0,0,1.6673361,6.987118,-24.283344)"
-           inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing_w.png"
-           inkscape:export-xdpi="300"
-           inkscape:export-ydpi="300" />
-        <use
-           style="fill:#fdbb6c;fill-opacity:1;stroke:#073b4c;stroke-width:0.828726;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:0"
-           x="69.218185"
-           xlink:href="#m7111cbf3cd"
-           y="56.207748"
-           id="use34383-1-5-6-2-7"
-           width="100%"
-           height="100%"
-           transform="matrix(1.6670545,0,0,1.6673361,-23.702259,-27.455679)"
-           inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing_w.png"
-           inkscape:export-xdpi="300"
-           inkscape:export-ydpi="300" />
-        <use
-           style="fill:#ffbafd;fill-opacity:1;stroke:#073b4c;stroke-width:0.828726;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:0"
-           x="69.218185"
-           xlink:href="#m7111cbf3cd"
-           y="56.207748"
-           id="use34383-1-5-6-2"
-           width="100%"
-           height="100%"
-           transform="matrix(1.6670545,0,0,1.6673361,-176.50075,-27.009692)"
-           inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing_w.png"
-           inkscape:export-xdpi="300"
-           inkscape:export-ydpi="300" />
-        <use
-           style="fill:#fee38f;fill-opacity:1;stroke:#073b4c;stroke-width:0.828726;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:0"
-           x="69.218185"
-           xlink:href="#m7111cbf3cd"
-           y="56.207748"
-           id="use34383-1-5-6-2-9"
-           width="100%"
-           height="100%"
-           transform="matrix(1.6670545,0,0,1.6673361,-115.24029,-18.634388)"
-           inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing_w.png"
-           inkscape:export-xdpi="300"
-           inkscape:export-ydpi="300" />
-        <use
-           style="fill:#5cb6aa;fill-opacity:1;stroke:#073b4c;stroke-width:0.828726;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:0"
-           x="69.218185"
-           xlink:href="#m7111cbf3cd"
-           y="56.207748"
-           id="use34383-1-5"
-           width="100%"
-           height="100%"
-           transform="matrix(1.6670545,0,0,1.6673361,-231.59428,-27.218096)"
-           inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing_w.png"
-           inkscape:export-xdpi="300"
-           inkscape:export-ydpi="300" />
-        <use
-           style="fill:#91d3a4;fill-opacity:1;stroke:#073b4c;stroke-width:0.828726;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:0"
-           x="69.218185"
-           xlink:href="#m7111cbf3cd"
-           y="56.207748"
-           id="use34383-1-5-6"
-           width="100%"
-           height="100%"
-           transform="matrix(1.6670545,0,0,1.6673361,-225.45639,-22.389444)"
-           inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing_w.png"
-           inkscape:export-xdpi="300"
-           inkscape:export-ydpi="300" />
-        <use
-           style="fill:#c5e79f;fill-opacity:1;stroke:#073b4c;stroke-width:0.828726;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:0"
-           x="69.218185"
-           xlink:href="#m7111cbf3cd"
-           y="56.207748"
-           id="use34383-1-5-6-6"
-           width="100%"
-           height="100%"
-           transform="matrix(1.6670545,0,0,1.6673361,-213.14392,-13.055462)"
-           inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing_w.png"
-           inkscape:export-xdpi="300"
-           inkscape:export-ydpi="300" />
-        <use
-           style="fill:#edf8a3;fill-opacity:1;stroke:#073b4c;stroke-width:0.828726;stroke-linecap:butt;stroke-linejoin:round;stroke-opacity:0"
-           x="69.218185"
-           xlink:href="#m7111cbf3cd"
-           y="56.207748"
-           id="use34383-1-5-6-1"
-           width="100%"
-           height="100%"
-           transform="matrix(1.6670545,0,0,1.6673361,-201.1128,-23.385043)"
-           inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing_w.png"
-           inkscape:export-xdpi="300"
-           inkscape:export-ydpi="300" />
-      </g>
-      <g
-         id="figure_1-3"
-         transform="matrix(0.39554314,0,0,0.38987418,140.95784,33.643087)"
-         style="stroke-width:0.898342"
-         inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing_w.png"
-         inkscape:export-xdpi="300"
-         inkscape:export-ydpi="300">
-        <g
-           id="figure_1-9"
-           transform="translate(172.96365,-38.618797)"
-           style="stroke-width:0.898342">
-          <g
-             id="axes_1-2"
-             transform="matrix(0.64819445,0,0,0.64752999,-258.58794,-23.212146)"
-             style="stroke-width:1.38662">
-            <g
-               id="matplotlib.axis_1-55"
-               style="stroke-width:1.38662">
-              <g
-                 id="xtick_1-7"
-                 style="stroke-width:1.38662">
-                <g
-                   id="line2d_1-01"
-                   style="stroke-width:1.38662"
-                   inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing_w.png"
-                   inkscape:export-xdpi="300"
-                   inkscape:export-ydpi="300">
-                  <defs
-                     id="defs9351">
-                    <path
-                       d="M 0,0 V 3.5"
-                       id="path9768"
-                       style="stroke:#000000;stroke-width:2.8" />
-                  </defs>
-                  <g
-                     id="g9355"
-                     style="stroke-width:1.38662">
-                    <use
-                       style="stroke:#000000;stroke-width:3.88256"
-                       x="69.218185"
-                       xlink:href="#m96f468dca7"
-                       y="252"
-                       id="use9353"
-                       width="100%"
-                       height="100%" />
-                  </g>
-                </g>
-                <g
-                   id="text_1-0"
-                   style="stroke-width:1.38662">
-                  <!-- 0.00 -->
-                  <defs
-                     id="defs9360">
-                    <path
-                       d="m 46,36.53125 q 0,13.671875 -2.5625,19.25 -2.5625,5.59375 -8.625,5.59375 -6.046875,0 -8.640625,-5.59375 -2.59375,-5.578125 -2.59375,-19.25 0,-13.828125 2.59375,-19.5 2.59375,-5.65625 8.640625,-5.65625 6.015625,0 8.59375,5.65625 Q 46,22.703125 46,36.53125 Z M 64.796875,36.375 q 0,-18.109375 -7.8125,-27.953125 -7.8125,-9.84375 -22.171875,-9.84375 -14.40625,0 -22.21875,9.84375 -7.8125,9.84375 -7.8125,27.953125 0,18.171875 7.8125,28 7.8125,9.84375 22.21875,9.84375 14.359375,0 22.171875,-9.84375 7.8125,-9.828125 7.8125,-28 z"
-                       id="path9774" />
-                    <path
-                       d="M 10.203125,18.890625 H 27.78125 V 0 H 10.203125 Z"
-                       id="path9776" />
-                  </defs>
-                  <g
-                     transform="matrix(0.12,0,0,-0.12,54.415057,268.11813)"
-                     id="g9370"
-                     style="stroke-width:1.38662">
-                    <use
-                       x="177.14844"
-                       xlink:href="#DejaVuSans-Bold-48-20"
-                       id="use9368"
-                       y="0"
-                       width="100%"
-                       height="100%"
-                       style="stroke-width:1.38662"
-                       transform="translate(-85.996755)"
-                       inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing_w.png"
-                       inkscape:export-xdpi="300"
-                       inkscape:export-ydpi="300" />
-                  </g>
-                </g>
-              </g>
-              <g
-                 id="xtick_2-3"
-                 style="stroke-width:1.38662"
-                 inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing_w.png"
-                 inkscape:export-xdpi="300"
-                 inkscape:export-ydpi="300">
-                <g
-                   id="line2d_2-9"
-                   style="stroke-width:1.38662">
-                  <g
-                     id="g9376"
-                     style="stroke-width:1.38662">
-                    <use
-                       style="stroke:#000000;stroke-width:3.88256"
-                       x="130.09091"
-                       xlink:href="#m96f468dca7"
-                       y="252"
-                       id="use9374"
-                       width="100%"
-                       height="100%" />
-                  </g>
-                </g>
-                <g
-                   id="text_2-46"
-                   style="stroke-width:1.38662">
-                  <!-- 0.01 -->
-                  <defs
-                     id="defs9380">
-                    <path
-                       d="m 11.71875,12.984375 h 16.609375 v 47.125 L 11.28125,56.59375 v 12.796875 l 16.9375,3.515625 h 17.875 V 12.984375 H 62.703125 V 0 H 11.71875 Z"
-                       id="path9789" />
-                  </defs>
-                  <g
-                     transform="matrix(0.12,0,0,-0.12,115.28778,268.11813)"
-                     id="g9390"
-                     style="stroke-width:1.38662">
-                    <use
-                       x="177.14844"
-                       xlink:href="#DejaVuSans-Bold-49-31"
-                       id="use9388"
-                       y="0"
-                       width="100%"
-                       height="100%"
-                       style="stroke-width:1.38662"
-                       transform="translate(-85.996755)" />
-                  </g>
-                </g>
-              </g>
-              <g
-                 id="xtick_3-7"
-                 style="stroke-width:1.38662"
-                 inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing_w.png"
-                 inkscape:export-xdpi="300"
-                 inkscape:export-ydpi="300">
-                <g
-                   id="line2d_3-7"
-                   style="stroke-width:1.38662">
-                  <g
-                     id="g9396"
-                     style="stroke-width:1.38662">
-                    <use
-                       style="stroke:#000000;stroke-width:3.88256"
-                       x="190.96364"
-                       xlink:href="#m96f468dca7"
-                       y="252"
-                       id="use9394"
-                       width="100%"
-                       height="100%" />
-                  </g>
-                </g>
-                <g
-                   id="text_3-2"
-                   style="stroke-width:1.38662"
-                   transform="translate(-10.319611)">
-                  <!-- 0.02 -->
-                  <defs
-                     id="defs9400">
-                    <path
-                       d="M 28.8125,13.8125 H 60.890625 V 0 H 7.90625 v 13.8125 l 26.609375,23.5 q 3.578125,3.21875 5.28125,6.296875 Q 41.5,46.6875 41.5,50 q 0,5.125 -3.4375,8.25 -3.4375,3.125 -9.15625,3.125 -4.390625,0 -9.625,-1.875 Q 14.0625,57.625 8.109375,53.90625 v 16.015625 q 6.34375,2.09375 12.546875,3.1875 6.203125,1.109375 12.15625,1.109375 13.09375,0 20.34375,-5.765625 7.25,-5.75 7.25,-16.0625 0,-5.953125 -3.078125,-11.109375 Q 54.25,36.140625 44.390625,27.484375 Z"
-                       id="path9802" />
-                  </defs>
-                  <g
-                     transform="matrix(0.12,0,0,-0.12,176.16051,268.11813)"
-                     id="g9410"
-                     style="stroke-width:1.38662">
-                    <use
-                       x="177.14844"
-                       xlink:href="#DejaVuSans-Bold-50-62"
-                       id="use9408"
-                       y="0"
-                       width="100%"
-                       height="100%"
-                       style="stroke-width:1.38662" />
-                  </g>
-                </g>
-              </g>
-              <g
-                 id="xtick_4-9"
-                 style="stroke-width:1.38662"
-                 inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing_w.png"
-                 inkscape:export-xdpi="300"
-                 inkscape:export-ydpi="300">
-                <g
-                   id="line2d_4-2"
-                   style="stroke-width:1.38662">
-                  <g
-                     id="g9416"
-                     style="stroke-width:1.38662">
-                    <use
-                       style="stroke:#000000;stroke-width:3.88256"
-                       x="251.83636"
-                       xlink:href="#m96f468dca7"
-                       y="252"
-                       id="use9414"
-                       width="100%"
-                       height="100%" />
-                  </g>
-                </g>
-                <g
-                   id="text_4-3"
-                   style="stroke-width:1.38662">
-                  <!-- 0.03 -->
-                  <defs
-                     id="defs9420">
-                    <path
-                       d="m 46.578125,39.3125 q 7.375,-1.90625 11.203125,-6.625 3.84375,-4.703125 3.84375,-11.984375 0,-10.84375 -8.3125,-16.484375 -8.296875,-5.640625 -24.203125,-5.640625 -5.625,0 -11.265625,0.90625 -5.640625,0.90625 -11.15625,2.71875 v 14.5 Q 11.96875,14.0625 17.15625,12.71875 22.359375,11.375 27.390625,11.375 q 7.46875,0 11.453125,2.578125 3.984375,2.59375 3.984375,7.4375 0,4.984375 -4.078125,7.546875 Q 34.671875,31.5 26.703125,31.5 H 19.1875 v 12.109375 h 7.90625 q 7.09375,0 10.546875,2.21875 3.46875,2.21875 3.46875,6.765625 0,4.1875 -3.375,6.484375 Q 34.375,61.375 28.21875,61.375 23.6875,61.375 19.046875,60.34375 14.40625,59.328125 9.8125,57.328125 V 71.09375 q 5.5625,1.5625 11.03125,2.34375 5.46875,0.78125 10.75,0.78125 14.203125,0 21.25,-4.671875 7.0625,-4.65625 7.0625,-14.03125 0,-6.390625 -3.375,-10.46875 Q 53.171875,40.96875 46.578125,39.3125 Z"
-                       id="path9815" />
-                  </defs>
-                  <g
-                     transform="matrix(0.12,0,0,-0.12,237.03324,268.11813)"
-                     id="g9430"
-                     style="stroke-width:1.38662">
-                    <use
-                       x="177.14844"
-                       xlink:href="#DejaVuSans-Bold-51-2"
-                       id="use9428"
-                       y="0"
-                       width="100%"
-                       height="100%"
-                       style="stroke-width:1.38662"
-                       transform="translate(-85.996755)" />
-                  </g>
-                </g>
-              </g>
-              <g
-                 id="xtick_5-3"
-                 style="stroke-width:1.38662"
-                 inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing_w.png"
-                 inkscape:export-xdpi="300"
-                 inkscape:export-ydpi="300">
-                <g
-                   id="line2d_5-1"
-                   style="stroke-width:1.38662">
-                  <g
-                     id="g9436"
-                     style="stroke-width:1.38662">
-                    <use
-                       style="stroke:#000000;stroke-width:3.88256"
-                       x="312.70908"
-                       xlink:href="#m96f468dca7"
-                       y="252"
-                       id="use9434"
-                       width="100%"
-                       height="100%" />
-                  </g>
-                </g>
-                <g
-                   id="text_5-5"
-                   style="stroke-width:1.38662">
-                  <!-- 0.04 -->
-                  <defs
-                     id="defs9440">
-                    <path
-                       d="M 36.8125,57.421875 16.21875,26.90625 H 36.8125 Z m -3.125,15.484375 h 20.90625 v -46 h 10.390625 v -13.625 H 54.59375 V 0 H 36.8125 V 13.28125 H 4.5 v 16.109375 z"
-                       id="path9828" />
-                  </defs>
-                  <g
-                     transform="matrix(0.12,0,0,-0.12,297.90597,268.11813)"
-                     id="g9450"
-                     style="stroke-width:1.38662">
-                    <use
-                       x="177.14844"
-                       xlink:href="#DejaVuSans-Bold-52-6"
-                       id="use9448"
-                       y="0"
-                       width="100%"
-                       height="100%"
-                       style="stroke-width:1.38662"
-                       transform="translate(-85.996755)" />
-                  </g>
-                </g>
-              </g>
-              <g
-                 id="xtick_6-9"
-                 style="stroke-width:1.38662"
-                 inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing_w.png"
-                 inkscape:export-xdpi="300"
-                 inkscape:export-ydpi="300">
-                <g
-                   id="line2d_6-8"
-                   style="stroke-width:1.38662">
-                  <g
-                     id="g9456"
-                     style="stroke-width:1.38662">
-                    <use
-                       style="stroke:#000000;stroke-width:3.88256"
-                       x="373.58182"
-                       xlink:href="#m96f468dca7"
-                       y="252"
-                       id="use9454"
-                       width="100%"
-                       height="100%" />
-                  </g>
-                </g>
-                <g
-                   id="text_6-4"
-                   style="stroke-width:1.38662">
-                  <!-- 0.05 -->
-                  <defs
-                     id="defs9460">
-                    <path
-                       d="M 10.59375,72.90625 H 57.328125 V 59.078125 H 25.59375 v -11.28125 q 2.140625,0.59375 4.3125,0.90625 2.171875,0.328125 4.515625,0.328125 13.328125,0 20.75,-6.671875 7.421875,-6.671875 7.421875,-18.578125 0,-11.8125 -8.078125,-18.515625 -8.078125,-6.6875 -22.4375,-6.6875 -6.203125,0 -12.28125,1.203125 Q 13.71875,0.984375 7.71875,3.421875 V 18.21875 q 5.953125,-3.421875 11.296875,-5.140625 5.34375,-1.703125 10.09375,-1.703125 6.828125,0 10.75,3.34375 3.9375,3.34375 3.9375,9.0625 0,5.765625 -3.9375,9.078125 -3.921875,3.328125 -10.75,3.328125 -4.0625,0 -8.65625,-1.0625 Q 15.875,34.078125 10.59375,31.890625 Z"
-                       id="path9841" />
-                  </defs>
-                  <g
-                     transform="matrix(0.12,0,0,-0.12,358.77869,268.11813)"
-                     id="g9470"
-                     style="stroke-width:1.38662">
-                    <use
-                       x="177.14844"
-                       xlink:href="#DejaVuSans-Bold-53-9"
-                       id="use9468"
-                       y="0"
-                       width="100%"
-                       height="100%"
-                       style="stroke-width:1.38662"
-                       transform="translate(-85.996759)" />
-                  </g>
-                </g>
-              </g>
-              <g
-                 id="text_7-72"
-                 style="stroke-width:1.38662"
-                 inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing_w.png"
-                 inkscape:export-xdpi="300"
-                 inkscape:export-ydpi="300">
-                <!-- % loss per 5 seconds -->
-                <defs
-                   id="defs9485">
-                  <path
-                     d="m 77.484375,30.078125 q -3.453125,0 -5.359375,-3 -1.90625,-3 -1.90625,-8.578125 0,-5.609375 1.875,-8.609375 1.875,-3 5.390625,-3 3.515625,0 5.375,3 1.859375,3 1.859375,8.609375 0,5.578125 -1.890625,8.578125 -1.875,3 -5.34375,3 z m 0,8.203125 q 9.09375,0 14.3125,-5.28125 5.21875,-5.265625 5.21875,-14.5 0,-9.21875 -5.21875,-14.578125 -5.21875,-5.34375 -14.3125,-5.34375 -9.078125,0 -14.328125,5.34375 -5.25,5.359375 -5.25,14.578125 0,9.1875 5.25,14.484375 5.25,5.296875 14.328125,5.296875 z M 32.71875,-1.421875 H 21.921875 l 45.5625,75.640625 h 10.84375 z M 22.703125,74.21875 q 9.078125,0 14.28125,-5.296875 Q 42.1875,63.625 42.1875,54.390625 q 0,-9.21875 -5.203125,-14.546875 -5.203125,-5.328125 -14.28125,-5.328125 -9.078125,0 -14.28125,5.328125 -5.203125,5.328125 -5.203125,14.546875 0,9.234375 5.203125,14.53125 5.203125,5.296875 14.28125,5.296875 z m 0,-8.203125 q -3.515625,0 -5.421875,-3.03125 -1.90625,-3.015625 -1.90625,-8.59375 0,-5.609375 1.90625,-8.671875 1.90625,-3.046875 5.421875,-3.046875 3.515625,0 5.390625,3.046875 1.890625,3.0625 1.890625,8.671875 0,5.578125 -1.90625,8.59375 -1.90625,3.03125 -5.375,3.03125 z"
-                     id="path9851" />
-                  <path
-                     id="path9853"
-                     d="" />
-                  <path
-                     d="M 8.40625,75.984375 H 25.875 V 0 H 8.40625 Z"
-                     id="path9855" />
-                  <path
-                     d="m 34.421875,43.5 q -5.8125,0 -8.859375,-4.171875 -3.046875,-4.171875 -3.046875,-12.03125 0,-7.859375 3.046875,-12.046875 3.046875,-4.171875 8.859375,-4.171875 5.71875,0 8.734375,4.171875 3.03125,4.1875 3.03125,12.046875 0,7.859375 -3.03125,12.03125 Q 40.140625,43.5 34.421875,43.5 Z m 0,12.5 q 14.109375,0 22.046875,-7.625 7.9375,-7.609375 7.9375,-21.078125 0,-13.484375 -7.9375,-21.109375 -7.9375,-7.609375 -22.046875,-7.609375 -14.15625,0 -22.140625,7.609375 -7.984375,7.625 -7.984375,21.109375 0,13.46875 7.984375,21.078125 Q 20.265625,56 34.421875,56 Z"
-                     id="path9857" />
-                  <path
-                     d="m 51.125,52.984375 v -13.28125 q -5.609375,2.34375 -10.84375,3.515625 -5.21875,1.171875 -9.859375,1.171875 -4.984375,0 -7.40625,-1.25 -2.40625,-1.25 -2.40625,-3.828125 0,-2.109375 1.828125,-3.234375 Q 24.265625,34.96875 29,34.421875 l 3.078125,-0.4375 q 13.4375,-1.703125 18.0625,-5.609375 4.640625,-3.90625 4.640625,-12.265625 0,-8.734375 -6.453125,-13.140625 -6.4375,-4.390625 -19.21875,-4.390625 -5.421875,0 -11.21875,0.859375 Q 12.109375,0.296875 6,2 v 13.28125 q 5.234375,-2.53125 10.71875,-3.8125 5.5,-1.265625 11.15625,-1.265625 5.140625,0 7.71875,1.40625 2.59375,1.421875 2.59375,4.21875 0,2.34375 -1.78125,3.484375 -1.78125,1.140625 -7.109375,1.78125 l -3.078125,0.390625 q -11.671875,1.46875 -16.359375,5.421875 -4.6875,3.953125 -4.6875,12.015625 0,8.6875 5.953125,12.875 Q 17.09375,56 29.390625,56 34.234375,56 39.546875,55.265625 44.875,54.546875 51.125,52.984375 Z"
-                     id="path9859" />
-                  <path
-                     d="M 25.875,7.90625 V -20.796875 H 8.40625 V 54.6875 H 25.875 v -8 Q 29.5,51.46875 33.890625,53.734375 38.28125,56 44,56 q 10.109375,0 16.59375,-8.03125 6.5,-8.03125 6.5,-20.671875 0,-12.640625 -6.5,-20.6875 Q 54.109375,-1.421875 44,-1.421875 q -5.71875,0 -10.109375,2.265625 Q 29.5,3.125 25.875,7.90625 Z M 37.5,43.3125 q -5.609375,0 -8.625,-4.125 -3,-4.125 -3,-11.890625 0,-7.765625 3,-11.890625 3.015625,-4.125 8.625,-4.125 5.609375,0 8.5625,4.09375 2.96875,4.109375 2.96875,11.921875 0,7.8125 -2.96875,11.90625 Q 43.109375,43.3125 37.5,43.3125 Z"
-                     id="path9861" />
-                  <path
-                     d="m 62.984375,27.484375 v -4.96875 H 22.125 q 0.625,-6.15625 4.4375,-9.234375 3.8125,-3.078125 10.640625,-3.078125 5.515625,0 11.296875,1.640625 5.796875,1.640625 11.90625,4.953125 V 3.328125 Q 54.203125,0.984375 48,-0.21875 41.796875,-1.421875 35.59375,-1.421875 q -14.84375,0 -23.078125,7.546875 -8.21875,7.546875 -8.21875,21.171875 0,13.375 8.078125,21.03125 Q 20.453125,56 34.625,56 q 12.890625,0 20.625,-7.765625 7.734375,-7.75 7.734375,-20.75 z m -17.96875,5.8125 q 0,4.984375 -2.90625,8.03125 -2.90625,3.0625 -7.59375,3.0625 -5.078125,0 -8.25,-2.859375 Q 23.09375,38.671875 22.3125,33.296875 Z"
-                     id="path9863" />
-                  <path
-                     d="M 49.03125,39.796875 Q 46.734375,40.875 44.453125,41.375 q -2.265625,0.515625 -4.5625,0.515625 -6.734375,0 -10.375,-4.328125 Q 25.875,33.25 25.875,25.203125 V 0 H 8.40625 V 54.6875 H 25.875 v -8.984375 q 3.375,5.375 7.734375,7.828125 Q 37.984375,56 44.09375,56 q 0.875,0 1.890625,-0.07813 1.03125,-0.0625 2.984375,-0.3125 z"
-                     id="path9865" />
-                  <path
-                     d="M 52.59375,52.984375 V 38.71875 q -3.5625,2.4375 -7.15625,3.609375 Q 41.84375,43.5 37.984375,43.5 q -7.3125,0 -11.390625,-4.265625 -4.078125,-4.265625 -4.078125,-11.9375 0,-7.671875 4.078125,-11.953125 4.078125,-4.265625 11.390625,-4.265625 4.109375,0 7.796875,1.21875 3.6875,1.234375 6.8125,3.625 V 1.609375 Q 48.484375,0.09375 44.265625,-0.65625 q -4.21875,-0.765625 -8.46875,-0.765625 -14.796875,0 -23.15625,7.59375 -8.34375,7.59375 -8.34375,21.125 0,13.53125 8.34375,21.109375 Q 21,56 35.796875,56 40.09375,56 44.265625,55.25 48.4375,54.5 52.59375,52.984375 Z"
-                     id="path9867" />
-                  <path
-                     d="M 63.375,33.296875 V 0 H 45.796875 v 5.421875 20.0625 q 0,7.078125 -0.3125,9.765625 -0.3125,2.6875 -1.09375,3.953125 -1.03125,1.71875 -2.796875,2.671875 -1.75,0.953125 -4,0.953125 Q 32.125,42.828125 29,38.59375 25.875,34.375 25.875,26.90625 V 0 H 8.40625 V 54.6875 H 25.875 v -8 q 3.953125,4.78125 8.390625,7.046875 Q 38.71875,56 44.09375,56 53.5625,56 58.46875,50.1875 63.375,44.390625 63.375,33.296875 Z"
-                     id="path9869" />
-                  <path
-                     d="M 45.609375,46.6875 V 75.984375 H 63.1875 V 0 H 45.609375 V 7.90625 Q 42,3.078125 37.640625,0.828125 q -4.34375,-2.25 -10.046875,-2.25 -10.109375,0 -16.609375,8.03125 Q 4.5,14.65625 4.5,27.296875 4.5,39.9375 10.984375,47.96875 17.484375,56 27.59375,56 33.25,56 37.625,53.734375 42,51.46875 45.609375,46.6875 Z M 34.078125,11.28125 q 5.625,0 8.578125,4.09375 2.953125,4.109375 2.953125,11.921875 0,7.8125 -2.953125,11.90625 -2.953125,4.109375 -8.578125,4.109375 -5.5625,0 -8.515625,-4.109375 -2.953125,-4.09375 -2.953125,-11.90625 0,-7.8125 2.953125,-11.921875 2.953125,-4.09375 8.515625,-4.09375 z"
-                     id="path9871" />
-                </defs>
-                <g
-                   transform="matrix(0.12,0,0,-0.12,150.7575,287.73187)"
-                   id="g9527"
-                   style="stroke-width:1.38662">
-                  <use
-                     xlink:href="#DejaVuSans-Bold-37-3"
-                     id="use9487"
-                     x="0"
-                     y="0"
-                     width="100%"
-                     height="100%"
-                     style="stroke-width:1.38662" />
-                  <use
-                     x="100.19531"
-                     xlink:href="#DejaVuSans-Bold-32-575"
-                     id="use9489"
-                     y="0"
-                     width="100%"
-                     height="100%"
-                     style="stroke-width:1.38662" />
-                  <use
-                     x="135.00977"
-                     xlink:href="#DejaVuSans-Bold-108-45"
-                     id="use9491"
-                     y="0"
-                     width="100%"
-                     height="100%"
-                     style="stroke-width:1.38662" />
-                  <use
-                     x="169.28711"
-                     xlink:href="#DejaVuSans-Bold-111-930"
-                     id="use9493"
-                     y="0"
-                     width="100%"
-                     height="100%"
-                     style="stroke-width:1.38662" />
-                  <use
-                     x="237.98828"
-                     xlink:href="#DejaVuSans-Bold-115-5"
-                     id="use9495"
-                     y="0"
-                     width="100%"
-                     height="100%"
-                     style="stroke-width:1.38662" />
-                  <use
-                     x="297.50977"
-                     xlink:href="#DejaVuSans-Bold-115-5"
-                     id="use9497"
-                     y="0"
-                     width="100%"
-                     height="100%"
-                     style="stroke-width:1.38662" />
-                  <use
-                     x="357.03125"
-                     xlink:href="#DejaVuSans-Bold-32-575"
-                     id="use9499"
-                     y="0"
-                     width="100%"
-                     height="100%"
-                     style="stroke-width:1.38662" />
-                  <use
-                     x="391.8457"
-                     xlink:href="#DejaVuSans-Bold-112-24"
-                     id="use9501"
-                     y="0"
-                     width="100%"
-                     height="100%"
-                     style="stroke-width:1.38662" />
-                  <use
-                     x="463.42773"
-                     xlink:href="#DejaVuSans-Bold-101-43"
-                     id="use9503"
-                     y="0"
-                     width="100%"
-                     height="100%"
-                     style="stroke-width:1.38662" />
-                  <use
-                     x="531.25"
-                     xlink:href="#DejaVuSans-Bold-114-81"
-                     id="use9505"
-                     y="0"
-                     width="100%"
-                     height="100%"
-                     style="stroke-width:1.38662" />
-                  <use
-                     x="580.56641"
-                     xlink:href="#DejaVuSans-Bold-32-575"
-                     id="use9507"
-                     y="0"
-                     width="100%"
-                     height="100%"
-                     style="stroke-width:1.38662" />
-                  <use
-                     x="615.38086"
-                     xlink:href="#DejaVuSans-Bold-53-9"
-                     id="use9509"
-                     y="0"
-                     width="100%"
-                     height="100%"
-                     style="stroke-width:1.38662" />
-                  <use
-                     x="684.96094"
-                     xlink:href="#DejaVuSans-Bold-32-575"
-                     id="use9511"
-                     y="0"
-                     width="100%"
-                     height="100%"
-                     style="stroke-width:1.38662" />
-                  <use
-                     x="719.77539"
-                     xlink:href="#DejaVuSans-Bold-115-5"
-                     id="use9513"
-                     y="0"
-                     width="100%"
-                     height="100%"
-                     style="stroke-width:1.38662" />
-                  <use
-                     x="779.29688"
-                     xlink:href="#DejaVuSans-Bold-101-43"
-                     id="use9515"
-                     y="0"
-                     width="100%"
-                     height="100%"
-                     style="stroke-width:1.38662" />
-                  <use
-                     x="847.11914"
-                     xlink:href="#DejaVuSans-Bold-99-5"
-                     id="use9517"
-                     y="0"
-                     width="100%"
-                     height="100%"
-                     style="stroke-width:1.38662" />
-                  <use
-                     x="906.39648"
-                     xlink:href="#DejaVuSans-Bold-111-930"
-                     id="use9519"
-                     y="0"
-                     width="100%"
-                     height="100%"
-                     style="stroke-width:1.38662" />
-                  <use
-                     x="975.09766"
-                     xlink:href="#DejaVuSans-Bold-110-1"
-                     id="use9521"
-                     y="0"
-                     width="100%"
-                     height="100%"
-                     style="stroke-width:1.38662" />
-                  <use
-                     x="1046.2891"
-                     xlink:href="#DejaVuSans-Bold-100-4"
-                     id="use9523"
-                     y="0"
-                     width="100%"
-                     height="100%"
-                     style="stroke-width:1.38662" />
-                  <use
-                     x="1117.8711"
-                     xlink:href="#DejaVuSans-Bold-115-5"
-                     id="use9525"
-                     y="0"
-                     width="100%"
-                     height="100%"
-                     style="stroke-width:1.38662" />
-                </g>
-              </g>
-            </g>
-            <g
-               id="matplotlib.axis_2-0"
-               style="stroke-width:1.38662"
-               inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing_w.png"
-               inkscape:export-xdpi="300"
-               inkscape:export-ydpi="300">
-              <g
-                 id="ytick_1-2"
-                 style="stroke-width:1.38662">
-                <g
-                   id="line2d_7-8"
-                   style="stroke-width:1.38662">
-                  <defs
-                     id="defs9532">
-                    <path
-                       d="M 0,0 H -3.5"
-                       id="path9897"
-                       style="stroke:#000000;stroke-width:2.8" />
-                  </defs>
-                  <g
-                     id="g9536"
-                     style="stroke-width:1.38662">
-                    <use
-                       style="stroke:#000000;stroke-width:3.88256"
-                       x="54"
-                       xlink:href="#m6ed73a7289"
-                       y="251.25363"
-                       id="use9534"
-                       width="100%"
-                       height="100%" />
-                  </g>
-                </g>
-                <g
-                   id="text_8-4"
-                   style="stroke-width:1.38662">
-                  <!-- 0.10 -->
-                  <g
-                     transform="matrix(0.12,0,0,-0.12,17.39375,255.8127)"
-                     id="g9547"
-                     style="stroke-width:1.38662">
-                    <use
-                       xlink:href="#DejaVuSans-Bold-48-20"
-                       id="use9539"
-                       x="0"
-                       y="0"
-                       width="100%"
-                       height="100%"
-                       style="stroke-width:1.38662" />
-                    <use
-                       x="69.580078"
-                       xlink:href="#DejaVuSans-Bold-46-33"
-                       id="use9541"
-                       y="0"
-                       width="100%"
-                       height="100%"
-                       style="stroke-width:1.38662" />
-                    <use
-                       x="107.56836"
-                       xlink:href="#DejaVuSans-Bold-49-31"
-                       id="use9543"
-                       y="0"
-                       width="100%"
-                       height="100%"
-                       style="stroke-width:1.38662" />
-                    <use
-                       x="177.14844"
-                       xlink:href="#DejaVuSans-Bold-48-20"
-                       id="use9545"
-                       y="0"
-                       width="100%"
-                       height="100%"
-                       style="stroke-width:1.38662" />
-                  </g>
-                </g>
-              </g>
-              <g
-                 id="ytick_2-4"
-                 style="stroke-width:1.38662">
-                <g
-                   id="line2d_8-3"
-                   style="stroke-width:1.38662">
-                  <g
-                     id="g9553"
-                     style="stroke-width:1.38662">
-                    <use
-                       style="stroke:#000000;stroke-width:3.88256"
-                       x="54"
-                       xlink:href="#m6ed73a7289"
-                       y="217.32811"
-                       id="use9551"
-                       width="100%"
-                       height="100%" />
-                  </g>
-                </g>
-                <g
-                   id="text_9-6"
-                   style="stroke-width:1.38662">
-                  <!-- 0.15 -->
-                  <g
-                     transform="matrix(0.12,0,0,-0.12,17.39375,221.88718)"
-                     id="g9564"
-                     style="stroke-width:1.38662">
-                    <use
-                       xlink:href="#DejaVuSans-Bold-48-20"
-                       id="use9556"
-                       x="0"
-                       y="0"
-                       width="100%"
-                       height="100%"
-                       style="stroke-width:1.38662" />
-                    <use
-                       x="69.580078"
-                       xlink:href="#DejaVuSans-Bold-46-33"
-                       id="use9558"
-                       y="0"
-                       width="100%"
-                       height="100%"
-                       style="stroke-width:1.38662" />
-                    <use
-                       x="107.56836"
-                       xlink:href="#DejaVuSans-Bold-49-31"
-                       id="use9560"
-                       y="0"
-                       width="100%"
-                       height="100%"
-                       style="stroke-width:1.38662" />
-                    <use
-                       x="177.14844"
-                       xlink:href="#DejaVuSans-Bold-53-9"
-                       id="use9562"
-                       y="0"
-                       width="100%"
-                       height="100%"
-                       style="stroke-width:1.38662" />
-                  </g>
-                </g>
-              </g>
-              <g
-                 id="ytick_3-1"
-                 style="stroke-width:1.38662">
-                <g
-                   id="line2d_9-9"
-                   style="stroke-width:1.38662">
-                  <g
-                     id="g9570"
-                     style="stroke-width:1.38662">
-                    <use
-                       style="stroke:#000000;stroke-width:3.88256"
-                       x="54"
-                       xlink:href="#m6ed73a7289"
-                       y="183.40259"
-                       id="use9568"
-                       width="100%"
-                       height="100%" />
-                  </g>
-                </g>
-                <g
-                   id="text_10-8"
-                   style="stroke-width:1.38662">
-                  <!-- 0.20 -->
-                  <g
-                     transform="matrix(0.12,0,0,-0.12,17.39375,187.96165)"
-                     id="g9581"
-                     style="stroke-width:1.38662">
-                    <use
-                       xlink:href="#DejaVuSans-Bold-48-20"
-                       id="use9573"
-                       x="0"
-                       y="0"
-                       width="100%"
-                       height="100%"
-                       style="stroke-width:1.38662" />
-                    <use
-                       x="69.580078"
-                       xlink:href="#DejaVuSans-Bold-46-33"
-                       id="use9575"
-                       y="0"
-                       width="100%"
-                       height="100%"
-                       style="stroke-width:1.38662" />
-                    <use
-                       x="107.56836"
-                       xlink:href="#DejaVuSans-Bold-50-62"
-                       id="use9577"
-                       y="0"
-                       width="100%"
-                       height="100%"
-                       style="stroke-width:1.38662" />
-                    <use
-                       x="177.14844"
-                       xlink:href="#DejaVuSans-Bold-48-20"
-                       id="use9579"
-                       y="0"
-                       width="100%"
-                       height="100%"
-                       style="stroke-width:1.38662" />
-                  </g>
-                </g>
-              </g>
-              <g
-                 id="ytick_4-5"
-                 style="stroke-width:1.38662">
-                <g
-                   id="line2d_10-7"
-                   style="stroke-width:1.38662">
-                  <g
-                     id="g9587"
-                     style="stroke-width:1.38662">
-                    <use
-                       style="stroke:#000000;stroke-width:3.88256"
-                       x="54"
-                       xlink:href="#m6ed73a7289"
-                       y="149.47707"
-                       id="use9585"
-                       width="100%"
-                       height="100%" />
-                  </g>
-                </g>
-                <g
-                   id="text_11-6"
-                   style="stroke-width:1.38662">
-                  <!-- 0.25 -->
-                  <g
-                     transform="matrix(0.12,0,0,-0.12,17.39375,154.03612)"
-                     id="g9598"
-                     style="stroke-width:1.38662">
-                    <use
-                       xlink:href="#DejaVuSans-Bold-48-20"
-                       id="use9590"
-                       x="0"
-                       y="0"
-                       width="100%"
-                       height="100%"
-                       style="stroke-width:1.38662" />
-                    <use
-                       x="69.580078"
-                       xlink:href="#DejaVuSans-Bold-46-33"
-                       id="use9592"
-                       y="0"
-                       width="100%"
-                       height="100%"
-                       style="stroke-width:1.38662" />
-                    <use
-                       x="107.56836"
-                       xlink:href="#DejaVuSans-Bold-50-62"
-                       id="use9594"
-                       y="0"
-                       width="100%"
-                       height="100%"
-                       style="stroke-width:1.38662" />
-                    <use
-                       x="177.14844"
-                       xlink:href="#DejaVuSans-Bold-53-9"
-                       id="use9596"
-                       y="0"
-                       width="100%"
-                       height="100%"
-                       style="stroke-width:1.38662" />
-                  </g>
-                </g>
-              </g>
-              <g
-                 id="ytick_5-5"
-                 style="stroke-width:1.38662">
-                <g
-                   id="line2d_11-9"
-                   style="stroke-width:1.38662">
-                  <g
-                     id="g9604"
-                     style="stroke-width:1.38662">
-                    <use
-                       style="stroke:#000000;stroke-width:3.88256"
-                       x="54"
-                       xlink:href="#m6ed73a7289"
-                       y="115.55154"
-                       id="use9602"
-                       width="100%"
-                       height="100%" />
-                  </g>
-                </g>
-                <g
-                   id="text_12-5"
-                   style="stroke-width:1.38662">
-                  <!-- 0.30 -->
-                  <g
-                     transform="matrix(0.12,0,0,-0.12,17.39375,120.1106)"
-                     id="g9615"
-                     style="stroke-width:1.38662">
-                    <use
-                       xlink:href="#DejaVuSans-Bold-48-20"
-                       id="use9607"
-                       x="0"
-                       y="0"
-                       width="100%"
-                       height="100%"
-                       style="stroke-width:1.38662" />
-                    <use
-                       x="69.580078"
-                       xlink:href="#DejaVuSans-Bold-46-33"
-                       id="use9609"
-                       y="0"
-                       width="100%"
-                       height="100%"
-                       style="stroke-width:1.38662" />
-                    <use
-                       x="107.56836"
-                       xlink:href="#DejaVuSans-Bold-51-2"
-                       id="use9611"
-                       y="0"
-                       width="100%"
-                       height="100%"
-                       style="stroke-width:1.38662" />
-                    <use
-                       x="177.14844"
-                       xlink:href="#DejaVuSans-Bold-48-20"
-                       id="use9613"
-                       y="0"
-                       width="100%"
-                       height="100%"
-                       style="stroke-width:1.38662" />
-                  </g>
-                </g>
-              </g>
-              <g
-                 id="ytick_6-0"
-                 style="stroke-width:1.38662">
-                <g
-                   id="line2d_12-4"
-                   style="stroke-width:1.38662">
-                  <g
-                     id="g9621"
-                     style="stroke-width:1.38662">
-                    <use
-                       style="stroke:#000000;stroke-width:3.88256"
-                       x="54"
-                       xlink:href="#m6ed73a7289"
-                       y="81.626015"
-                       id="use9619"
-                       width="100%"
-                       height="100%" />
-                  </g>
-                </g>
-                <g
-                   id="text_13-4"
-                   style="stroke-width:1.38662">
-                  <!-- 0.35 -->
-                  <g
-                     transform="matrix(0.12,0,0,-0.12,17.39375,86.185075)"
-                     id="g9632"
-                     style="stroke-width:1.38662">
-                    <use
-                       xlink:href="#DejaVuSans-Bold-48-20"
-                       id="use9624"
-                       x="0"
-                       y="0"
-                       width="100%"
-                       height="100%"
-                       style="stroke-width:1.38662" />
-                    <use
-                       x="69.580078"
-                       xlink:href="#DejaVuSans-Bold-46-33"
-                       id="use9626"
-                       y="0"
-                       width="100%"
-                       height="100%"
-                       style="stroke-width:1.38662" />
-                    <use
-                       x="107.56836"
-                       xlink:href="#DejaVuSans-Bold-51-2"
-                       id="use9628"
-                       y="0"
-                       width="100%"
-                       height="100%"
-                       style="stroke-width:1.38662" />
-                    <use
-                       x="177.14844"
-                       xlink:href="#DejaVuSans-Bold-53-9"
-                       id="use9630"
-                       y="0"
-                       width="100%"
-                       height="100%"
-                       style="stroke-width:1.38662" />
-                  </g>
-                </g>
-              </g>
-              <g
-                 id="ytick_7"
-                 style="stroke-width:1.38662">
-                <g
-                   id="line2d_13-9"
-                   style="stroke-width:1.38662">
-                  <g
-                     id="g9638"
-                     style="stroke-width:1.38662">
-                    <use
-                       style="stroke:#000000;stroke-width:3.88256"
-                       x="54"
-                       xlink:href="#m6ed73a7289"
-                       y="47.700485"
-                       id="use9636"
-                       width="100%"
-                       height="100%" />
-                  </g>
-                </g>
-                <g
-                   id="text_14-8"
-                   style="stroke-width:1.38662">
-                  <!-- 0.40 -->
-                  <g
-                     transform="matrix(0.12,0,0,-0.12,17.39375,52.259549)"
-                     id="g9649"
-                     style="stroke-width:1.38662">
-                    <use
-                       xlink:href="#DejaVuSans-Bold-48-20"
-                       id="use9641"
-                       x="0"
-                       y="0"
-                       width="100%"
-                       height="100%"
-                       style="stroke-width:1.38662" />
-                    <use
-                       x="69.580078"
-                       xlink:href="#DejaVuSans-Bold-46-33"
-                       id="use9643"
-                       y="0"
-                       width="100%"
-                       height="100%"
-                       style="stroke-width:1.38662" />
-                    <use
-                       x="107.56836"
-                       xlink:href="#DejaVuSans-Bold-52-6"
-                       id="use9645"
-                       y="0"
-                       width="100%"
-                       height="100%"
-                       style="stroke-width:1.38662" />
-                    <use
-                       x="177.14844"
-                       xlink:href="#DejaVuSans-Bold-48-20"
-                       id="use9647"
-                       y="0"
-                       width="100%"
-                       height="100%"
-                       style="stroke-width:1.38662" />
-                  </g>
-                </g>
-              </g>
-              <g
-                 id="text_15-3"
-                 style="stroke-width:1.38662">
-                <!-- % spots kept -->
-                <defs
-                   id="defs9655">
-                  <path
-                     d="M 27.484375,70.21875 V 54.6875 h 18.03125 v -12.5 H 27.484375 V 19 Q 27.484375,15.1875 29,13.84375 30.515625,12.5 35.015625,12.5 H 44 V 0 H 29 Q 18.65625,0 14.328125,4.3125 10.015625,8.640625 10.015625,19 V 42.1875 H 1.3125 v 12.5 h 8.703125 v 15.53125 z"
-                     id="path9970" />
-                  <path
-                     d="M 8.40625,75.984375 H 25.875 V 34.625 L 46,54.6875 H 66.3125 L 39.59375,29.59375 68.40625,0 H 47.21875 L 25.875,22.796875 V 0 H 8.40625 Z"
-                     id="path9972" />
-                </defs>
-                <g
-                   transform="matrix(0,-0.12,-0.12,0,6.898125,186.96094)"
-                   id="g9681"
-                   style="stroke-width:1.38662">
-                  <use
-                     xlink:href="#DejaVuSans-Bold-37-3"
-                     id="use9657"
-                     x="0"
-                     y="0"
-                     width="100%"
-                     height="100%"
-                     style="stroke-width:1.38662" />
-                  <use
-                     x="100.19531"
-                     xlink:href="#DejaVuSans-Bold-32-575"
-                     id="use9659"
-                     y="0"
-                     width="100%"
-                     height="100%"
-                     style="stroke-width:1.38662" />
-                  <use
-                     x="135.00977"
-                     xlink:href="#DejaVuSans-Bold-115-5"
-                     id="use9661"
-                     y="0"
-                     width="100%"
-                     height="100%"
-                     style="stroke-width:1.38662" />
-                  <use
-                     x="194.53125"
-                     xlink:href="#DejaVuSans-Bold-112-24"
-                     id="use9663"
-                     y="0"
-                     width="100%"
-                     height="100%"
-                     style="stroke-width:1.38662" />
-                  <use
-                     x="266.11328"
-                     xlink:href="#DejaVuSans-Bold-111-930"
-                     id="use9665"
-                     y="0"
-                     width="100%"
-                     height="100%"
-                     style="stroke-width:1.38662" />
-                  <use
-                     x="334.81445"
-                     xlink:href="#DejaVuSans-Bold-116-75"
-                     id="use9667"
-                     y="0"
-                     width="100%"
-                     height="100%"
-                     style="stroke-width:1.38662" />
-                  <use
-                     x="382.61719"
-                     xlink:href="#DejaVuSans-Bold-115-5"
-                     id="use9669"
-                     y="0"
-                     width="100%"
-                     height="100%"
-                     style="stroke-width:1.38662" />
-                  <use
-                     x="442.13867"
-                     xlink:href="#DejaVuSans-Bold-32-575"
-                     id="use9671"
-                     y="0"
-                     width="100%"
-                     height="100%"
-                     style="stroke-width:1.38662" />
-                  <use
-                     x="476.95312"
-                     xlink:href="#DejaVuSans-Bold-107-85"
-                     id="use9673"
-                     y="0"
-                     width="100%"
-                     height="100%"
-                     style="stroke-width:1.38662" />
-                  <use
-                     x="540.83203"
-                     xlink:href="#DejaVuSans-Bold-101-43"
-                     id="use9675"
-                     y="0"
-                     width="100%"
-                     height="100%"
-                     style="stroke-width:1.38662" />
-                  <use
-                     x="608.6543"
-                     xlink:href="#DejaVuSans-Bold-112-24"
-                     id="use9677"
-                     y="0"
-                     width="100%"
-                     height="100%"
-                     style="stroke-width:1.38662" />
-                  <use
-                     x="680.23633"
-                     xlink:href="#DejaVuSans-Bold-116-75"
-                     id="use9679"
-                     y="0"
-                     width="100%"
-                     height="100%"
-                     style="stroke-width:1.38662" />
-                </g>
-              </g>
-            </g>
-            <g
-               id="line2d_14-6"
-               style="stroke-width:1.38662"
-               inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing_w.png"
-               inkscape:export-xdpi="300"
-               inkscape:export-ydpi="300">
-              <path
-                 clip-path="url(#p36afb4f28a)"
-                 d="m 69.218182,47.06721 6.087273,-2.352169 6.087272,5.066211 12.174546,9.318211 12.174547,-10.494296 24.34909,-3.70919 60.87273,8.684934 91.30909,-9.137275 30.43636,3.166383 30.43637,79.250031 30.43636,115.25631"
-                 style="fill:none;stroke:#073b4c;stroke-width:2.07994;stroke-linecap:square"
-                 id="path9685" />
-              <defs
-                 id="defs9688">
-                <path
-                   d="M 0,3 C 0.795609,3 1.55874,2.683901 2.12132,2.12132 2.683901,1.55874 3,0.795609 3,0 3,-0.795609 2.683901,-1.55874 2.12132,-2.12132 1.55874,-2.683901 0.795609,-3 0,-3 -0.795609,-3 -1.55874,-2.683901 -2.12132,-2.12132 -2.683901,-1.55874 -3,-0.795609 -3,0 -3,0.795609 -2.683901,1.55874 -2.12132,2.12132 -1.55874,2.683901 -0.795609,3 0,3 Z"
-                   id="path9991"
-                   style="stroke:#073b4c" />
-              </defs>
-              <g
-                 clip-path="url(#p36afb4f28a)"
-                 id="g9712"
-                 style="stroke-width:1.38662">
-                <use
-                   style="fill:#073b4c;stroke:#073b4c;stroke-width:1.38662"
-                   x="69.218185"
-                   xlink:href="#m93ec58187e"
-                   y="47.067211"
-                   id="use9690"
-                   width="100%"
-                   height="100%" />
-                <use
-                   style="fill:#073b4c;stroke:#073b4c;stroke-width:1.38662"
-                   x="75.305458"
-                   xlink:href="#m93ec58187e"
-                   y="44.715042"
-                   id="use9692"
-                   width="100%"
-                   height="100%" />
-                <use
-                   style="fill:#073b4c;stroke:#073b4c;stroke-width:1.38662"
-                   x="81.392731"
-                   xlink:href="#m93ec58187e"
-                   y="49.781254"
-                   id="use9694"
-                   width="100%"
-                   height="100%" />
-                <use
-                   style="fill:#073b4c;stroke:#073b4c;stroke-width:1.38662"
-                   x="93.567276"
-                   xlink:href="#m93ec58187e"
-                   y="59.099464"
-                   id="use9696"
-                   width="100%"
-                   height="100%" />
-                <use
-                   style="fill:#073b4c;stroke:#073b4c;stroke-width:1.38662"
-                   x="105.74182"
-                   xlink:href="#m93ec58187e"
-                   y="48.605167"
-                   id="use9698"
-                   width="100%"
-                   height="100%" />
-                <use
-                   style="fill:#073b4c;stroke:#073b4c;stroke-width:1.38662"
-                   x="130.09091"
-                   xlink:href="#m93ec58187e"
-                   y="44.895977"
-                   id="use9700"
-                   width="100%"
-                   height="100%" />
-                <use
-                   style="fill:#073b4c;stroke:#073b4c;stroke-width:1.38662"
-                   x="190.96364"
-                   xlink:href="#m93ec58187e"
-                   y="53.58091"
-                   id="use9702"
-                   width="100%"
-                   height="100%" />
-                <use
-                   style="fill:#073b4c;stroke:#073b4c;stroke-width:1.38662"
-                   x="282.27274"
-                   xlink:href="#m93ec58187e"
-                   y="44.443638"
-                   id="use9704"
-                   width="100%"
-                   height="100%" />
-                <use
-                   style="fill:#073b4c;stroke:#073b4c;stroke-width:1.38662"
-                   x="312.70908"
-                   xlink:href="#m93ec58187e"
-                   y="47.61002"
-                   id="use9706"
-                   width="100%"
-                   height="100%" />
-                <use
-                   style="fill:#073b4c;stroke:#073b4c;stroke-width:1.38662"
-                   x="343.14545"
-                   xlink:href="#m93ec58187e"
-                   y="126.86005"
-                   id="use9708"
-                   width="100%"
-                   height="100%" />
-                <use
-                   style="fill:#073b4c;stroke:#073b4c;stroke-width:1.38662"
-                   x="373.58182"
-                   xlink:href="#m93ec58187e"
-                   y="242.11636"
-                   id="use9710"
-                   width="100%"
-                   height="100%" />
-              </g>
-            </g>
-            <g
-               id="patch_3-8"
-               style="stroke-width:1.38662"
-               inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing_w.png"
-               inkscape:export-xdpi="300"
-               inkscape:export-ydpi="300">
-              <path
-                 d="M 54,252 V 34.56"
-                 style="fill:none;stroke:#000000;stroke-width:3.88256;stroke-linecap:square;stroke-linejoin:miter"
-                 id="path9715" />
-            </g>
-            <g
-               id="patch_4-8"
-               style="stroke-width:1.38662"
-               inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing_w.png"
-               inkscape:export-xdpi="300"
-               inkscape:export-ydpi="300">
-              <path
-                 d="M 388.8,252 V 34.56"
-                 style="fill:none;stroke:#000000;stroke-width:3.88256;stroke-linecap:square;stroke-linejoin:miter"
-                 id="path9718" />
-            </g>
-            <g
-               id="patch_5-4"
-               style="stroke-width:1.38662"
-               inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing_w.png"
-               inkscape:export-xdpi="300"
-               inkscape:export-ydpi="300">
-              <path
-                 d="M 54,252 H 388.8"
-                 style="fill:none;stroke:#000000;stroke-width:3.88256;stroke-linecap:square;stroke-linejoin:miter"
-                 id="path9721" />
-            </g>
-            <g
-               id="patch_6-0"
-               style="stroke-width:1.38662"
-               inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing_w.png"
-               inkscape:export-xdpi="300"
-               inkscape:export-ydpi="300">
-              <path
-                 d="M 54,34.56 H 388.8"
-                 style="fill:none;stroke:#000000;stroke-width:3.88256;stroke-linecap:square;stroke-linejoin:miter"
-                 id="path9724" />
-            </g>
-          </g>
-        </g>
-      </g>
-    </g>
-    <g
        id="matplotlib.axis_1-9"
        style="stroke-width:1.38315"
-       inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing_w.png"
+       inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing.png"
        inkscape:export-xdpi="300"
        inkscape:export-ydpi="300"
        transform="matrix(0.25555009,0,0,0.25456058,108.2556,81.344998)">
@@ -5311,7 +3913,7 @@
     <g
        id="matplotlib.axis_2-5"
        style="stroke-width:1.38315"
-       inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing_w.png"
+       inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing.png"
        inkscape:export-xdpi="300"
        inkscape:export-ydpi="300"
        transform="matrix(0.25555009,0,0,0.25456058,108.2556,81.344998)">
@@ -6160,7 +4762,7 @@
     <g
        id="line2d_16-3"
        style="stroke:#da678c;stroke-width:1.38315;stroke-opacity:1"
-       inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing_w.png"
+       inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing.png"
        inkscape:export-xdpi="300"
        inkscape:export-ydpi="300"
        transform="matrix(0.25555009,0,0,0.25456058,108.2556,81.344998)">
@@ -6274,7 +4876,7 @@
     <g
        id="line2d_17-7"
        style="stroke:#7400b8;stroke-width:1.38315;stroke-opacity:1"
-       inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing_w.png"
+       inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing.png"
        inkscape:export-xdpi="300"
        inkscape:export-ydpi="300"
        transform="matrix(0.25555009,0,0,0.25456058,108.2556,81.344998)">
@@ -6387,7 +4989,7 @@
     <g
        id="patch_3-6"
        style="stroke-width:1.38315"
-       inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing_w.png"
+       inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing.png"
        inkscape:export-xdpi="300"
        inkscape:export-ydpi="300"
        transform="matrix(0.25555009,0,0,0.25456058,108.2556,81.344998)">
@@ -6399,7 +5001,7 @@
     <g
        id="patch_4-2"
        style="stroke-width:1.38315"
-       inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing_w.png"
+       inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing.png"
        inkscape:export-xdpi="300"
        inkscape:export-ydpi="300"
        transform="matrix(0.25555009,0,0,0.25456058,108.2556,81.344998)">
@@ -6411,7 +5013,7 @@
     <g
        id="patch_5-49"
        style="stroke-width:1.38315"
-       inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing_w.png"
+       inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing.png"
        inkscape:export-xdpi="300"
        inkscape:export-ydpi="300"
        transform="matrix(0.25555009,0,0,0.25456058,108.2556,81.344998)">
@@ -6423,7 +5025,7 @@
     <g
        id="patch_6-8"
        style="stroke-width:1.38315"
-       inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing_w.png"
+       inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing.png"
        inkscape:export-xdpi="300"
        inkscape:export-ydpi="300"
        transform="matrix(0.25555009,0,0,0.25456058,108.2556,81.344998)">
@@ -6435,7 +5037,7 @@
     <g
        id="text_18-5"
        style="fill:#7400b8;fill-opacity:1;stroke:#7400b8;stroke-width:1.38315;stroke-opacity:1"
-       inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing_w.png"
+       inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing.png"
        inkscape:export-xdpi="300"
        inkscape:export-ydpi="300"
        transform="matrix(0.25555009,0,0,0.25456058,108.2556,81.344998)">
@@ -6481,7 +5083,7 @@
     <g
        id="text_19-8"
        style="fill:#7400b8;fill-opacity:1;stroke:#7400b8;stroke-width:1.38315;stroke-opacity:1"
-       inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing_w.png"
+       inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing.png"
        inkscape:export-xdpi="300"
        inkscape:export-ydpi="300"
        transform="matrix(0.25555009,0,0,0.25456058,108.2556,81.344998)">
@@ -6527,7 +5129,7 @@
     <g
        id="text_20-2"
        style="fill:#7400b8;fill-opacity:1;stroke:#7400b8;stroke-width:1.38315;stroke-opacity:1"
-       inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing_w.png"
+       inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing.png"
        inkscape:export-xdpi="300"
        inkscape:export-ydpi="300"
        transform="matrix(0.25555009,0,0,0.25456058,108.2556,81.344998)">
@@ -6573,7 +5175,7 @@
     <g
        id="text_21-38"
        style="fill:#7400b8;fill-opacity:1;stroke:#7400b8;stroke-width:1.38315;stroke-opacity:1"
-       inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing_w.png"
+       inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing.png"
        inkscape:export-xdpi="300"
        inkscape:export-ydpi="300"
        transform="matrix(0.25555009,0,0,0.25456058,108.2556,81.344998)">
@@ -6619,7 +5221,7 @@
     <g
        id="text_22-3"
        style="fill:#7400b8;fill-opacity:1;stroke:#7400b8;stroke-width:1.38315;stroke-opacity:1"
-       inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing_w.png"
+       inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing.png"
        inkscape:export-xdpi="300"
        inkscape:export-ydpi="300"
        transform="matrix(0.25555009,0,0,0.25456058,108.2556,81.344998)">
@@ -6665,7 +5267,7 @@
     <g
        id="text_23-2"
        style="fill:#7400b8;fill-opacity:1;stroke:#7400b8;stroke-width:1.38315;stroke-opacity:1"
-       inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing_w.png"
+       inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing.png"
        inkscape:export-xdpi="300"
        inkscape:export-ydpi="300"
        transform="matrix(0.25555009,0,0,0.25456058,108.2556,81.344998)">
@@ -6711,7 +5313,7 @@
     <g
        id="text_24-9"
        style="fill:#7400b8;fill-opacity:1;stroke:#7400b8;stroke-width:1.38315;stroke-opacity:1"
-       inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing_w.png"
+       inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing.png"
        inkscape:export-xdpi="300"
        inkscape:export-ydpi="300"
        transform="matrix(0.25555009,0,0,0.25456058,108.2556,81.344998)">
@@ -6757,7 +5359,7 @@
     <g
        id="text_25-7"
        style="fill:#7400b8;fill-opacity:1;stroke:#7400b8;stroke-width:1.38315;stroke-opacity:1"
-       inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing_w.png"
+       inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing.png"
        inkscape:export-xdpi="300"
        inkscape:export-ydpi="300"
        transform="matrix(0.25555009,0,0,0.25456058,108.2556,81.344998)">
@@ -6809,7 +5411,7 @@
     <g
        id="text_26-9"
        style="fill:#7400b8;fill-opacity:1;stroke:#7400b8;stroke-width:1.38315;stroke-opacity:1"
-       inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing_w.png"
+       inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing.png"
        inkscape:export-xdpi="300"
        inkscape:export-ydpi="300"
        transform="matrix(0.25555009,0,0,0.25456058,108.2556,81.344998)">
@@ -6855,7 +5457,7 @@
     <g
        id="text_27-7"
        style="fill:#7400b8;fill-opacity:1;stroke:#7400b8;stroke-width:1.38315;stroke-opacity:1"
-       inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing_w.png"
+       inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing.png"
        inkscape:export-xdpi="300"
        inkscape:export-ydpi="300"
        transform="matrix(0.25555009,0,0,0.25456058,108.2556,81.344998)">
@@ -6901,7 +5503,7 @@
     <g
        id="text_28-9"
        style="fill:#7400b8;fill-opacity:1;stroke:#7400b8;stroke-width:1.38315;stroke-opacity:1"
-       inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing_w.png"
+       inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing.png"
        inkscape:export-xdpi="300"
        inkscape:export-ydpi="300"
        transform="matrix(0.25555009,0,0,0.25456058,108.2556,81.344998)">
@@ -6939,7 +5541,7 @@
     <g
        id="text_29-1"
        style="fill:#da678c;fill-opacity:1;stroke:#da678c;stroke-width:1.38315;stroke-opacity:1"
-       inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing_w.png"
+       inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing.png"
        inkscape:export-xdpi="300"
        inkscape:export-ydpi="300"
        transform="matrix(0.25555009,0,0,0.25456058,108.2556,81.344998)">
@@ -7066,7 +5668,7 @@
     <g
        id="text_30"
        style="fill:#da678c;fill-opacity:1;stroke:#da678c;stroke-width:1.38315;stroke-opacity:1"
-       inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing_w.png"
+       inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing.png"
        inkscape:export-xdpi="300"
        inkscape:export-ydpi="300"
        transform="matrix(0.25555009,0,0,0.25456058,108.2556,81.344998)">
@@ -7112,7 +5714,7 @@
     <g
        id="legend_1-7"
        style="stroke-width:1.38315"
-       inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing_w.png"
+       inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing.png"
        inkscape:export-xdpi="300"
        inkscape:export-ydpi="300"
        transform="matrix(0.25555009,0,0,0.25456058,108.2556,81.344998)">
@@ -7481,7 +6083,7 @@
        y="5.6437054"
        id="text92100"
        transform="translate(-99.860269,4.8796941)"
-       inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing_w.png"
+       inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing.png"
        inkscape:export-xdpi="300"
        inkscape:export-ydpi="300"><tspan
          id="tspan92098"
@@ -7495,7 +6097,7 @@
        y="5.6437054"
        id="text92100-3"
        transform="translate(3.3404152,4.8796941)"
-       inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing_w.png"
+       inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing.png"
        inkscape:export-xdpi="300"
        inkscape:export-ydpi="300"><tspan
          id="tspan92098-4"
@@ -7509,7 +6111,7 @@
        y="5.6437054"
        id="text92100-3-9"
        transform="translate(3.1471454,78.448501)"
-       inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing_w.png"
+       inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing.png"
        inkscape:export-xdpi="300"
        inkscape:export-ydpi="300"><tspan
          id="tspan92098-4-3"
@@ -7518,26 +6120,12 @@
          y="5.6437054">D)</tspan></text>
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.58611px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial Bold';white-space:pre;inline-size:0;stroke-width:0.264583;stroke-linecap:butt;stroke-linejoin:round"
-       x="106.52494"
-       y="5.6437054"
-       id="text92100-5-5"
-       transform="translate(14.671142,7.821309)"
-       inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing_w.png"
-       inkscape:export-xdpi="300"
-       inkscape:export-ydpi="300"><tspan
-         id="tspan92098-1-1"
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:4.58611px;font-family:Arial;-inkscape-font-specification:'Arial Bold';stroke-width:0.264583"
-         x="106.52494"
-         y="5.6437054">Tracking efficiency</tspan></text>
-    <text
-       xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-size:7.76111px;line-height:1.25;font-family:Arial;-inkscape-font-specification:'Arial Bold';white-space:pre;inline-size:0;stroke-width:0.264583;stroke-linecap:butt;stroke-linejoin:round"
        x="106.52494"
        y="5.6437054"
        id="text92100-3-3"
        transform="translate(-100.42871,78.448501)"
-       inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing_w.png"
+       inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing.png"
        inkscape:export-xdpi="300"
        inkscape:export-ydpi="300"><tspan
          id="tspan92098-4-7"
@@ -7550,13 +6138,13 @@
        cx="68.458183"
        cy="145.64676"
        r="0.39687499"
-       inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing_w.png"
+       inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing.png"
        inkscape:export-xdpi="300"
        inkscape:export-ydpi="300" />
     <g
        id="g4308"
        transform="translate(-102.83782,-78.994859)"
-       inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing_w.png"
+       inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing.png"
        inkscape:export-xdpi="300"
        inkscape:export-ydpi="300">
       <g
@@ -10831,7 +9419,7 @@
     <g
        id="g13105"
        transform="translate(-1.0583333)"
-       inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing_w.png"
+       inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing.png"
        inkscape:export-xdpi="300"
        inkscape:export-ydpi="300">
       <g
@@ -12372,7 +10960,7 @@
        id="text_7-6-3"
        style="stroke-width:1.40084;stroke-linecap:butt;stroke-linejoin:round"
        transform="matrix(0,-0.25193267,0.25173458,0,-63.764789,98.329702)"
-       inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing_w.png"
+       inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing.png"
        inkscape:export-xdpi="300"
        inkscape:export-ydpi="300">
       <!-- % loss per 5 seconds -->
@@ -12582,7 +11170,7 @@
        id="text_7-6-2"
        style="stroke-width:2.56131;stroke-linecap:butt;stroke-linejoin:round"
        transform="matrix(0.13778769,0,0,0.13767935,63.414545,49.026083)"
-       inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing_w.png"
+       inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing.png"
        inkscape:export-xdpi="300"
        inkscape:export-ydpi="300">
       <!-- % loss per 5 seconds -->
@@ -12790,7 +11378,10 @@
     </g>
     <g
        id="g62058"
-       transform="translate(3.2839312,-87.725688)">
+       transform="translate(-0.08779882,1.1061907)"
+       inkscape:export-filename="D:\multiplexing_ML\finalized_plots_gaussians\figures\figure_s4_multiplexing.png"
+       inkscape:export-xdpi="300"
+       inkscape:export-ydpi="300">
       <path
          style="fill:none;stroke:#7400b8;stroke-width:0.264584px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
          d="m 152.80003,60.604864 c 0.29412,-0.01775 0.62201,0.05995 0.89407,-0.08515 0.34019,-0.181438 0.4413,-0.600165 0.55347,-0.936639 0.0616,-0.18484 0.0878,-0.324426 0.12772,-0.510894 0.15434,-0.463037 -0.0224,0.112194 0.0426,-0.212873 0.0263,-0.131525 0.0213,0.06315 0.0213,-0.04257"

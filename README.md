@@ -32,6 +32,8 @@ Using mechanistic models and machine learning to design single-color multiplexed
 ---
 
 
+[![DOI](https://zenodo.org/badge/236034859.svg)](https://zenodo.org/badge/latestdoi/236034859)
+
 ## Organization  <br/>
 
 
